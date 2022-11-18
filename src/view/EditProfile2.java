@@ -56,16 +56,16 @@ public class EditProfile2 extends javax.swing.JFrame {
         labelContact19 = new javax.swing.JLabel();
         labelProfilePic = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        name = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        labelUsernamedisp = new javax.swing.JLabel();
+        labelNamedisp = new javax.swing.JLabel();
+        labelGenderdisp = new javax.swing.JLabel();
+        labelNationalitydisp = new javax.swing.JLabel();
+        labelStreetdisp = new javax.swing.JLabel();
+        labelAnchaldisp = new javax.swing.JLabel();
+        labelCitydisp = new javax.swing.JLabel();
+        labelCountrydisp = new javax.swing.JLabel();
+        labelZipcodedisp = new javax.swing.JLabel();
+        labelNationdisp = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -281,35 +281,31 @@ public class EditProfile2 extends javax.swing.JFrame {
             }
         });
 
-        name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        name.setText("Raj49ku1kur");
+        labelUsernamedisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Raj Kumar Bista");
+        labelNamedisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Male");
+        labelGenderdisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setText("Nepali");
+        labelNationalitydisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("12 Ranipokhari");
+        labelStreetdisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelStreetdisp.setText("   ");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setText("Bagmati");
+        labelAnchaldisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelAnchaldisp.setText("  ");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("Kathmandu");
+        labelCitydisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelCitydisp.setText(" ");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel9.setText("Nepal");
+        labelCountrydisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelCountrydisp.setText(" ");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel10.setText("014751");
+        labelZipcodedisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelZipcodedisp.setText(" ");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setText("Nepali");
+        labelNationdisp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelNationdisp.setText(" ");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setText("rajku6kur@hotmail.com");
@@ -366,16 +362,16 @@ public class EditProfile2 extends javax.swing.JFrame {
                             .addGroup(panelLoginFrameLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelNamedisp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelUsernamedisp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelGenderdisp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelNationalitydisp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAnchaldisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelStreetdisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCitydisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelCountrydisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelZipcodedisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelNationdisp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14)
@@ -426,25 +422,25 @@ public class EditProfile2 extends javax.swing.JFrame {
                                 .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelLoginFrameLayout.createSequentialGroup()
                                 .addGap(25, 25, 25)
-                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelUsernamedisp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelNamedisp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelGenderdisp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelNationalitydisp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(jLabel6)
+                                .addComponent(labelStreetdisp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7)
+                                .addComponent(labelAnchaldisp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8)
+                                .addComponent(labelCitydisp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel9)
+                                .addComponent(labelCountrydisp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel10)
+                                .addComponent(labelZipcodedisp)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel11)
+                                .addComponent(labelNationdisp)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
@@ -580,47 +576,47 @@ public class EditProfile2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MAMAPANEL;
     private javax.swing.JButton buttonRegister;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelAnchaldisp;
     private javax.swing.JLabel labelBack;
+    private javax.swing.JLabel labelCitydisp;
     private javax.swing.JLabel labelContact15;
     private javax.swing.JLabel labelContact16;
     private javax.swing.JLabel labelContact17;
     private javax.swing.JLabel labelContact18;
     private javax.swing.JLabel labelContact19;
+    private javax.swing.JLabel labelCountrydisp;
     private javax.swing.JLabel labelDOB;
     private javax.swing.JLabel labelDriverLicenseNo;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelExpiryDate;
     private javax.swing.JLabel labelGender;
+    private javax.swing.JLabel labelGenderdisp;
     private javax.swing.JLabel labelLOGIN;
     private javax.swing.JLabel labelLogoTop;
     private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelNamedisp;
+    private javax.swing.JLabel labelNationalitydisp;
+    private javax.swing.JLabel labelNationdisp;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelPhone;
     private javax.swing.JLabel labelProfilePic;
     private javax.swing.JLabel labelRePassword;
     private javax.swing.JLabel labelSecurityQuestion;
+    private javax.swing.JLabel labelStreetdisp;
     private javax.swing.JLabel labelUsername;
+    private javax.swing.JLabel labelUsernamedisp;
     private javax.swing.JLabel labelWhiteHLine;
     private javax.swing.JLabel labelWhiteLineDivider;
-    private javax.swing.JLabel name;
+    private javax.swing.JLabel labelZipcodedisp;
     private javax.swing.JPanel panelContact2;
     private javax.swing.JPanel panelContacts;
     private javax.swing.JPanel panelLoginFrame;
