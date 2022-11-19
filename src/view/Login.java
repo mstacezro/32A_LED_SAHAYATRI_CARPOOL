@@ -4,6 +4,13 @@
  */
 package view;
 
+import java.sql.ResultSet;
+
+import javax.swing.JOptionPane;
+
+import controller.UserController;
+import model.User;
+
 /**
  *
  * @author lenovo
@@ -26,6 +33,8 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        // buttonGroup1 = new javax.swing.ButtonGroup();
+        // buttonGroup2 = new javax.swing.ButtonGroup();
         panelMain = new javax.swing.JPanel();
         labelCarpoolLogo = new javax.swing.JLabel();
         labelWhiteLineDivider = new javax.swing.JLabel();
@@ -278,7 +287,21 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_textfieldPasswordActionPerformed
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
-        // TODO add your handling code here:
+        // if(textfieldUsername1.)
+        try {
+            User u1 = new User(null, textfieldPassword.getText(), null, null, null, null, null, null, null, null, textfieldUsername1.getText(), null, null, null, null, null, null) ;
+             UserController sc = new UserController();
+             ResultSet result = sc.selectQuery(u1);
+                 if(result.next()){
+                     JOptionPane.showMessageDialog(null, "Login Success");
+                     sc.changeStatus(u1);
+                     sc.updatestatus(u1);
+     
+                 }
+             } catch (Exception e) {
+                 // TODO Auto-generated catch block
+                 e.printStackTrace();
+             }
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
@@ -321,6 +344,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    // private javax.swing.ButtonGroup buttonGroup1;
+    // private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton buttonLogin;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JLabel labelCarpoolLogo;

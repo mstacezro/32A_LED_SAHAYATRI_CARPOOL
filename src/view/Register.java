@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import javax.swing.JOptionPane;
 
 import controller.UserController;
@@ -31,9 +34,7 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        genderButton = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroupGender = new javax.swing.ButtonGroup();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         labelBack = new javax.swing.JLabel();
@@ -60,24 +61,23 @@ public class Register extends javax.swing.JFrame {
         labelDriverLicenseNo = new javax.swing.JLabel();
         labelExpiryDate = new javax.swing.JLabel();
         textfieldFirstName = new javax.swing.JTextField();
-        passField = new javax.swing.JPasswordField();
-        repassField = new javax.swing.JPasswordField();
+        passText = new javax.swing.JPasswordField();
+        repassText = new javax.swing.JPasswordField();
         textfieldLastName = new javax.swing.JTextField();
         MiddleName = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButtonMale = new javax.swing.JRadioButton();
+        jRadioButtonFemale = new javax.swing.JRadioButton();
+        jRadioButtonOther = new javax.swing.JRadioButton();
+        DateDOB = new com.toedter.calendar.JDateChooser();
         textfieldNationality = new javax.swing.JTextField();
         textfieldStreet = new javax.swing.JTextField();
-        textfieldStreetExtra = new javax.swing.JTextField();
-        textfieldZipcode = new javax.swing.JTextField();
-        choiceProvince = new java.awt.Choice();
         textfieldEmail = new javax.swing.JTextField();
         textfieldPhone = new javax.swing.JTextField();
         textfieldSecurityQuestion = new javax.swing.JTextField();
         textfieldAnswer = new javax.swing.JTextField();
         textfieldCitizenship = new javax.swing.JTextField();
         textfieldDriverLicense = new javax.swing.JTextField();
+        DateExpiry = new com.toedter.calendar.JDateChooser();
         labelNote = new javax.swing.JLabel();
         panelContact = new javax.swing.JPanel();
         labelContact5 = new javax.swing.JLabel();
@@ -85,13 +85,12 @@ public class Register extends javax.swing.JFrame {
         labelContact7 = new javax.swing.JLabel();
         labelContact8 = new javax.swing.JLabel();
         labelContact9 = new javax.swing.JLabel();
-        DobField = new com.toedter.calendar.JDateChooser();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
         setMaximumSize(new java.awt.Dimension(1270, 720));
         setPreferredSize(new java.awt.Dimension(1270, 720));
+        setResizable(false);
 
         jScrollPane2.setPreferredSize(new java.awt.Dimension(1270, 720));
 
@@ -250,11 +249,11 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        passField.setText("jPasswordField1");
-        passField.setPreferredSize(new java.awt.Dimension(64, 22));
+        passText.setText("jPasswordField1");
+        passText.setPreferredSize(new java.awt.Dimension(64, 22));
 
-        repassField.setText("jPasswordField1");
-        repassField.setPreferredSize(new java.awt.Dimension(64, 22));
+        repassText.setText("jPasswordField1");
+        repassText.setPreferredSize(new java.awt.Dimension(64, 22));
 
         textfieldLastName.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         textfieldLastName.setText("Last Name");
@@ -274,33 +273,33 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        genderButton.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Male");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroupGender.add(jRadioButtonMale);
+        jRadioButtonMale.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jRadioButtonMale.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButtonMale.setText("Male");
+        jRadioButtonMale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRadioButtonMaleActionPerformed(evt);
             }
         });
 
-        genderButton.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Female");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroupGender.add(jRadioButtonFemale);
+        jRadioButtonFemale.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jRadioButtonFemale.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButtonFemale.setText("Female");
+        jRadioButtonFemale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRadioButtonFemaleActionPerformed(evt);
             }
         });
 
-        genderButton.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("Other");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroupGender.add(jRadioButtonOther);
+        jRadioButtonOther.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jRadioButtonOther.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButtonOther.setText("Other");
+        jRadioButtonOther.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jRadioButtonOtherActionPerformed(evt);
             }
         });
 
@@ -314,28 +313,10 @@ public class Register extends javax.swing.JFrame {
         });
 
         textfieldStreet.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        textfieldStreet.setText("Street");
         textfieldStreet.setName(""); // NOI18N
         textfieldStreet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfieldStreetActionPerformed(evt);
-            }
-        });
-
-        textfieldStreetExtra.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        textfieldStreetExtra.setName(""); // NOI18N
-        textfieldStreetExtra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldStreetExtraActionPerformed(evt);
-            }
-        });
-
-        textfieldZipcode.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        textfieldZipcode.setText("Zip Code");
-        textfieldZipcode.setName(""); // NOI18N
-        textfieldZipcode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfieldZipcodeActionPerformed(evt);
             }
         });
 
@@ -498,37 +479,30 @@ public class Register extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelNote)
-                            .addComponent(textfieldDriverLicense)
-                            .addComponent(textfieldCitizenship)
-                            .addComponent(textfieldAnswer)
-                            .addComponent(textfieldSecurityQuestion)
-                            .addComponent(textfieldUsername)
-                            .addComponent(textfieldLastName)
-                            .addComponent(passField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(repassField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jRadioButton2)
-                                .addGap(41, 41, 41)
-                                .addComponent(jRadioButton3))
-                            .addComponent(textfieldNationality)
-                            .addComponent(textfieldStreet)
-                            .addComponent(textfieldStreetExtra)
-                            .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                                .addComponent(textfieldZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(choiceProvince, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(textfieldEmail)
-                            .addComponent(textfieldPhone)
-                            .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                                .addComponent(textfieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(DobField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textfieldDriverLicense)
+                                .addComponent(textfieldCitizenship)
+                                .addComponent(textfieldAnswer)
+                                .addComponent(textfieldSecurityQuestion)
+                                .addComponent(textfieldUsername)
+                                .addComponent(textfieldLastName)
+                                .addComponent(passText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(repassText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioButtonMale)
+                                .addComponent(DateDOB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(textfieldNationality)
+                                .addComponent(textfieldStreet)
+                                .addComponent(textfieldEmail)
+                                .addComponent(textfieldPhone)
+                                .addComponent(DateExpiry, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelRegisterFrameLayout.createSequentialGroup()
+                                    .addComponent(textfieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jRadioButtonFemale)
+                            .addComponent(jRadioButtonOther))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRegisterFrameLayout.setVerticalGroup(
@@ -536,57 +510,52 @@ public class Register extends javax.swing.JFrame {
             .addGroup(panelRegisterFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                        .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGap(45, 45, 45)
+                        .addComponent(textfieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(repassText, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButtonMale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonFemale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButtonOther)
+                        .addGap(22, 22, 22)
+                        .addComponent(DateDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldSecurityQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldDriverLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DateExpiry, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelNote))
+                    .addGroup(panelRegisterFrameLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(textfieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)
-                                .addComponent(repassField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textfieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DobField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldStreet, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldStreetExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textfieldZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                                    .addComponent(choiceProvince, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldSecurityQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldDriverLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11)
-                                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelNote))
-                            .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
                                 .addComponent(labelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -596,13 +565,13 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
                                 .addComponent(labelGender, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(87, 87, 87)
                                 .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(96, 96, 96)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -616,14 +585,11 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(labelDriverLicenseNo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)))
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegisterFrameLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGap(39, 39, 39))
+                            .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24)
                 .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -634,10 +600,7 @@ public class Register extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelLogoTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelLogoTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelBack)
@@ -654,9 +617,7 @@ public class Register extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(labelBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelLogoTop)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -670,17 +631,14 @@ public class Register extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -691,15 +649,43 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_textfieldUsernameActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        User u1 = new User("1","1","1","1","1","1","1","1","1","1","2", "12", "1", "1", "12", null, null);
+        String username = textfieldUsername.getText();
+        String fname = textfieldFirstName.getText();
+        String mname= MiddleName.getText();
+        String lname = textfieldLastName.getText();
+        String pass = new String(passText.getPassword());
+        String repass = new String(repassText.getPassword());
+        String gender =null;
+        if(jRadioButtonMale.isSelected()){
+            gender="Male";
+
+        }else if(jRadioButtonFemale.isSelected()){
+            gender="Female";
+        }
+        else{
+            gender ="Other";
+        }
+
+        DateFormat fmt = new SimpleDateFormat("dd/MM/YY");
+        String dob = fmt.format(this.DateDOB.getDate());
+        String nationality = textfieldNationality.getText();
+        String address = textfieldStreet.getText();
+        String email = textfieldEmail.getText();
+        String phone = textfieldPhone.getText();
+        String sq = textfieldSecurityQuestion.getText();
+        String sq_ans = textfieldAnswer.getText();
+        String citizen = textfieldCitizenship.getText();
+        // User u1 = new User(textfieldUsername) 
+        User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, null, null);
         UserController sc  = new UserController();
         int result = sc.insertDetails(u1);
-        if(result>0){
-            JOptionPane.showMessageDialog(null, "Inserted");
-        }else{
-            JOptionPane.showMessageDialog(null, " NOt Inserted");
+        JOptionPane.showMessageDialog(null, "Inserted");
+        // if(result>0){
+        //     JOptionPane.showMessageDialog(null, "Inserted");
+        // }else{
+        //     JOptionPane.showMessageDialog(null, " NOt Inserted");
             
-        }
+        // }
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void textfieldFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldFirstNameActionPerformed
@@ -714,17 +700,17 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MiddleNameActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRadioButtonMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMaleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_jRadioButtonMaleActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemaleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jRadioButtonFemaleActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void jRadioButtonOtherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonOtherActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_jRadioButtonOtherActionPerformed
 
     private void textfieldNationalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNationalityActionPerformed
         // TODO add your handling code here:
@@ -733,14 +719,6 @@ public class Register extends javax.swing.JFrame {
     private void textfieldStreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldStreetActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textfieldStreetActionPerformed
-
-    private void textfieldStreetExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldStreetExtraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldStreetExtraActionPerformed
-
-    private void textfieldZipcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldZipcodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldZipcodeActionPerformed
 
     private void textfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldEmailActionPerformed
         // TODO add your handling code here:
@@ -802,19 +780,15 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser DobField;
+    private com.toedter.calendar.JDateChooser DateDOB;
+    private com.toedter.calendar.JDateChooser DateExpiry;
     private javax.swing.JTextField MiddleName;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonRegister;
-    private java.awt.Choice choiceProvince;
-    private javax.swing.ButtonGroup genderButton;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButtonFemale;
+    private javax.swing.JRadioButton jRadioButtonMale;
+    private javax.swing.JRadioButton jRadioButtonOther;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelAnswer;
@@ -844,8 +818,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel labelWhiteLineDivider;
     private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelRegisterFrame;
-    private javax.swing.JPasswordField passField;
-    private javax.swing.JPasswordField repassField;
+    private javax.swing.JPasswordField passText;
+    private javax.swing.JPasswordField repassText;
     private javax.swing.JTextField textfieldAnswer;
     private javax.swing.JTextField textfieldCitizenship;
     private javax.swing.JTextField textfieldDriverLicense;
@@ -856,8 +830,6 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField textfieldPhone;
     private javax.swing.JTextField textfieldSecurityQuestion;
     private javax.swing.JTextField textfieldStreet;
-    private javax.swing.JTextField textfieldStreetExtra;
     private javax.swing.JTextField textfieldUsername;
-    private javax.swing.JTextField textfieldZipcode;
     // End of variables declaration//GEN-END:variables
 }
