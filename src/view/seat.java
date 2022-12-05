@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
 import controller.DriverController;
 
 import java.sql.ResultSet;
@@ -632,7 +631,7 @@ public final class seat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
         String convertedDate;
         String publishLeave = Leavebox.getSelectedItem().toString();
         String publishGoing = Goingbox.getSelectedItem().toString();
