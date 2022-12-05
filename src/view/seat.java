@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 // import com.mysql.cj.protocol.Resultset;
 // import com.mysql.cj.protocol.ResultsetRow;
@@ -271,6 +272,11 @@ public final class seat extends javax.swing.JFrame {
 
         btnDelete.setBackground(new java.awt.Color(204, 0, 51));
         btnDelete.setText("Delete");
+        btnDelete.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                btnDeleteFocusGained(evt);
+            }
+        });
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -651,7 +657,7 @@ public final class seat extends javax.swing.JFrame {
         String publishTrunk = Trunkbox.getSelectedItem().toString();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
+        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
         DriverController dc = new DriverController();
         int result = dc.insertDriverDetails(addDriverDetails);
         if (result > 0) {
@@ -689,51 +695,54 @@ public final class seat extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    public void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         // fetchDriverDetails();
         
     }//GEN-LAST:event_formWindowOpened
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        
+        // DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+        int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        try {
+            Driver d1 = new Driver(id,null,null,null,null,0,0);
+            DriverController dc = new DriverController();
+            int result = dc.deleteDetails(d1);
+            if(result>0){
+                JOptionPane.showMessageDialog(this,"Delete Success");
+                DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
+                model1.setRowCount(0);
+                table();
+                
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnDeleteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnDeleteFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteFocusGained
 
     /**
      * @param evt
      */
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-        //get jtable model first
-        final DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-        
-        //delete row
-        if(jTable1.getseletedRowCount()==1){
-            // if single row is selected than delete
-            tblModel.removeRow(extracted2());
-            
-        }else{
-            if(jTable1.getRowCount()==0){
-                //if tabel is empty(no data) than display message
-                JoptionPane.showMessageDialog(this,"Table is Empty.");
-               
-            }else{
-                // if table is not empty but row is not selected or multiple row is selected
-                JoptionPane.showMessageDialog(this,"Please Select Single Row For Delete.");
-            }
-        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
+                                             
 
-    private int extracted2() {
-        return extracted();
-    }
-
-    private int extracted() {
-        return jTable1.getSelectedRow();
-    }
+    
     public void table(){
         try {
-            Driver d1 = new Driver(null,null,null,null,0,0);
+            Driver d1 = new Driver(0,null,null,null,null,0,0);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
