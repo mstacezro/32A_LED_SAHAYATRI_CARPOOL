@@ -102,4 +102,12 @@ public class DriverController {
         int result = dbConnection.manipulate(editquery);
         return result;
     }
+    public int deleteDetails(Driver driver){
+        int driverId = driver.getDSN();
+        String query  = "delete from driver_table where dSN='"+driverId+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+
+    }
 }
