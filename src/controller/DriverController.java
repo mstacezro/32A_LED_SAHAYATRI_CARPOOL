@@ -167,6 +167,14 @@ public class DriverController {
         return result;
     }
 
+    public int fullSeat(Driver driver){
+        int id = driver.getDSN();
+        String query = "update driver_table set dSeatAvailable='"+0+"' where dSN='"+id+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
     
 
 }

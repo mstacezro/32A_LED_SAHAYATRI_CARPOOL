@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
+// Importing Libraries
 import controller.DriverController;
 import controller.UserController;
 
@@ -89,6 +91,7 @@ public final class seat extends javax.swing.JFrame {
         declineBtn = new javax.swing.JButton();
         acceptBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        fullBtn = new javax.swing.JButton();
         jMenu = new javax.swing.JMenuBar();
         jMenuProfile = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -341,6 +344,7 @@ public final class seat extends javax.swing.JFrame {
             }
         });
 
+        idBox.setEditable(false);
         idBox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -601,6 +605,13 @@ public final class seat extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("RESPOND", tabRider);
 
+        fullBtn.setText("Full");
+        fullBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fullBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -608,13 +619,20 @@ public final class seat extends javax.swing.JFrame {
             .addGroup(panelProfileLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fullBtn)
+                .addContainerGap())
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addGap(526, 526, 526)
+                        .addComponent(fullBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1114, Short.MAX_VALUE))
         );
 
@@ -801,52 +819,26 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to add advertisement?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        String convertedDate;
-        String publishLeave = Leavebox.getSelectedItem().toString();
-        String publishGoing = Goingbox.getSelectedItem().toString();
-        String publishDate = (String) Datebox.getDate().toString();
-        System.out.println(publishDate);
-        String day = publishDate.split(" ")[2];
-        String month = publishDate.split(" ")[1];
-        String year = publishDate.split(" ")[5];
-        String convertedMonth = convertMonthIntoString(month);
-        int resultHasDigit = convertMonthIntoString(month).length();
-        if (resultHasDigit == 1){
-            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
-        } else{
-            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
-        }
-        System.out.println(convertedDate);
-        String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String publishSeat = Seatbox.getSelectedItem().toString();
-        String publishPrice = Pricebox.getText();
-        String email = null;
-        String phone  = null;
-
-        ResultSet rset = new UserController().selectEmail();
-        try {
-            while(rset.next()){
-                email = rset.getString(1);
-                phone = rset.getString(2);
+        if(response == JOptionPane.YES_OPTION){
+            try {
+                view();
+                
+            } catch (NullPointerException e) {
+                // TODO: handle exception
+                JOptionPane.showMessageDialog(this, "Please fill the date");
+            }catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e);
             }
-        } catch (Exception e) {
-            // TODO: handle exception
         }
-        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,phone,email);
-        DriverController dc = new DriverController();
-        int result = dc.insertDriverDetails(addDriverDetails);
-        if (result > 0) {
-            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            table();
+        else if(response == JOptionPane.NO_OPTION){
+            return;
 
-        }
-        else {
-            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+     public void view(){
         String convertedDate;
         String publishLeave = Leavebox.getSelectedItem().toString();
         String publishGoing = Goingbox.getSelectedItem().toString();
@@ -864,17 +856,100 @@ public final class seat extends javax.swing.JFrame {
         }
         System.out.println(convertedDate);
         String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String id = idBox.getText();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(Integer.parseInt(id),publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,null,null);
-        DriverController dc = new DriverController();
-        int result = dc.editDetails(addDriverDetails);
-        if(result>0){
-            JOptionPane.showMessageDialog(this, "Edited Success");
-            DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
-            model1.setRowCount(0);
-            table();
+
+        if(!publishPrice.matches("[0-9]+")){
+            JOptionPane.showMessageDialog(this, "Please enter valid price", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(publishPrice.length() > 5){
+            JOptionPane.showMessageDialog(this, "Please enter valid price", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(!nameValid.nameVerify(publishLeave)){
+            JOptionPane.showMessageDialog(this, "Please enter valid leave place", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(!nameValid.nameVerify(publishGoing)){
+            JOptionPane.showMessageDialog(this, "Please enter valid going place", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else{
+
+            String email = null;
+            String phone  = null;
+    
+            ResultSet rset = new UserController().selectEmail();
+            try {
+                while(rset.next()){
+                    email = rset.getString(1);
+                    phone = rset.getString(2);
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+            Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,phone,email);
+            DriverController dc = new DriverController();
+            int result = dc.insertDriverDetails(addDriverDetails);
+            if (result > 0) {
+                JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                table();
+    
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+}
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        try {
+            
+            String convertedDate;
+            String publishLeave = Leavebox.getSelectedItem().toString();
+            String publishGoing = Goingbox.getSelectedItem().toString();
+            String publishDate = (String) Datebox.getDate().toString();
+            System.out.println(publishDate);
+            String day = publishDate.split(" ")[2];
+            String month = publishDate.split(" ")[1];
+            String year = publishDate.split(" ")[5];
+            String convertedMonth = convertMonthIntoString(month);
+            int resultHasDigit = convertMonthIntoString(month).length();
+            if (resultHasDigit == 1){
+                convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
+            } else{
+                convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
+            }
+            System.out.println(convertedDate);
+            String publishTrunk = Trunkbox.getSelectedItem().toString();
+            String id = idBox.getText();
+            String publishSeat = Seatbox.getSelectedItem().toString();
+            String publishPrice = Pricebox.getText();
+            if(!publishPrice.matches("[0-9]+")){
+                JOptionPane.showMessageDialog(this, "Please enter valid price", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }else if(publishPrice.length() > 5){
+                JOptionPane.showMessageDialog(this, "Please enter valid price", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }else if(!nameValid.nameVerify(publishLeave)){
+                JOptionPane.showMessageDialog(this, "Please enter valid leave place", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }else if(!nameValid.nameVerify(publishGoing)){
+                JOptionPane.showMessageDialog(this, "Please enter valid going place", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+                else{
+                    Driver addDriverDetails = new Driver(Integer.parseInt(id),publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,null,null);
+                    DriverController dc = new DriverController();
+                    int result = dc.editDetails(addDriverDetails);
+                    if(result>0){
+                        JOptionPane.showMessageDialog(this, "Edited Success");
+                        DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
+                        model1.setRowCount(0);
+                        table();
+                    }
+    
+                }
+
+        } catch (Exception e) {
+            // TODO: handle exception
+            JOptionPane.showMessageDialog(this, "Please select a row to edit", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_editBtnActionPerformed
 
@@ -1033,7 +1108,6 @@ public final class seat extends javax.swing.JFrame {
 
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
-        dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
 
@@ -1100,8 +1174,10 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_LeaveboxActionPerformed
 
     private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-        // TODO add your handling code here:
-        UserController uc = new UserController();
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            UserController uc = new UserController();
             DriverController dc=  new DriverController();
             dc.cancelAllRide();
             dc.deleteallDetails();
@@ -1111,7 +1187,32 @@ public final class seat extends javax.swing.JFrame {
                 dispose();
                 new Login().setVisible(true);
             }
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+
     }//GEN-LAST:event_jMenuItemDeleteActionPerformed
+
+    private void fullBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullBtnActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to fill the seat?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(response == JOptionPane.YES_OPTION){
+            int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
+        
+            DriverController dc = new DriverController();
+            dc.fullSeat(d1);
+            JOptionPane.showMessageDialog(this, "Seat Filled");
+            table();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+    }//GEN-LAST:event_fullBtnActionPerformed
 
 
     /**
@@ -1136,6 +1237,10 @@ public final class seat extends javax.swing.JFrame {
                 
                 String trunk = rset.getString(5);
                 String seat = rset.getString(6);
+                if(seat.equals("0")){
+                    seat = "Full";
+                }
+                
                 String price = rset.getString(7);
                 String rideStatus= rset.getString(10);
                 String email = rset.getString(11);
@@ -1227,6 +1332,7 @@ public final class seat extends javax.swing.JFrame {
     private javax.swing.JMenu contactMenu;
     private javax.swing.JButton declineBtn;
     private javax.swing.JButton editBtn;
+    private javax.swing.JButton fullBtn;
     private javax.swing.JTextField idBox;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
