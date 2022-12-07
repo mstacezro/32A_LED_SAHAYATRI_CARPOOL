@@ -6,7 +6,7 @@ import javax.swing.*;
 
 import java.sql.*;
 
-// A commet
+
 
 public class DbConnection {
 
