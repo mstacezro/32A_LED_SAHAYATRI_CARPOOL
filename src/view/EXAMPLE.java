@@ -4,33 +4,17 @@
  */
 package view;
 
-import controller.DriverController;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-
-// import com.mysql.cj.protocol.Resultset;
-// import com.mysql.cj.protocol.ResultsetRow;
-
-import model.Driver;
-
 /**
  *
  * @author lenovo
  */
-public class seat extends javax.swing.JFrame {
+public class EXAMPLE extends javax.swing.JFrame {
 
     /**
      * Creates new form EXAMPLE
      */
-    public seat() {
+    public EXAMPLE() {
         initComponents();
-        table();
     }
 
     /**
@@ -44,26 +28,10 @@ public class seat extends javax.swing.JFrame {
 
         panelProfile = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        tabDriverTab = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         panelEditProfile1 = new javax.swing.JPanel();
         labelLogoTop1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDriver = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        Leavebox = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        Goingbox = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        Datebox = new com.toedter.calendar.JDateChooser();
-        jLabel10 = new javax.swing.JLabel();
-        Trunkbox = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        Seatbox = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        Pricebox = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        labelWhiteHLine1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         panelEditProfile2 = new javax.swing.JPanel();
@@ -83,11 +51,6 @@ public class seat extends javax.swing.JFrame {
         labelProfileIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -96,7 +59,7 @@ public class seat extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("DRIVER");
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
-        tabDriverTab.setBackground(new java.awt.Color(102, 142, 57));
+        jPanel2.setBackground(new java.awt.Color(102, 142, 57));
 
         panelEditProfile1.setBackground(new java.awt.Color(102, 142, 57));
         panelEditProfile1.setMaximumSize(new java.awt.Dimension(1145, 895));
@@ -106,207 +69,53 @@ public class seat extends javax.swing.JFrame {
         labelLogoTop1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelLogoTop1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
 
-        tblDriver.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "S.N.", "Leaving from ....", "Going to ....", "Date", "Trunk Space", "No. of Passengers", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDriver.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblDriver);
-        if (tblDriver.getColumnModel().getColumnCount() > 0) {
-            tblDriver.getColumnModel().getColumn(0).setResizable(false);
-            tblDriver.getColumnModel().getColumn(1).setResizable(false);
-            tblDriver.getColumnModel().getColumn(2).setResizable(false);
-            tblDriver.getColumnModel().getColumn(3).setResizable(false);
-            tblDriver.getColumnModel().getColumn(4).setResizable(false);
-            tblDriver.getColumnModel().getColumn(5).setResizable(false);
-            tblDriver.getColumnModel().getColumn(6).setResizable(false);
-        }
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        Leavebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Leaving from ...");
-
-        Goingbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        // Goingbox.setEditable(true);
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Going to ...");
-        jLabel8.setToolTipText("");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Date");
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Trunk Space");
-
-        Trunkbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes ", "No" }));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Seat");
-
-        Seatbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setText("Price");
-
-        jButton2.setBackground(new java.awt.Color(0, 153, 0));
-        jButton2.setText("Publish");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Leavebox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Goingbox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel10)
-                        .addGap(12, 12, 12))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Datebox, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Trunkbox, 0, 94, Short.MAX_VALUE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(Seatbox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pricebox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Pricebox)
-                            .addComponent(Datebox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Leavebox, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                            .addComponent(Goingbox)
-                            .addComponent(Trunkbox)
-                            .addComponent(Seatbox))))
-                .addContainerGap())
-        );
+        labelWhiteHLine1.setBackground(new java.awt.Color(255, 255, 255));
+        labelWhiteHLine1.setOpaque(true);
+        labelWhiteHLine1.setPreferredSize(new java.awt.Dimension(4, 20));
 
         javax.swing.GroupLayout panelEditProfile1Layout = new javax.swing.GroupLayout(panelEditProfile1);
         panelEditProfile1.setLayout(panelEditProfile1Layout);
         panelEditProfile1Layout.setHorizontalGroup(
             panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelLogoTop1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1131, Short.MAX_VALUE)
+            .addGroup(panelEditProfile1Layout.createSequentialGroup()
+                .addComponent(labelLogoTop1, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(labelWhiteHLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(329, 329, 329))
         );
         panelEditProfile1Layout.setVerticalGroup(
             panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfile1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addComponent(labelLogoTop1)
-                .addGap(29, 29, 29)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1022, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelWhiteHLine1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1511, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout tabDriverTabLayout = new javax.swing.GroupLayout(tabDriverTab);
-        tabDriverTab.setLayout(tabDriverTabLayout);
-        tabDriverTabLayout.setHorizontalGroup(
-            tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1143, Short.MAX_VALUE)
-            .addGroup(tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabDriverTabLayout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelEditProfile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        tabDriverTabLayout.setVerticalGroup(
-            tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1886, Short.MAX_VALUE)
-            .addGroup(tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabDriverTabLayout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1749, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelEditProfile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.addTab("DRIVER", tabDriverTab);
+        jTabbedPane1.addTab("DRIVER", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -564,11 +373,14 @@ public class seat extends javax.swing.JFrame {
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
                 .addComponent(labelBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1138, Short.MAX_VALUE)
                 .addComponent(labelProfileIcon)
                 .addGap(22, 22, 22))
+            .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelProfileLayout.createSequentialGroup()
+                    .addGap(54, 54, 54)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(72, Short.MAX_VALUE)))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,121 +389,39 @@ public class seat extends javax.swing.JFrame {
                     .addComponent(labelBack)
                     .addGroup(panelProfileLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 932, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelProfileIcon))))
-                .addContainerGap(690, Short.MAX_VALUE))
+                        .addComponent(labelProfileIcon)))
+                .addContainerGap(1572, Short.MAX_VALUE))
+            .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelProfileLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 932, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(690, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+            .addGap(0, 1417, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(151, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 1640, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String convertedDate;
-        String publishLeave = Leavebox.getSelectedItem().toString();
-        String publishGoing = Goingbox.getSelectedItem().toString();
-        String publishDate = (String) Datebox.getDate().toString();
-        System.out.println(publishDate);
-        String day = publishDate.split(" ")[2];
-        String month = publishDate.split(" ")[1];
-        String year = publishDate.split(" ")[5];
-        String convertedMonth = convertMonthIntoString(month);
-        int resultHasDigit = convertMonthIntoString(month).length();
-        if (resultHasDigit == 1){
-                convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
-        } else{
-            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
-        }
-        System.out.println(convertedDate);
-        String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String publishSeat = Seatbox.getSelectedItem().toString();
-        String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
-        DriverController dc = new DriverController();
-        int result = dc.insertDriverDetails(addDriverDetails);
-        if (result > 0) {
-            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            // fetchDriverDetails();
-            try {
-                // Driver d1 = new Driver(null,null,null,null,0,0);
-                // DriverController dc = new DriverController();
-                ResultSet rset = dc.fetchDriverDetails();
-                DefaultTableModel model = (DefaultTableModel) tblDriver.getModel();
-                model.setRowCount(0);
-                while(rset.next()){
-                    String SN = rset.getString(1);
-                    String Leave = rset.getString(2);
-                    String Going  = rset.getString(3);
-                    String date = rset.getString(4);
-                    String trunk = rset.getString(5);
-                    String seat = rset.getString(6);
-                    String price = rset.getString(7);
-    
-                    // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                    Object[] row = {SN,Leave,Going,date,trunk,seat,price};
-                    model.addRow(row);
-                }
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        } 
-        else {
-            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-        // fetchDriverDetails();
-        
-    }//GEN-LAST:event_formWindowOpened
-    public void table(){
-        try {
-            Driver d1 = new Driver(null,null,null,null,0,0);
-            DriverController dc = new DriverController();
-            ResultSet result = dc.fetchDriverDetails();
-            while(result.next()){
-                String SN = result.getString(1);
-                String Leave = result.getString(2);
-                String Going  = result.getString(3);
-                String date = result.getString(4);
-                String trunk = result.getString(5);
-                String seat = result.getString(6);
-                String price = result.getString(7);
-
-                // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                DefaultTableModel model = (DefaultTableModel) tblDriver.getModel();
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
-                model.addRow(row);
-            }
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        
-    }
     /**
      * @param args the command line arguments
      */
@@ -722,32 +452,17 @@ public class seat extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new seat().setVisible(true);
+                new EXAMPLE().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser Datebox;
-    private javax.swing.JComboBox<String> Goingbox;
-    private javax.swing.JComboBox<String> Leavebox;
-    private javax.swing.JTextField Pricebox;
-    private javax.swing.JComboBox<String> Seatbox;
-    private javax.swing.JComboBox<String> Trunkbox;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelLogoTop1;
@@ -755,6 +470,7 @@ public class seat extends javax.swing.JFrame {
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelLogoTop4;
     private javax.swing.JLabel labelProfileIcon;
+    private javax.swing.JLabel labelWhiteHLine1;
     private javax.swing.JLabel labelWhiteHLine2;
     private javax.swing.JLabel labelWhiteHLine3;
     private javax.swing.JLabel labelWhiteHLine4;
@@ -764,28 +480,6 @@ public class seat extends javax.swing.JFrame {
     private javax.swing.JPanel panelEditProfile4;
     private javax.swing.JPanel panelProfile;
     private javax.swing.JPanel tabDriver;
-    private javax.swing.JPanel tabDriverTab;
     private javax.swing.JPanel tabRider;
-    private javax.swing.JTable tblDriver;
     // End of variables declaration//GEN-END:variables
-
-    private String convertMonthIntoString(String month) {
-        return switch(month){
-            case "Jan" -> "1";
-            case "Feb" -> "2";
-            case "Mar" -> "3";
-            case "Apr" -> "4";
-            case "May" -> "5";
-            case "Jun" -> "6";
-            case "Jul" -> "7";
-            case "Aug" -> "8";
-            case "Sep" -> "9";
-            case "Oct" -> "10";
-            case "Nov" -> "11";
-            case "Dec" -> "12";
-            default -> "00";
-        };
-    }
-
-    
 }
