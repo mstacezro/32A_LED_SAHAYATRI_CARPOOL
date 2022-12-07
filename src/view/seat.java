@@ -64,6 +64,8 @@ public class seat extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         Pricebox = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         panelEditProfile2 = new javax.swing.JPanel();
@@ -160,7 +162,7 @@ public class seat extends javax.swing.JFrame {
         jLabel7.setText("Leaving from ...");
 
         Goingbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        // Goingbox.setEditable(true);
+        Goingbox.setEditable(true);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Going to ...");
@@ -261,6 +263,12 @@ public class seat extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setText("Edit");
+
+        jButton3.setBackground(new java.awt.Color(255, 0, 0));
+        jButton3.setText("Delete");
+
         javax.swing.GroupLayout panelEditProfile1Layout = new javax.swing.GroupLayout(panelEditProfile1);
         panelEditProfile1.setLayout(panelEditProfile1Layout);
         panelEditProfile1Layout.setHorizontalGroup(
@@ -268,9 +276,14 @@ public class seat extends javax.swing.JFrame {
             .addComponent(labelLogoTop1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1131, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelEditProfile1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(23, 23, 23))
         );
         panelEditProfile1Layout.setVerticalGroup(
@@ -280,9 +293,13 @@ public class seat extends javax.swing.JFrame {
                 .addComponent(labelLogoTop1)
                 .addGap(29, 29, 29)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1022, Short.MAX_VALUE))
+                .addContainerGap(1028, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabDriverTabLayout = new javax.swing.GroupLayout(tabDriverTab);
@@ -734,7 +751,9 @@ public class seat extends javax.swing.JFrame {
     private javax.swing.JTextField Pricebox;
     private javax.swing.JComboBox<String> Seatbox;
     private javax.swing.JComboBox<String> Trunkbox;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

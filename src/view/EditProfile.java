@@ -555,31 +555,32 @@ public class EditProfile extends javax.swing.JFrame {
                         .addComponent(jLabelProfilePic, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textfieldDriverLicense)
-                            .addComponent(textfieldCitizenship)
-                            .addComponent(textfieldAnswer)
-                            .addComponent(textfieldSecurityQuestion)
-                            .addComponent(textfieldUsername)
-                            .addComponent(jPasswordField1)
-                            .addComponent(jPasswordField2)
-                            .addComponent(textfieldNationality)
-                            .addComponent(textfieldStreet)
-                            .addComponent(textfieldEmail)
-                            .addComponent(textfieldPhone)
-                            .addComponent(buttonUploadProfilePic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
-                                .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(textfieldLastName, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textfieldFirstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jRadioButton1)
-                            .addComponent(labelNote)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textfieldDriverLicense)
+                                .addComponent(textfieldCitizenship)
+                                .addComponent(textfieldAnswer)
+                                .addComponent(textfieldSecurityQuestion)
+                                .addComponent(textfieldUsername)
+                                .addComponent(jPasswordField1)
+                                .addComponent(jPasswordField2)
+                                .addComponent(textfieldNationality)
+                                .addComponent(textfieldStreet)
+                                .addComponent(textfieldEmail)
+                                .addComponent(textfieldPhone)
+                                .addComponent(buttonUploadProfilePic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
+                                    .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(textfieldLastName, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(textfieldFirstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(MiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jRadioButton1)
+                                .addComponent(labelNote)
+                                .addComponent(jRadioButton2)
+                                .addComponent(jRadioButton3))
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(303, 303, 303))
         );
         panelEditProfileFrameLayout.setVerticalGroup(
@@ -839,9 +840,6 @@ public class EditProfile extends javax.swing.JFrame {
         String citizen = textfieldCitizenship.getText();
         String driver_license = textfieldDriverLicense.getText();
         String exp_date = fmt.format(this.jDateChooser2.getDate());
-        if (mname.equals("Middle Name")){
-            mname = "";
-        }
         User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
         UserController sc  = new UserController();
         int result = sc.editdetails(u1);

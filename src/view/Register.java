@@ -718,10 +718,6 @@ public class Register extends javax.swing.JFrame {
         String citizen = textfieldCitizenship.getText();
         String driver_license = textfieldDriverLicense.getText();
         String exp_date = fmt.format(this.DateExpiry.getDate());
-        
-        if (mname.equals("Middle Name")){
-            mname = "";
-        }
         // User u1 = new User(textfieldUsername) 
         User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
         UserController sc  = new UserController();

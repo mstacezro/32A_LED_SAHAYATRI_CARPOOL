@@ -197,33 +197,35 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textfieldDriverLicense" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldCitizenship" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldAnswer" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldSecurityQuestion" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldUsername" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPasswordField2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldNationality" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldStreet" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldEmail" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="textfieldPhone" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="buttonUploadProfilePic" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="textfieldLastName" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="textfieldFirstName" alignment="0" pref="154" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="textfieldDriverLicense" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldCitizenship" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldAnswer" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldSecurityQuestion" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldUsername" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jPasswordField2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldNationality" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldStreet" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldEmail" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textfieldPhone" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="buttonUploadProfilePic" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="textfieldLastName" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="textfieldFirstName" alignment="0" pref="154" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="MiddleName" min="-2" pref="154" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="MiddleName" min="-2" pref="154" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="labelNote" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labelNote" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser2" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                                      <Component id="jDateChooser1" alignment="0" min="-2" pref="246" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
