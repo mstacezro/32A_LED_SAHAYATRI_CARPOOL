@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
 import controller.DriverController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -23,7 +23,7 @@ import model.Driver;
  *
  * @author lenovo
  */
-public class seat extends javax.swing.JFrame {
+public final class seat extends javax.swing.JFrame {
 
     /**
      * Creates new form EXAMPLE
@@ -64,8 +64,10 @@ public class seat extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         Pricebox = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        viewBtn = new javax.swing.JButton();
+        idBox = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         panelEditProfile2 = new javax.swing.JPanel();
@@ -162,7 +164,6 @@ public class seat extends javax.swing.JFrame {
         jLabel7.setText("Leaving from ...");
 
         Goingbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        Goingbox.setEditable(true);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Going to ...");
@@ -263,11 +264,34 @@ public class seat extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 255));
-        jButton1.setText("Edit");
+        editBtn.setBackground(new java.awt.Color(0, 0, 204));
+        editBtn.setText("Edit");
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(255, 0, 0));
-        jButton3.setText("Delete");
+        btnDelete.setBackground(new java.awt.Color(204, 0, 51));
+        btnDelete.setText("Delete");
+        btnDelete.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                btnDeleteFocusGained(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        viewBtn.setBackground(new java.awt.Color(51, 255, 0));
+        viewBtn.setText("View");
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEditProfile1Layout = new javax.swing.GroupLayout(panelEditProfile1);
         panelEditProfile1.setLayout(panelEditProfile1Layout);
@@ -276,15 +300,21 @@ public class seat extends javax.swing.JFrame {
             .addComponent(labelLogoTop1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1131, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelEditProfile1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(23, 23, 23))
+                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
+                        .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
+                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(idBox, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(viewBtn)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))))
         );
         panelEditProfile1Layout.setVerticalGroup(
             panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,12 +324,14 @@ public class seat extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(viewBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idBox))
+                .addGap(30, 30, 30)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1028, Short.MAX_VALUE))
+                .addContainerGap(1022, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabDriverTabLayout = new javax.swing.GroupLayout(tabDriverTab);
@@ -621,7 +653,7 @@ public class seat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
         String convertedDate;
         String publishLeave = Leavebox.getSelectedItem().toString();
         String publishGoing = Goingbox.getSelectedItem().toString();
@@ -641,7 +673,7 @@ public class seat extends javax.swing.JFrame {
         String publishTrunk = Trunkbox.getSelectedItem().toString();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
+        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
         DriverController dc = new DriverController();
         int result = dc.insertDriverDetails(addDriverDetails);
         if (result > 0) {
@@ -661,14 +693,15 @@ public class seat extends javax.swing.JFrame {
                     String trunk = rset.getString(5);
                     String seat = rset.getString(6);
                     String price = rset.getString(7);
-    
+
+                    
                     // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
                     Object[] row = {SN,Leave,Going,date,trunk,seat,price};
                     model.addRow(row);
                 }
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+
             }
         } 
         else {
@@ -679,14 +712,116 @@ public class seat extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    public void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         // fetchDriverDetails();
         
     }//GEN-LAST:event_formWindowOpened
+
+    public void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        String convertedDate;
+        String publishLeave = Leavebox.getSelectedItem().toString();
+        String publishGoing = Goingbox.getSelectedItem().toString();
+        String publishDate = (String) Datebox.getDate().toString();
+        System.out.println(publishDate);
+        String day = publishDate.split(" ")[2];
+        String month = publishDate.split(" ")[1];
+        String year = publishDate.split(" ")[5];
+        String convertedMonth = convertMonthIntoString(month);
+        int resultHasDigit = convertMonthIntoString(month).length();
+        if (resultHasDigit == 1){
+                convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
+        } else{
+            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
+        }
+        System.out.println(convertedDate);
+        String publishTrunk = Trunkbox.getSelectedItem().toString();
+        String id = idBox.getText();
+        String publishSeat = Seatbox.getSelectedItem().toString();
+        String publishPrice = Pricebox.getText();
+        Driver addDriverDetails = new Driver(Integer.parseInt(id),publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
+        DriverController dc = new DriverController();
+        int result = dc.editDetails(addDriverDetails);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "Edited Success");
+            DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
+                model1.setRowCount(0);
+                table();
+        }
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        
+        // DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+        int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        try {
+            Driver d1 = new Driver(id,null,null,null,null,0,0);
+            DriverController dc = new DriverController();
+            int result = dc.deleteDetails(d1);
+            if(result>0){
+                JOptionPane.showMessageDialog(this,"Delete Success");
+                DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
+                model1.setRowCount(0);
+                table();
+                
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnDeleteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnDeleteFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteFocusGained
+
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+        int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        try {
+            //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
+                    Driver d1 = new Driver(id, null, null, null, null, 0, 0);
+                    DriverController dc = new DriverController();
+                    ResultSet result  = dc.selectDetails(d1);
+                    while(result.next()){
+                        String dId  = result.getString(1);
+                        String dLeave = result.getString(2);
+                        String dGoing = result.getString(3);
+                        String dDate = result.getString(4);
+                        String dTrunk = result.getString(5);
+                        String seat = result.getString(6);
+                        String price = result.getString(7);
+                        // JOptionPane.showMessageDialog(null,dLeave+" " +dGoing +""+ dDate+""+dTrunk+ ""+ seat);
+                    Leavebox.setSelectedItem(dLeave);
+                    Goingbox.setSelectedItem(dGoing);
+                    Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dDate);
+                    Datebox.setDate(date);
+                    Trunkbox.setSelectedItem(dTrunk);
+                    Seatbox.setSelectedItem(seat);
+                    Pricebox.setText(price);
+                    idBox.setText(dId);
+                    }
+                        
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+    }//GEN-LAST:event_viewBtnActionPerformed
+
+    /**
+     * @param evt
+     */
+                                             
+
+    
     public void table(){
         try {
-            Driver d1 = new Driver(null,null,null,null,0,0);
+            Driver d1 = new Driver(0,null,null,null,null,0,0);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
@@ -705,7 +840,7 @@ public class seat extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
         
     }
@@ -726,18 +861,19 @@ public class seat extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(seat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new seat().setVisible(true);
             }
@@ -751,9 +887,10 @@ public class seat extends javax.swing.JFrame {
     private javax.swing.JTextField Pricebox;
     private javax.swing.JComboBox<String> Seatbox;
     private javax.swing.JComboBox<String> Trunkbox;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton editBtn;
+    private javax.swing.JTextField idBox;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -786,6 +923,7 @@ public class seat extends javax.swing.JFrame {
     private javax.swing.JPanel tabDriverTab;
     private javax.swing.JPanel tabRider;
     private javax.swing.JTable tblDriver;
+    private javax.swing.JButton viewBtn;
     // End of variables declaration//GEN-END:variables
 
     private String convertMonthIntoString(String month) {

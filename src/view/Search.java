@@ -775,7 +775,7 @@ public class Search extends javax.swing.JFrame {
         String publishTrunk = Trunkbox.getSelectedItem().toString();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
+        Driver addDriverDetails = new Driver(resultHasDigit, publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
         DriverController dc = new DriverController();
         int result = dc.insertDriverDetails(addDriverDetails);
         if (result > 0) {
@@ -840,7 +840,7 @@ public class Search extends javax.swing.JFrame {
         String publishTrunk = Trunkbox.getSelectedItem().toString();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
+        Driver addDriverDetails = new Driver(resultHasDigit, publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
         DriverController dc = new DriverController();
         int result = dc.insertDriverDetails(addDriverDetails);
         if (result > 0) {
@@ -877,7 +877,7 @@ public class Search extends javax.swing.JFrame {
     
     public void table(){
         try {
-            Driver d1 = new Driver(null,null,null,null,0,0);
+            Driver d1 = new Driver(0, null,null,null,null,0,0);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
