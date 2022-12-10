@@ -88,8 +88,6 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setMaximumSize(new java.awt.Dimension(1270, 720));
-        setPreferredSize(new java.awt.Dimension(1270, 720));
 
         jScrollPane2.setPreferredSize(new java.awt.Dimension(1270, 720));
 

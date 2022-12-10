@@ -42,9 +42,10 @@ public class Login extends javax.swing.JFrame {
         labelLOGIN = new javax.swing.JLabel();
         textfieldEmail = new javax.swing.JTextField();
         textfieldPassword = new javax.swing.JTextField();
-        buttonLogin = new javax.swing.JButton();
-        buttonRegister = new javax.swing.JButton();
+        buttonLoginRider = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
+        buttonRegister = new javax.swing.JButton();
+        buttonLoginDriver = new javax.swing.JButton();
         panelContact = new javax.swing.JPanel();
         labelContact10 = new javax.swing.JLabel();
         labelContact11 = new javax.swing.JLabel();
@@ -82,12 +83,7 @@ public class Login extends javax.swing.JFrame {
                 textfieldEmailFocusLost(evt);
             }
         });
-        // textfieldEmail.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         textfieldEmailActionPerformed(evt);
-        //     }
-        // });
-
+        
         textfieldPassword.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         textfieldPassword.setText("Password");
         textfieldPassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -104,24 +100,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        buttonLogin.setBackground(new java.awt.Color(0, 0, 255));
-        buttonLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        buttonLogin.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogin.setText("LOGIN");
-        buttonLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        buttonLogin.addActionListener(new java.awt.event.ActionListener() {
+        buttonLoginRider.setBackground(new java.awt.Color(0, 0, 255));
+        buttonLoginRider.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonLoginRider.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLoginRider.setText("LOGIN as Rider");
+        buttonLoginRider.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buttonLoginRider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLoginActionPerformed(evt);
-            }
-        });
-
-        buttonRegister.setBackground(new java.awt.Color(0, 255, 51));
-        buttonRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        buttonRegister.setForeground(new java.awt.Color(255, 255, 255));
-        buttonRegister.setText("REGISTER");
-        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRegisterActionPerformed(evt);
+                buttonLoginRiderActionPerformed(evt);
             }
         });
 
@@ -134,44 +120,64 @@ public class Login extends javax.swing.JFrame {
         jToggleButton1.setContentAreaFilled(false);
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        buttonRegister.setBackground(new java.awt.Color(0, 255, 51));
+        buttonRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonRegister.setForeground(new java.awt.Color(255, 255, 255));
+        buttonRegister.setText("REGISTER");
+        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegisterActionPerformed(evt);
+            }
+        });
+
+        buttonLoginDriver.setBackground(new java.awt.Color(0, 0, 255));
+        buttonLoginDriver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonLoginDriver.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLoginDriver.setText("LOGIN as Driver");
+        buttonLoginDriver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buttonLoginDriver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLoginDriverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelLoginFrameLayout = new javax.swing.GroupLayout(panelLoginFrame);
         panelLoginFrame.setLayout(panelLoginFrameLayout);
         panelLoginFrameLayout.setHorizontalGroup(
             panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
-                .addGap(108, 108, 108))
-            .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelLoginFrameLayout.createSequentialGroup()
-                    .addGap(85, 85, 85)
-                    .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(labelLOGIN)
-                        .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textfieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(85, Short.MAX_VALUE)))
+            .addGroup(panelLoginFrameLayout.createSequentialGroup()
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
+                        .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textfieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelLOGIN)
+                            .addComponent(buttonLoginRider, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonLoginDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
+                        .addComponent(jToggleButton1)
+                        .addGap(102, 102, 102))))
         );
         panelLoginFrameLayout.setVerticalGroup(
             panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(textfieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jToggleButton1)
-                .addGap(132, 132, 132))
-            .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelLoginFrameLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(labelLOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textfieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(textfieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(67, 67, 67)
-                    .addComponent(buttonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addGap(45, 45, 45)
+                .addComponent(buttonLoginRider, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buttonLoginDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelContact.setBackground(new java.awt.Color(102, 142, 57));
@@ -253,7 +259,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(labelCarpoolLogo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(26, 26, 26)
                         .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelMainLayout.createSequentialGroup()
                         .addContainerGap()
@@ -263,13 +269,17 @@ public class Login extends javax.swing.JFrame {
         panelMainLayout.setVerticalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMainLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
                 .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelCarpoolLogo)
                     .addGroup(panelMainLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(155, 155, 155)
+                        .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelCarpoolLogo)
+                            .addGroup(panelMainLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panelMainLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelLoginFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -310,7 +320,7 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textfieldPasswordActionPerformed
 
-    private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
+    private void buttonLoginRiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginRiderActionPerformed
         // if(textfieldUsername1.)
         try {
             User u1 = new User(null, textfieldPassword.getText(), null, null, null, null, null, null, null, null, textfieldEmail.getText(), null, null, null, null, null, null) ;
@@ -320,13 +330,15 @@ public class Login extends javax.swing.JFrame {
                      JOptionPane.showMessageDialog(null, "Login Success");
                      sc.changeStatus(u1);
                      sc.updatestatus(u1);
+                     dispose();
+                     new Search().setVisible(true);
      
                  }
              } catch (Exception e) {
                  // TODO Auto-generated catch block
                  e.printStackTrace();
              }
-    }//GEN-LAST:event_buttonLoginActionPerformed
+    }//GEN-LAST:event_buttonLoginRiderActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         // TODO add your handling code here:
@@ -359,6 +371,25 @@ public class Login extends javax.swing.JFrame {
             textfieldPassword.setText("Password");
         }
     }//GEN-LAST:event_textfieldPasswordFocusLost
+
+    private void buttonLoginDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginDriverActionPerformed
+        try {
+            User u1 = new User(null, textfieldPassword.getText(), null, null, null, null, null, null, null, null, textfieldEmail.getText(), null, null, null, null, null, null) ;
+             UserController sc = new UserController();
+             ResultSet result = sc.selectQuery(u1);
+                 if(result.next()){
+                     JOptionPane.showMessageDialog(null, "Login Success");
+                     sc.changeStatus(u1);
+                     sc.updatestatus(u1);
+                     dispose();
+                     new seat().setVisible(true);
+     
+                 }
+             } catch (Exception e) {
+                 // TODO Auto-generated catch block
+                 e.printStackTrace();
+             }
+    }//GEN-LAST:event_buttonLoginDriverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -398,7 +429,8 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton buttonLogin;
+    private javax.swing.JButton buttonLoginDriver;
+    private javax.swing.JButton buttonLoginRider;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel labelCarpoolLogo;
