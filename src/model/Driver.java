@@ -79,24 +79,9 @@ public class Driver {
    
     
     public Driver(
-        String dLeavePlace,
-        String dGoingTo,
-        String dDate,
-        String dTrunkSpace,
-        int dSeatAvailable,
-        int dPrice
-    ) {      
-this.dLeavePlace = dLeavePlace;
-this.dGoingTo = dGoingTo;
-this.dDate = dDate;
-this.dTrunkSpace = dTrunkSpace;
-this.dSeatAvailable = dSeatAvailable;
-this.dPrice = dPrice;
-
-    }
+   
     
-    public Driver(
-        int dSN,
+         int dSN,
         String dLeavePlace,
         String dGoingTo,
         String dDate,
@@ -113,6 +98,4 @@ this.dSeatAvailable = dSeatAvailable;
 this.dPrice = dPrice;
 
     }
-    
-    
 }
