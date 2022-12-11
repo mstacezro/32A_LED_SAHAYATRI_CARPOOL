@@ -3,7 +3,9 @@
         "lib/**/*.jar",
         "d:\\Sem 2\\Database\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar",
         "c:\\Users\\Legion\\Desktop\\jcalendar-1.4.jar",
-        "c:\\Users\\khadk\\OneDrive - Softwarica College\\Desktop\\connector\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar"
+        "c:\\Users\\khadk\\OneDrive - Softwarica College\\Desktop\\connector\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar",
+        "c:\\Users\\user\\Desktop\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar",
+        "c:\\Users\\user\\Downloads\\jcalendar-1.4 (1).jar"
     ],
     "githubPullRequests.ignoredPullRequestBranches": [
         "master"

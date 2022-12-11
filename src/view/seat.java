@@ -386,6 +386,8 @@ public final class seat extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(rideTable);
 
+        declineBtn.setBackground(new java.awt.Color(204, 0, 0));
+        declineBtn.setForeground(new java.awt.Color(255, 255, 255));
         declineBtn.setText("Decline");
         declineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,6 +395,8 @@ public final class seat extends javax.swing.JFrame {
             }
         });
 
+        acceptBtn.setBackground(new java.awt.Color(0, 153, 51));
+        acceptBtn.setForeground(new java.awt.Color(255, 255, 255));
         acceptBtn.setText("Accept");
         acceptBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
