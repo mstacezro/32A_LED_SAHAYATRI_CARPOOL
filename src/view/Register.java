@@ -251,7 +251,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        passText.setText("Password");
         passText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passTextFocusGained(evt);
@@ -260,8 +259,11 @@ public class Register extends javax.swing.JFrame {
                 passTextFocusLost(evt);
             }
         });
-
-        repassText.setText("Password");
+        passText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passTextActionPerformed(evt);
+            }
+        });
 
         textfieldLastName.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         textfieldLastName.setText("Last Name");
@@ -852,6 +854,10 @@ public class Register extends javax.swing.JFrame {
             textfieldStreet.setText("Kathmandu");
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
+
+    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passTextActionPerformed
 
     /**
      * @param args the command line arguments
