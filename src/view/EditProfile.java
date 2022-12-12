@@ -54,7 +54,6 @@ public class EditProfile extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         panelEditProfile = new javax.swing.JPanel();
         labelLogoTop = new javax.swing.JLabel();
-        labelProfileIcon = new javax.swing.JLabel();
         labelWhiteHLine = new javax.swing.JLabel();
         panelEditProfileFrame = new javax.swing.JPanel();
         labelLEditProfile = new javax.swing.JLabel();
@@ -104,6 +103,9 @@ public class EditProfile extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuProfile = new javax.swing.JMenu();
+        jMenuItemProfile = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,8 +119,6 @@ public class EditProfile extends javax.swing.JFrame {
         labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
         labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelLogoTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
-
-        labelProfileIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
 
         labelWhiteHLine.setBackground(new java.awt.Color(255, 255, 255));
         labelWhiteHLine.setOpaque(true);
@@ -675,7 +675,6 @@ public class EditProfile extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(102, 142, 57));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-        jButton1.setActionCommand("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -700,18 +699,13 @@ public class EditProfile extends javax.swing.JFrame {
             .addGroup(panelEditProfileLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelProfileIcon)
-                .addGap(29, 29, 29))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEditProfileLayout.setVerticalGroup(
             panelEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfileLayout.createSequentialGroup()
-                .addGroup(panelEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelProfileIcon)
-                    .addGroup(panelEditProfileLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)))
+                .addContainerGap()
+                .addComponent(jButton1)
                 .addGap(12, 12, 12)
                 .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -723,6 +717,25 @@ public class EditProfile extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelEditProfile);
 
+        jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuProfile.setText("Profile");
+        jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuProfile.setOpaque(true);
+
+        jMenuItemProfile.setText("Profile");
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProfileActionPerformed(evt);
+            }
+        });
+        jMenuProfile.add(jMenuItemProfile);
+
+        jMenu.add(jMenuProfile);
+
+        setJMenuBar(jMenu);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -731,7 +744,7 @@ public class EditProfile extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1742, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1689, Short.MAX_VALUE)
         );
 
         pack();
@@ -953,6 +966,10 @@ public class EditProfile extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1056,6 +1073,9 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenuItem jMenuItemProfile;
+    private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JRadioButton jRadioButton1;
@@ -1082,7 +1102,6 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JLabel labelNote;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelPhone;
-    private javax.swing.JLabel labelProfileIcon;
     private javax.swing.JLabel labelRePassword;
     private javax.swing.JLabel labelSecurityQuestion;
     private javax.swing.JLabel labelUsername;
