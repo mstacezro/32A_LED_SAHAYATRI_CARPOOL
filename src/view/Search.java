@@ -5,7 +5,9 @@
 package view;
 
 import controller.DriverController;
+import controller.UserController;
 
+import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -44,28 +46,6 @@ public class Search extends javax.swing.JFrame {
 
         panelProfile = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        tabDriverTab = new javax.swing.JPanel();
-        panelEditProfile1 = new javax.swing.JPanel();
-        labelLogoTop1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblDriver = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        Leavebox = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        Goingbox = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        Datebox = new com.toedter.calendar.JDateChooser();
-        jLabel10 = new javax.swing.JLabel();
-        Trunkbox = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        Seatbox = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        Pricebox = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         panelEditProfile2 = new javax.swing.JPanel();
@@ -77,12 +57,10 @@ public class Search extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         Datebox1 = new com.toedter.calendar.JDateChooser();
-        jLabel17 = new javax.swing.JLabel();
-        Seatbox1 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
+        tblRIder = new javax.swing.JTable();
+        requestText = new javax.swing.JButton();
         tabRider = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         panelEditProfile3 = new javax.swing.JPanel();
@@ -110,237 +88,6 @@ public class Search extends javax.swing.JFrame {
         jTabbedPane1.setToolTipText("DRIVER");
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
-        tabDriverTab.setBackground(new java.awt.Color(102, 142, 57));
-
-        panelEditProfile1.setBackground(new java.awt.Color(102, 142, 57));
-        panelEditProfile1.setMaximumSize(new java.awt.Dimension(1145, 895));
-        panelEditProfile1.setName(""); // NOI18N
-
-        labelLogoTop1.setBackground(new java.awt.Color(102, 142, 57));
-        labelLogoTop1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLogoTop1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
-
-        tblDriver.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "S.N.", "Leaving from ....", "Going to ....", "Date", "Trunk Space", "No. of Passengers", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblDriver.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblDriver);
-        if (tblDriver.getColumnModel().getColumnCount() > 0) {
-            tblDriver.getColumnModel().getColumn(0).setResizable(false);
-            tblDriver.getColumnModel().getColumn(1).setResizable(false);
-            tblDriver.getColumnModel().getColumn(2).setResizable(false);
-            tblDriver.getColumnModel().getColumn(3).setResizable(false);
-            tblDriver.getColumnModel().getColumn(4).setResizable(false);
-            tblDriver.getColumnModel().getColumn(5).setResizable(false);
-            tblDriver.getColumnModel().getColumn(6).setResizable(false);
-        }
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        Leavebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        Leavebox.setEditable(true);
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Leaving from ...");
-
-        Goingbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        Goingbox.setEditable(true);
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Going to ...");
-        jLabel8.setToolTipText("");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Date");
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Trunk Space");
-
-        Trunkbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes ", "No" }));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Seat");
-
-        Seatbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setText("Price");
-
-        jButton2.setBackground(new java.awt.Color(0, 153, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("Publish");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Leavebox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Goingbox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(jLabel10)
-                        .addGap(12, 12, 12))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Datebox, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Trunkbox, 0, 94, Short.MAX_VALUE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(Seatbox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pricebox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Pricebox)
-                            .addComponent(Datebox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Leavebox, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                            .addComponent(Goingbox)
-                            .addComponent(Trunkbox)
-                            .addComponent(Seatbox))))
-                .addContainerGap())
-        );
-
-        jButton1.setBackground(new java.awt.Color(204, 51, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("Delete");
-
-        jButton4.setBackground(new java.awt.Color(0, 51, 204));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setText("Edit");
-
-        javax.swing.GroupLayout panelEditProfile1Layout = new javax.swing.GroupLayout(panelEditProfile1);
-        panelEditProfile1.setLayout(panelEditProfile1Layout);
-        panelEditProfile1Layout.setHorizontalGroup(
-            panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelLogoTop1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1131, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelEditProfile1Layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
-        );
-        panelEditProfile1Layout.setVerticalGroup(
-            panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelEditProfile1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(labelLogoTop1)
-                .addGap(29, 29, 29)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelEditProfile1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1022, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout tabDriverTabLayout = new javax.swing.GroupLayout(tabDriverTab);
-        tabDriverTab.setLayout(tabDriverTabLayout);
-        tabDriverTabLayout.setHorizontalGroup(
-            tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1143, Short.MAX_VALUE)
-            .addGroup(tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabDriverTabLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelEditProfile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        tabDriverTabLayout.setVerticalGroup(
-            tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1886, Short.MAX_VALUE)
-            .addGroup(tabDriverTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabDriverTabLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelEditProfile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane1.addTab("DRIVER", tabDriverTab);
-
         jPanel3.setBackground(new java.awt.Color(102, 142, 57));
 
         jPanel4.setBackground(new java.awt.Color(102, 142, 57));
@@ -354,13 +101,11 @@ public class Search extends javax.swing.JFrame {
         labelLogoTop2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
 
         Leavebox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        Leavebox1.setEditable(true);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setText("Leaving from ...");
 
         Goingbox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
-        Goingbox1.setEditable(true);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setText("Going to ...");
@@ -369,17 +114,12 @@ public class Search extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel15.setText("Date");
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel17.setText("Seat");
-
-        Seatbox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
-
-        jButton3.setBackground(new java.awt.Color(0, 153, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        searchBtn.setBackground(new java.awt.Color(0, 153, 0));
+        searchBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchBtn.setText("Search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchBtnActionPerformed(evt);
             }
         });
 
@@ -404,15 +144,11 @@ public class Search extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))
+                        .addGap(208, 208, 208))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(Datebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(Seatbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(150, 150, 150)))
+                .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -420,12 +156,10 @@ public class Search extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel15)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel15)
                             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -433,12 +167,11 @@ public class Search extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Datebox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Leavebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Seatbox1)
                             .addComponent(Goingbox1, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblRIder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -457,20 +190,25 @@ public class Search extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane2.setViewportView(tblRIder);
+        if (tblRIder.getColumnModel().getColumnCount() > 0) {
+            tblRIder.getColumnModel().getColumn(0).setResizable(false);
+            tblRIder.getColumnModel().getColumn(1).setResizable(false);
+            tblRIder.getColumnModel().getColumn(2).setResizable(false);
+            tblRIder.getColumnModel().getColumn(3).setResizable(false);
+            tblRIder.getColumnModel().getColumn(4).setResizable(false);
+            tblRIder.getColumnModel().getColumn(5).setResizable(false);
+            tblRIder.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        jButton5.setBackground(new java.awt.Color(0, 204, 255));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton5.setText("Request");
+        requestText.setBackground(new java.awt.Color(0, 204, 255));
+        requestText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        requestText.setText("Request");
+        requestText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                requestTextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEditProfile2Layout = new javax.swing.GroupLayout(panelEditProfile2);
         panelEditProfile2.setLayout(panelEditProfile2Layout);
@@ -486,7 +224,7 @@ public class Search extends javax.swing.JFrame {
                     .addComponent(jScrollPane2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         panelEditProfile2Layout.setVerticalGroup(
             panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,7 +233,7 @@ public class Search extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(773, Short.MAX_VALUE))
@@ -754,64 +492,7 @@ public class Search extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String convertedDate;
-        String publishLeave = Leavebox.getSelectedItem().toString();
-        String publishGoing = Goingbox.getSelectedItem().toString();
-        String publishDate = (String) Datebox.getDate().toString();
-        System.out.println(publishDate);
-        String day = publishDate.split(" ")[2];
-        String month = publishDate.split(" ")[1];
-        String year = publishDate.split(" ")[5];
-        String convertedMonth = convertMonthIntoString(month);
-        int resultHasDigit = convertMonthIntoString(month).length();
-        if (resultHasDigit == 1){
-                convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
-        } else{
-            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
-        }
-        System.out.println(convertedDate);
-        String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String publishSeat = Seatbox.getSelectedItem().toString();
-        String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(resultHasDigit, publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
-        DriverController dc = new DriverController();
-        int result = dc.insertDriverDetails(addDriverDetails);
-        if (result > 0) {
-            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            // fetchDriverDetails();
-            try {
-                // Driver d1 = new Driver(null,null,null,null,0,0);
-                // DriverController dc = new DriverController();
-                ResultSet rset = dc.fetchDriverDetails();
-                DefaultTableModel model = (DefaultTableModel) tblDriver.getModel();
-                model.setRowCount(0);
-                while(rset.next()){
-                    String SN = rset.getString(1);
-                    String Leave = rset.getString(2);
-                    String Going  = rset.getString(3);
-                    String date = rset.getString(4);
-                    String trunk = rset.getString(5);
-                    String seat = rset.getString(6);
-                    String price = rset.getString(7);
     
-                    // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                    Object[] row = {SN,Leave,Going,date,trunk,seat,price};
-                    model.addRow(row);
-                }
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        } 
-        else {
-            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -819,12 +500,12 @@ public class Search extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+   
         String convertedDate;
-        String publishLeave = Leavebox.getSelectedItem().toString();
-        String publishGoing = Goingbox.getSelectedItem().toString();
-        String publishDate = (String) Datebox.getDate().toString();
+        String publishLeave = Leavebox1.getSelectedItem().toString();
+        String publishGoing = Goingbox1.getSelectedItem().toString();
+        String publishDate = (String) Datebox1.getDate().toString();
         System.out.println(publishDate);
         String day = publishDate.split(" ")[2];
         String month = publishDate.split(" ")[1];
@@ -832,52 +513,64 @@ public class Search extends javax.swing.JFrame {
         String convertedMonth = convertMonthIntoString(month);
         int resultHasDigit = convertMonthIntoString(month).length();
         if (resultHasDigit == 1){
-                convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
+            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
         } else{
             convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
         }
         System.out.println(convertedDate);
-        String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String publishSeat = Seatbox.getSelectedItem().toString();
-        String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(resultHasDigit, publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice));
-        DriverController dc = new DriverController();
-        int result = dc.insertDriverDetails(addDriverDetails);
-        if (result > 0) {
-            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            // fetchDriverDetails();
+        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null);
+            DriverController dc = new DriverController();
+            ResultSet result = dc.searchDetails(d1);
             try {
-                // Driver d1 = new Driver(null,null,null,null,0,0);
-                // DriverController dc = new DriverController();
-                ResultSet rset = dc.fetchDriverDetails();
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
                 model.setRowCount(0);
-                while(rset.next()){
-                    String SN = rset.getString(1);
-                    String Leave = rset.getString(2);
-                    String Going  = rset.getString(3);
-                    String date = rset.getString(4);
-                    String trunk = rset.getString(5);
-                    String seat = rset.getString(6);
-                    String price = rset.getString(7);
-    
-                    // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                    Object[] row = {SN,Leave,Going,date,trunk,seat,price};
-                    model.addRow(row);
+                while(result.next()){
+                    String SN = result.getString(1);
+                String Leave = result.getString(2);
+                String Going  = result.getString(3);
+                String date = result.getString(4);
+                String trunk = result.getString(5);
+                String seat = result.getString(6);
+                String price = result.getString(7);
+
+                // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
+                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
+                model.addRow(row);
                 }
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+            } catch (Exception e) {
+                // TODO: handle exception
             }
-        } 
-        else {
-            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
+
+    //     
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void requestTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTextActionPerformed
+       ResultSet rs = new UserController().selectEmail();
+       int i = tblRIder.getSelectedRow();
+        TableModel model = tblRIder.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+       try {
+        while(rs.next()){
+            String email = rs.getString(1);
+            Driver d1 = new Driver(id, null,null,null,null,0,0,email);
+            DriverController dc = new DriverController();
+            int result = dc.Request(d1);
+            if(result>0){
+                JOptionPane.showMessageDialog(this, "Booked Success");
+            }
+
+
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+       } catch (Exception e) {
+        // TODO: handle exception
+       }
+    }//GEN-LAST:event_requestTextActionPerformed
     
     public void table(){
+        DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
+        model.setRowCount(0);
         try {
-            Driver d1 = new Driver(0, null,null,null,null,0,0);
+            Driver d1 = new Driver(0, null,null,null,null,0,0,null);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
@@ -890,7 +583,6 @@ public class Search extends javax.swing.JFrame {
                 String price = result.getString(7);
 
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                DefaultTableModel model = (DefaultTableModel) tblDriver.getModel();
                 Object[] row = {SN,Leave,Going,date,trunk,seat,price};
                 model.addRow(row);
             }
@@ -936,59 +628,35 @@ public class Search extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser Datebox;
     private com.toedter.calendar.JDateChooser Datebox1;
-    private javax.swing.JComboBox<String> Goingbox;
     private javax.swing.JComboBox<String> Goingbox1;
-    private javax.swing.JComboBox<String> Leavebox;
     private javax.swing.JComboBox<String> Leavebox1;
-    private javax.swing.JTextField Pricebox;
-    private javax.swing.JComboBox<String> Seatbox;
-    private javax.swing.JComboBox<String> Seatbox1;
-    private javax.swing.JComboBox<String> Trunkbox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelBack;
-    private javax.swing.JLabel labelLogoTop1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelLogoTop4;
     private javax.swing.JLabel labelProfileIcon;
     private javax.swing.JLabel labelWhiteHLine3;
     private javax.swing.JLabel labelWhiteHLine4;
-    private javax.swing.JPanel panelEditProfile1;
     private javax.swing.JPanel panelEditProfile2;
     private javax.swing.JPanel panelEditProfile3;
     private javax.swing.JPanel panelEditProfile4;
     private javax.swing.JPanel panelProfile;
+    private javax.swing.JButton requestText;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JPanel tabDriver;
-    private javax.swing.JPanel tabDriverTab;
     private javax.swing.JPanel tabRider;
-    private javax.swing.JTable tblDriver;
+    private javax.swing.JTable tblRIder;
     // End of variables declaration//GEN-END:variables
 
     private String convertMonthIntoString(String month) {
