@@ -34,7 +34,6 @@ public class Profile extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         panelProfile = new javax.swing.JPanel();
-        labelBack = new javax.swing.JLabel();
         labelLogoTop = new javax.swing.JLabel();
         labelProfileIcon = new javax.swing.JLabel();
         labelWhiteHLine = new javax.swing.JLabel();
@@ -75,6 +74,7 @@ public class Profile extends javax.swing.JFrame {
         labelContact7 = new javax.swing.JLabel();
         labelContact8 = new javax.swing.JLabel();
         labelContact9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1270, 720));
@@ -82,8 +82,6 @@ public class Profile extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1270, 720));
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
 
         labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
         labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -443,6 +441,9 @@ public class Profile extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setBackground(new java.awt.Color(102, 142, 57));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -459,7 +460,8 @@ public class Profile extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addComponent(labelBack)
+                .addContainerGap()
+                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelProfileIcon)
                 .addGap(32, 32, 32))
@@ -468,8 +470,10 @@ public class Profile extends javax.swing.JFrame {
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
                 .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelBack)
-                    .addComponent(labelProfileIcon))
+                    .addComponent(labelProfileIcon)
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
                 .addGap(12, 12, 12)
                 .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -492,7 +496,7 @@ public class Profile extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -585,11 +589,11 @@ public class Profile extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonUpdate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelAnswer;
     private javax.swing.JLabel labelAnswerView;
-    private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelCitizenshipNo;
     private javax.swing.JLabel labelCitizenshipView;
     private javax.swing.JLabel labelContact5;
