@@ -357,8 +357,8 @@
                                       <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="textfieldLastName" max="32767" attributes="0"/>
-                                      <Component id="jDateChooser2" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                                       <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -756,9 +756,6 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="jPasswordField1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Password"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordField1FocusGained"/>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordField1FocusLost"/>
@@ -766,9 +763,6 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="jPasswordField2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Passwrod"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="textfieldLastName">
                   <Properties>

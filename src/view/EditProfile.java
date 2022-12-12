@@ -263,7 +263,6 @@ public class EditProfile extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setText("Password");
         jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jPasswordField1FocusGained(evt);
@@ -277,8 +276,6 @@ public class EditProfile extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-
-        jPasswordField2.setText("Passwrod");
 
         textfieldLastName.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         textfieldLastName.setText("Last Name");
@@ -531,8 +528,8 @@ public class EditProfile extends javax.swing.JFrame {
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton3)
                             .addComponent(textfieldLastName)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(303, 303, 303))
         );
         panelEditProfileFrameLayout.setVerticalGroup(
