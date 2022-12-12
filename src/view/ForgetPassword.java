@@ -44,12 +44,6 @@ public class ForgetPassword extends javax.swing.JFrame {
         jComboBoxSecurityQuestion = new javax.swing.JComboBox<>();
         buttonRegister = new javax.swing.JButton();
         labelLOGIN3 = new javax.swing.JLabel();
-        panelContact = new javax.swing.JPanel();
-        labelContact10 = new javax.swing.JLabel();
-        labelContact11 = new javax.swing.JLabel();
-        labelContact12 = new javax.swing.JLabel();
-        labelContact13 = new javax.swing.JLabel();
-        labelContact14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,6 +128,11 @@ public class ForgetPassword extends javax.swing.JFrame {
         });
 
         jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
+        jComboBoxSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSecurityQuestionActionPerformed(evt);
+            }
+        });
 
         buttonRegister.setBackground(new java.awt.Color(0, 255, 51));
         buttonRegister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -201,91 +200,17 @@ public class ForgetPassword extends javax.swing.JFrame {
                         .addContainerGap(47, Short.MAX_VALUE))))
         );
 
-        panelContact.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelContact10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact10.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fbIcon.png"))); // NOI18N
-        labelContact10.setText("www.facebook/sahayatri_carpool.com");
-
-        labelContact11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-
-        labelContact12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact12.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phoneIcon.PNG"))); // NOI18N
-        labelContact12.setText("+977-(01)-4797486, +977-9841446531");
-
-        labelContact13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact13.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locationIcon.png"))); // NOI18N
-        labelContact13.setText("Pipolbot, Dillibazar, Kathmandu");
-
-        labelContact14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact14.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emailIcon.png"))); // NOI18N
-        labelContact14.setText("sahayatri.carpool@gmail.com");
-
-        javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
-        panelContact.setLayout(panelContactLayout);
-        panelContactLayout.setHorizontalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addContainerGap(401, Short.MAX_VALUE)
-                .addComponent(labelContact14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact10, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact13, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(376, 376, 376))
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelContactLayout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(labelContact11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1154, Short.MAX_VALUE)))
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelContactLayout.createSequentialGroup()
-                    .addGap(123, 123, 123)
-                    .addComponent(labelContact12, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(851, Short.MAX_VALUE)))
-        );
-        panelContactLayout.setVerticalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelContact14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelContact10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelContact13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelContactLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(labelContact11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(16, Short.MAX_VALUE)))
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                    .addContainerGap(16, Short.MAX_VALUE)
-                    .addComponent(labelContact12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
         javax.swing.GroupLayout panelMainLayout = new javax.swing.GroupLayout(panelMain);
         panelMain.setLayout(panelMainLayout);
         panelMainLayout.setHorizontalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addComponent(labelCarpoolLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(labelCarpoolLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panelMainLayout.setVerticalGroup(
@@ -301,9 +226,7 @@ public class ForgetPassword extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(labelCarpoolLogo)
                         .addGap(89, 89, 89)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -417,6 +340,10 @@ public class ForgetPassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cpassTextActionPerformed
 
+    private void jComboBoxSecurityQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSecurityQuestionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSecurityQuestionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -459,15 +386,9 @@ public class ForgetPassword extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxSecurityQuestion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelCarpoolLogo;
-    private javax.swing.JLabel labelContact10;
-    private javax.swing.JLabel labelContact11;
-    private javax.swing.JLabel labelContact12;
-    private javax.swing.JLabel labelContact13;
-    private javax.swing.JLabel labelContact14;
     private javax.swing.JLabel labelLOGIN2;
     private javax.swing.JLabel labelLOGIN3;
     private javax.swing.JLabel labelWhiteLineDivider;
-    private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelLoginFrame;
     private javax.swing.JPanel panelMain;
     private javax.swing.JTextField passText;
