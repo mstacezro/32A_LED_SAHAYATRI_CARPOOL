@@ -341,6 +341,7 @@ public class ForgetPassword extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    // yp
 
     private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
         if(emailText.getText().equals("Email address")){
