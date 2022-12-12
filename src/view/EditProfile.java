@@ -102,8 +102,8 @@ public class EditProfile extends javax.swing.JFrame {
         jLabelProfilePic = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
         jMenu = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
         jMenuItemProfile = new javax.swing.JMenuItem();
 
@@ -673,14 +673,6 @@ public class EditProfile extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setBackground(new java.awt.Color(102, 142, 57));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelEditProfileLayout = new javax.swing.GroupLayout(panelEditProfile);
         panelEditProfile.setLayout(panelEditProfileLayout);
         panelEditProfileLayout.setHorizontalGroup(
@@ -696,17 +688,11 @@ public class EditProfile extends javax.swing.JFrame {
                         .addComponent(panelEditProfileFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(panelEditProfileLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEditProfileLayout.setVerticalGroup(
             panelEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfileLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(12, 12, 12)
+                .addGap(75, 75, 75)
                 .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -716,6 +702,14 @@ public class EditProfile extends javax.swing.JFrame {
         );
 
         jScrollPane1.setViewportView(panelEditProfile);
+
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setForeground(new java.awt.Color(255, 0, 102));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenu1.setText("BACK");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenu1.setOpaque(true);
+        jMenu.add(jMenu1);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
         jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -744,7 +738,7 @@ public class EditProfile extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1689, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1685, Short.MAX_VALUE)
         );
 
         pack();
@@ -963,10 +957,6 @@ public class EditProfile extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemProfileActionPerformed
@@ -1069,11 +1059,11 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonUpdate;
     private javax.swing.JButton buttonUploadProfilePic;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
