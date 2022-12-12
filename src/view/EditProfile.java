@@ -103,9 +103,8 @@ public class EditProfile extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jMenu = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
-        jMenuItemProfile = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -703,13 +702,13 @@ public class EditProfile extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelEditProfile);
 
-        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenu1.setForeground(new java.awt.Color(255, 0, 102));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-        jMenu1.setText("BACK");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenu1.setOpaque(true);
-        jMenu.add(jMenu1);
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setOpaque(true);
+        jMenu.add(jMenuBack);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
         jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -717,15 +716,6 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuProfile.setOpaque(true);
-
-        jMenuItemProfile.setText("Profile");
-        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemProfileActionPerformed(evt);
-            }
-        });
-        jMenuProfile.add(jMenuItemProfile);
-
         jMenu.add(jMenuProfile);
 
         setJMenuBar(jMenu);
@@ -956,10 +946,6 @@ public class EditProfile extends javax.swing.JFrame {
             textfieldStreet.setText("Street");
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
-
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1063,8 +1049,7 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItemProfile;
+    private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;

@@ -6,7 +6,7 @@
     </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenu">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="jMenuBack">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="39" green="8e" red="66" type="rgb"/>
@@ -43,16 +43,6 @@
             </Property>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemProfile">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Profile"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemProfileActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
