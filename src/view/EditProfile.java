@@ -53,7 +53,6 @@ public class EditProfile extends javax.swing.JFrame {
         buttonGroupGender = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelEditProfile = new javax.swing.JPanel();
-        labelBack = new javax.swing.JLabel();
         labelLogoTop = new javax.swing.JLabel();
         labelProfileIcon = new javax.swing.JLabel();
         labelWhiteHLine = new javax.swing.JLabel();
@@ -104,6 +103,7 @@ public class EditProfile extends javax.swing.JFrame {
         jLabelProfilePic = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,8 +113,6 @@ public class EditProfile extends javax.swing.JFrame {
         jScrollPane1.setRequestFocusEnabled(false);
 
         panelEditProfile.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
 
         labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
         labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -675,6 +673,15 @@ public class EditProfile extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setBackground(new java.awt.Color(102, 142, 57));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jButton1.setActionCommand("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelEditProfileLayout = new javax.swing.GroupLayout(panelEditProfile);
         panelEditProfile.setLayout(panelEditProfileLayout);
         panelEditProfileLayout.setHorizontalGroup(
@@ -691,7 +698,8 @@ public class EditProfile extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelEditProfileLayout.createSequentialGroup()
-                .addComponent(labelBack)
+                .addContainerGap()
+                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelProfileIcon)
                 .addGap(29, 29, 29))
@@ -700,8 +708,10 @@ public class EditProfile extends javax.swing.JFrame {
             panelEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfileLayout.createSequentialGroup()
                 .addGroup(panelEditProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelBack)
-                    .addComponent(labelProfileIcon))
+                    .addComponent(labelProfileIcon)
+                    .addGroup(panelEditProfileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
                 .addGap(12, 12, 12)
                 .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -939,6 +949,10 @@ public class EditProfile extends javax.swing.JFrame {
             textfieldStreet.setText("Street");
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1038,6 +1052,7 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonUpdate;
     private javax.swing.JButton buttonUploadProfilePic;
+    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
@@ -1049,7 +1064,6 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelAnswer;
-    private javax.swing.JLabel labelBack;
     private javax.swing.JLabel labelCitizenshipNo;
     private javax.swing.JLabel labelContact5;
     private javax.swing.JLabel labelContact6;
