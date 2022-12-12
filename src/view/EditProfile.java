@@ -105,6 +105,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -703,10 +704,12 @@ public class EditProfile extends javax.swing.JFrame {
         jScrollPane1.setViewportView(panelEditProfile);
 
         jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
         jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
         jMenuBack.setText("BACK");
         jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(150, 52));
         jMenuBack.setOpaque(true);
         jMenu.add(jMenuBack);
 
@@ -715,8 +718,18 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuProfile.setMinimumSize(new java.awt.Dimension(150, 52));
         jMenuProfile.setOpaque(true);
         jMenu.add(jMenuProfile);
+
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
+        jMenu1.setText("KYC");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(150, 52));
+        jMenu.add(jMenu1);
 
         setJMenuBar(jMenu);
 
@@ -1049,6 +1062,7 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
