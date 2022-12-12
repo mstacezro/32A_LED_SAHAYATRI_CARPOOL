@@ -93,11 +93,6 @@ public class EditProfile extends javax.swing.JFrame {
         buttonUploadProfilePic = new javax.swing.JButton();
         labelNote = new javax.swing.JLabel();
         panelContact = new javax.swing.JPanel();
-        labelContact5 = new javax.swing.JLabel();
-        labelContact6 = new javax.swing.JLabel();
-        labelContact7 = new javax.swing.JLabel();
-        labelContact8 = new javax.swing.JLabel();
-        labelContact9 = new javax.swing.JLabel();
         buttonUpdate = new javax.swing.JButton();
         jLabelProfilePic = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
@@ -447,28 +442,6 @@ public class EditProfile extends javax.swing.JFrame {
 
         panelContact.setBackground(new java.awt.Color(102, 142, 57));
 
-        labelContact5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact5.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fbIcon.png"))); // NOI18N
-        labelContact5.setText("www.facebook/sahayatri_carpool.com");
-
-        labelContact6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-
-        labelContact7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact7.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phoneIcon.PNG"))); // NOI18N
-        labelContact7.setText("+977-(01)-4797486, +977-9841446531");
-
-        labelContact8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact8.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locationIcon.png"))); // NOI18N
-        labelContact8.setText("Pipolbot, Dillibazar, Kathmandu");
-
-        labelContact9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact9.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emailIcon.png"))); // NOI18N
-        labelContact9.setText("sahayatri.carpool@gmail.com");
-
         buttonUpdate.setBackground(new java.awt.Color(0, 255, 51));
         buttonUpdate.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         buttonUpdate.setForeground(new java.awt.Color(255, 255, 255));
@@ -484,36 +457,16 @@ public class EditProfile extends javax.swing.JFrame {
         panelContactLayout.setHorizontalGroup(
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContactLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                        .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                        .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(466, 466, 466))))
+                .addGap(470, 470, 470)
+                .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(480, Short.MAX_VALUE))
         );
         panelContactLayout.setVerticalGroup(
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
+            .addGroup(panelContactLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
                 .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelEditProfileFrameLayout = new javax.swing.GroupLayout(panelEditProfileFrame);
@@ -578,8 +531,8 @@ public class EditProfile extends javax.swing.JFrame {
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton3)
                             .addComponent(textfieldLastName)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(303, 303, 303))
         );
         panelEditProfileFrameLayout.setVerticalGroup(
@@ -868,44 +821,6 @@ public class EditProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textfieldFirstNameActionPerformed
 
-    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
-        // TODO add your handling code here:
-        String username = textfieldUsername.getText();
-        String fname = textfieldFirstName.getText();
-        String mname= MiddleName.getText();
-        String lname = textfieldLastName.getText();
-        String pass = new String(jPasswordField1.getPassword());
-        String repass = new String(jPasswordField2.getPassword());
-        String gender =null;
-        if(jRadioButton1.isSelected()){
-            gender="Male";
-
-        }else if(jRadioButton2.isSelected()){
-            gender="Female";
-        }
-        else{
-            gender ="Other";
-        }
-
-        DateFormat fmt = new SimpleDateFormat("YYYY-MM-DD");
-        String dob = fmt.format(this.jDateChooser1.getDate());
-        String nationality = textfieldNationality.getText();
-        String address = textfieldStreet.getText();
-        String email = textfieldEmail.getText();
-        String phone = textfieldPhone.getText();
-        String sq = textfieldSecurityQuestion.getText();
-        String sq_ans = textfieldAnswer.getText();
-        String citizen = textfieldCitizenship.getText();
-        String driver_license = textfieldDriverLicense.getText();
-        String exp_date = fmt.format(this.jDateChooser2.getDate());
-        User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
-        UserController sc  = new UserController();
-        int result = sc.editdetails(u1);
-        if(result>0){
-            JOptionPane.showMessageDialog(null, "Updated Successfully");
-        }
-    }//GEN-LAST:event_buttonUpdateActionPerformed
-
     private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textfieldUsernameActionPerformed
@@ -1001,6 +916,44 @@ public class EditProfile extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
+        // TODO add your handling code here:
+        String username = textfieldUsername.getText();
+        String fname = textfieldFirstName.getText();
+        String mname= MiddleName.getText();
+        String lname = textfieldLastName.getText();
+        String pass = new String(jPasswordField1.getPassword());
+        String repass = new String(jPasswordField2.getPassword());
+        String gender =null;
+        if(jRadioButton1.isSelected()){
+            gender="Male";
+
+        }else if(jRadioButton2.isSelected()){
+            gender="Female";
+        }
+        else{
+            gender ="Other";
+        }
+
+        DateFormat fmt = new SimpleDateFormat("YYYY-MM-DD");
+        String dob = fmt.format(this.jDateChooser1.getDate());
+        String nationality = textfieldNationality.getText();
+        String address = textfieldStreet.getText();
+        String email = textfieldEmail.getText();
+        String phone = textfieldPhone.getText();
+        String sq = textfieldSecurityQuestion.getText();
+        String sq_ans = textfieldAnswer.getText();
+        String citizen = textfieldCitizenship.getText();
+        String driver_license = textfieldDriverLicense.getText();
+        String exp_date = fmt.format(this.jDateChooser2.getDate());
+        User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
+        UserController sc  = new UserController();
+        int result = sc.editdetails(u1);
+        if(result>0){
+            JOptionPane.showMessageDialog(null, "Updated Successfully");
+        }
+    }//GEN-LAST:event_buttonUpdateActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1119,11 +1072,6 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelAnswer;
     private javax.swing.JLabel labelCitizenshipNo;
-    private javax.swing.JLabel labelContact5;
-    private javax.swing.JLabel labelContact6;
-    private javax.swing.JLabel labelContact7;
-    private javax.swing.JLabel labelContact8;
-    private javax.swing.JLabel labelContact9;
     private javax.swing.JLabel labelDOB;
     private javax.swing.JLabel labelDriverLicenseNo;
     private javax.swing.JLabel labelEmail;
