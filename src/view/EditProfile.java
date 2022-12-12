@@ -105,6 +105,9 @@ public class EditProfile extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuKYC = new javax.swing.JMenu();
+        jMenuBank = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -709,8 +712,9 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
         jMenuBack.setText("BACK");
         jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBack.setMinimumSize(new java.awt.Dimension(150, 52));
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuBack);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
@@ -718,17 +722,46 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuProfile.setMinimumSize(new java.awt.Dimension(150, 52));
+        jMenuProfile.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuProfile.setOpaque(true);
+        jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItem1.setText("View Profile");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuProfile.add(jMenuItem1);
+
         jMenu.add(jMenuProfile);
 
+        jMenuKYC.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuKYC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
+        jMenuKYC.setText("KYC");
+        jMenuKYC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.setOpaque(true);
+        jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuKYC);
+
+        jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/bankIcon.png"))); // NOI18N
+        jMenuBank.setText("Bank Details");
+        jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBank.setOpaque(true);
+        jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBank);
+
         jMenu1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenu1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
-        jMenu1.setText("KYC");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenu1.setText("Contacts");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenu1.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenu1.setOpaque(true);
-        jMenu1.setPreferredSize(new java.awt.Dimension(150, 52));
+        jMenu1.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenu1);
 
         setJMenuBar(jMenu);
@@ -959,6 +992,10 @@ public class EditProfile extends javax.swing.JFrame {
             textfieldStreet.setText("Street");
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1064,6 +1101,9 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBank;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
