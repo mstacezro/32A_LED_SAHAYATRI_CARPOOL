@@ -35,7 +35,6 @@ public class Profile extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         panelProfile = new javax.swing.JPanel();
         labelLogoTop = new javax.swing.JLabel();
-        labelProfileIcon = new javax.swing.JLabel();
         labelWhiteHLine = new javax.swing.JLabel();
         panelProfileFrame = new javax.swing.JPanel();
         labelProfile = new javax.swing.JLabel();
@@ -85,8 +84,6 @@ public class Profile extends javax.swing.JFrame {
         labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
         labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelLogoTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
-
-        labelProfileIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
 
         labelWhiteHLine.setBackground(new java.awt.Color(255, 255, 255));
         labelWhiteHLine.setOpaque(true);
@@ -455,16 +452,11 @@ public class Profile extends javax.swing.JFrame {
                         .addComponent(panelProfileFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(panelProfileLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelProfileIcon)
-                .addGap(32, 32, 32))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addComponent(labelProfileIcon)
-                .addGap(25, 25, 25)
+                .addGap(75, 75, 75)
                 .addComponent(labelLogoTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -608,7 +600,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JLabel labelPhone;
     private javax.swing.JLabel labelPhoneView;
     private javax.swing.JLabel labelProfile;
-    private javax.swing.JLabel labelProfileIcon;
     private javax.swing.JLabel labelProfilePic;
     private javax.swing.JLabel labelSecurityQuestion;
     private javax.swing.JLabel labelSecurityView;
