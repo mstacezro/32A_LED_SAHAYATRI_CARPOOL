@@ -81,6 +81,16 @@ public final class seat extends javax.swing.JFrame {
         declineBtn = new javax.swing.JButton();
         acceptBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuBack = new javax.swing.JMenu();
+        jMenuProfile = new javax.swing.JMenu();
+        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItemDelete = new javax.swing.JMenuItem();
+        jMenuKYC = new javax.swing.JMenu();
+        jMenuBank = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
+        jMenuLogout = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -90,6 +100,7 @@ public final class seat extends javax.swing.JFrame {
         });
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
+        panelProfile.setPreferredSize(new java.awt.Dimension(1400, 2114));
 
         jTabbedPane1.setBackground(new java.awt.Color(102, 142, 57));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -520,7 +531,7 @@ public final class seat extends javax.swing.JFrame {
         panelProfileLayout.setHorizontalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
         );
@@ -532,6 +543,102 @@ public final class seat extends javax.swing.JFrame {
                 .addContainerGap(1176, Short.MAX_VALUE))
         );
 
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBack);
+
+        jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuProfile.setText("Profile");
+        jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuProfile.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuProfile.setOpaque(true);
+        jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
+        jMenuItemProfile.setText("View Profile");
+        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemProfile.setOpaque(true);
+        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProfileActionPerformed(evt);
+            }
+        });
+        jMenuProfile.add(jMenuItemProfile);
+
+        jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
+        jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
+        jMenuItemDelete.setText("Delete Account");
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setOpaque(true);
+        jMenuProfile.add(jMenuItemDelete);
+
+        jMenu.add(jMenuProfile);
+
+        jMenuKYC.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuKYC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
+        jMenuKYC.setText("KYC");
+        jMenuKYC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.setOpaque(true);
+        jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuKYC);
+
+        jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/bankIcon.png"))); // NOI18N
+        jMenuBank.setText("Bank Details");
+        jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBank.setOpaque(true);
+        jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBank);
+
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
+
+        jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        jMenuLogout.setText("Logout");
+        jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuLogout.setOpaque(true);
+        jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuLogout);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
+
+        setJMenuBar(jMenu);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -539,7 +646,7 @@ public final class seat extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -735,6 +842,10 @@ public final class seat extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
+
     /**
      * @param evt
      */
@@ -849,6 +960,16 @@ public final class seat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBank;
+    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenuItem jMenuItemProfile;
+    private javax.swing.JMenu jMenuKYC;
+    private javax.swing.JMenu jMenuLogout;
+    private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
