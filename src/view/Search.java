@@ -69,6 +69,16 @@ public class Search extends javax.swing.JFrame {
         labelLogoTop3 = new javax.swing.JLabel();
         labelWhiteHLine3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuBack = new javax.swing.JMenu();
+        jMenuProfile = new javax.swing.JMenu();
+        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItemDelete = new javax.swing.JMenuItem();
+        jMenuKYC = new javax.swing.JMenu();
+        jMenuBank = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
+        jMenuLogout = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -192,6 +202,7 @@ public class Search extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblRIder.setPreferredSize(new java.awt.Dimension(525, 50));
         jScrollPane2.setViewportView(tblRIder);
         if (tblRIder.getColumnModel().getColumnCount() > 0) {
             tblRIder.getColumnModel().getColumn(0).setResizable(false);
@@ -236,8 +247,8 @@ public class Search extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(476, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(553, Short.MAX_VALUE))
         );
 
         labelLogoTop2.setBackground(new java.awt.Color(102, 142, 57));
@@ -288,7 +299,7 @@ public class Search extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(211, 211, 211)
                 .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1507, Short.MAX_VALUE))
+                .addContainerGap(1210, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -345,7 +356,9 @@ public class Search extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1143, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1112, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -404,6 +417,102 @@ public class Search extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 932, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(690, Short.MAX_VALUE))
         );
+
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBack);
+
+        jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuProfile.setText("Profile");
+        jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuProfile.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuProfile.setOpaque(true);
+        jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
+        jMenuItemProfile.setText("View Profile");
+        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemProfile.setOpaque(true);
+        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProfileActionPerformed(evt);
+            }
+        });
+        jMenuProfile.add(jMenuItemProfile);
+
+        jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
+        jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
+        jMenuItemDelete.setText("Delete Account");
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setOpaque(true);
+        jMenuProfile.add(jMenuItemDelete);
+
+        jMenu.add(jMenuProfile);
+
+        jMenuKYC.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuKYC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
+        jMenuKYC.setText("KYC");
+        jMenuKYC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.setOpaque(true);
+        jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuKYC);
+
+        jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/bankIcon.png"))); // NOI18N
+        jMenuBank.setText("Bank Details");
+        jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBank.setOpaque(true);
+        jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBank);
+
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
+
+        jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        jMenuLogout.setText("Logout");
+        jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuLogout.setOpaque(true);
+        jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuLogout);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
+
+        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -497,6 +606,10 @@ public class Search extends javax.swing.JFrame {
 
         //
     }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -568,6 +681,16 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBank;
+    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenuItem jMenuItemProfile;
+    private javax.swing.JMenu jMenuKYC;
+    private javax.swing.JMenu jMenuLogout;
+    private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
