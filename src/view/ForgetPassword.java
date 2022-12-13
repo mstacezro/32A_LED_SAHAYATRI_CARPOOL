@@ -46,13 +46,16 @@ public class ForgetPassword extends javax.swing.JFrame {
         labelLOGIN3 = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
+        jMenuBlank = new javax.swing.JMenu();
         jMenuContact = new javax.swing.JMenu();
+        jMenuBlank1 = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelMain.setBackground(new java.awt.Color(102, 142, 57));
         panelMain.setToolTipText("");
-        panelMain.setPreferredSize(new java.awt.Dimension(1270, 720));
+        panelMain.setPreferredSize(new java.awt.Dimension(1400, 720));
 
         labelCarpoolLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpool.png"))); // NOI18N
 
@@ -243,7 +246,16 @@ public class ForgetPassword extends javax.swing.JFrame {
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuBack);
 
+        jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBlank.setOpaque(true);
+        jMenuBlank.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank);
+
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
         jMenuContact.setText("Contacts");
         jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -251,6 +263,23 @@ public class ForgetPassword extends javax.swing.JFrame {
         jMenuContact.setOpaque(true);
         jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuContact);
+
+        jMenuBlank1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank1.setOpaque(true);
+        jMenuBlank1.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank1);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
 
@@ -273,43 +302,6 @@ public class ForgetPassword extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    // yp
-
-    private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
-        if(emailText.getText().equals("Email address")){
-            emailText.setText("");
-        }
-        
-    }//GEN-LAST:event_emailTextFocusGained
-
-    private void emailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusLost
-        // TODO add your handling code here:
-        if (emailText.getText().equals("")) {
-            emailText.setText("Email address");
-        }
-    }//GEN-LAST:event_emailTextFocusLost
-
-    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTextActionPerformed
-
-    private void sqTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sqTextFocusGained
-        if(sqText.getText().equals("Security Question Answer")){
-            sqText.setText("");
-        }
-        
-    }//GEN-LAST:event_sqTextFocusGained
-
-    private void sqTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sqTextFocusLost
-        // TODO add your handling code here:
-        if (sqText.getText().equals("")) {
-            sqText.setText("Security Question Answer");
-        }
-    }//GEN-LAST:event_sqTextFocusLost
-
-    private void sqTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sqTextActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         String sq = null;
@@ -318,42 +310,45 @@ public class ForgetPassword extends javax.swing.JFrame {
             sq=item.toString();
         }
 
-
         String email = emailText.getText();
         String sq_ans = sqText.getText();
         String pass = passText.getText();
         String cpass = cpassText.getText();
 
-        User u1 = new User(null, pass, null, null, null, null, null, null, null, null, email, null, sq, sq_ans, null, null, null) ;  
-            UserController sc = new UserController();
-            int result = sc.resetPass(u1);
+        User u1 = new User(null, pass, null, null, null, null, null, null, null, null, email, null, sq, sq_ans, null, null, null) ;
+        UserController sc = new UserController();
+        int result = sc.resetPass(u1);
 
-            if(result>0){
-                JOptionPane.showMessageDialog(this, "Reset password Success");
-            }
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "Reset password Success");
+        }
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
-    private void passTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusGained
-        if(passText.getText().equals("New Password")){
-            passText.setText("");
-        }
-    }//GEN-LAST:event_passTextFocusGained
-
-    private void passTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusLost
-        if(passText.getText().equals("")){
-            passText.setText("New Password");
-        }
-    }//GEN-LAST:event_passTextFocusLost
-
-    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
+    private void jComboBoxSecurityQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSecurityQuestionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passTextActionPerformed
+    }//GEN-LAST:event_jComboBoxSecurityQuestionActionPerformed
 
-    private void cpassTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpassTextFocusGained
-        if(cpassText.getText().equals("Re-enter Password")){
-            cpassText.setText("");
+    private void sqTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sqTextActionPerformed
+
+    private void sqTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sqTextFocusLost
+        // TODO add your handling code here:
+        if (sqText.getText().equals("")) {
+            sqText.setText("Security Question Answer");
         }
-    }//GEN-LAST:event_cpassTextFocusGained
+    }//GEN-LAST:event_sqTextFocusLost
+
+    private void sqTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sqTextFocusGained
+        if(sqText.getText().equals("Security Question Answer")){
+            sqText.setText("");
+        }
+
+    }//GEN-LAST:event_sqTextFocusGained
+
+    private void cpassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpassTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpassTextActionPerformed
 
     private void cpassTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpassTextFocusLost
         if(cpassText.getText().equals("")){
@@ -361,13 +356,46 @@ public class ForgetPassword extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cpassTextFocusLost
 
-    private void cpassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpassTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cpassTextActionPerformed
+    private void cpassTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cpassTextFocusGained
+        if(cpassText.getText().equals("Re-enter Password")){
+            cpassText.setText("");
+        }
+    }//GEN-LAST:event_cpassTextFocusGained
 
-    private void jComboBoxSecurityQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSecurityQuestionActionPerformed
+    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxSecurityQuestionActionPerformed
+    }//GEN-LAST:event_passTextActionPerformed
+
+    private void passTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusLost
+        if(passText.getText().equals("")){
+            passText.setText("New Password");
+        }
+    }//GEN-LAST:event_passTextFocusLost
+
+    private void passTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusGained
+        if(passText.getText().equals("New Password")){
+            passText.setText("");
+        }
+    }//GEN-LAST:event_passTextFocusGained
+
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextActionPerformed
+
+    private void emailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusLost
+        // TODO add your handling code here:
+        if (emailText.getText().equals("")) {
+            emailText.setText("Email address");
+        }
+    }//GEN-LAST:event_emailTextFocusLost
+
+    private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
+        if(emailText.getText().equals("Email address")){
+            emailText.setText("");
+        }
+
+    }//GEN-LAST:event_emailTextFocusGained
+    // yp
 
     /**
      * @param args the command line arguments
@@ -412,7 +440,10 @@ public class ForgetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBlank;
+    private javax.swing.JMenu jMenuBlank1;
     private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenuExit;
     private javax.swing.JLabel labelCarpoolLogo;
     private javax.swing.JLabel labelLOGIN2;
     private javax.swing.JLabel labelLOGIN3;
