@@ -100,10 +100,13 @@ public class EditProfile extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
         jMenuContact = new javax.swing.JMenu();
+        jMenuLogout = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -537,7 +540,7 @@ public class EditProfile extends javax.swing.JFrame {
             .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelLEditProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelEditProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
                         .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -578,7 +581,7 @@ public class EditProfile extends javax.swing.JFrame {
                                 .addComponent(labelDriverLicenseNo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE))
                             .addGroup(panelEditProfileFrameLayout.createSequentialGroup()
                                 .addComponent(textfieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -674,20 +677,29 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile.setOpaque(true);
         jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
 
-        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
-        jMenuItem1.setText("View Profile");
-        jMenuItem1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuItem1.setOpaque(true);
-        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
+        jMenuItemProfile.setText("View Profile");
+        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemProfile.setOpaque(true);
+        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItemProfileActionPerformed(evt);
             }
         });
-        jMenuProfile.add(jMenuItem1);
+        jMenuProfile.add(jMenuItemProfile);
+
+        jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
+        jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
+        jMenuItemDelete.setText("Delete Account");
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setOpaque(true);
+        jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
 
@@ -711,6 +723,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenu.add(jMenuBank);
 
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
         jMenuContact.setText("Contacts");
         jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -719,13 +732,34 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuContact);
 
+        jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        jMenuLogout.setText("Logout");
+        jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuLogout.setOpaque(true);
+        jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuLogout);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
+
         setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1394, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -910,9 +944,9 @@ public class EditProfile extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
 
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         // TODO add your handling code here:
@@ -1057,8 +1091,11 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuBank;
     private javax.swing.JMenu jMenuContact;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
+    private javax.swing.JMenu jMenuLogout;
     private javax.swing.JMenu jMenuProfile;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
