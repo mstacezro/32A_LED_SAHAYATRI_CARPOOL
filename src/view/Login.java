@@ -46,12 +46,6 @@ public class Login extends javax.swing.JFrame {
         buttonRegister = new javax.swing.JButton();
         buttonLoginDriver = new javax.swing.JButton();
         buttonRegister1 = new javax.swing.JButton();
-        panelContact = new javax.swing.JPanel();
-        labelContact10 = new javax.swing.JLabel();
-        labelContact11 = new javax.swing.JLabel();
-        labelContact12 = new javax.swing.JLabel();
-        labelContact13 = new javax.swing.JLabel();
-        labelContact14 = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuBlank = new javax.swing.JMenu();
@@ -189,84 +183,18 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        panelContact.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelContact10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact10.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fbIcon.png"))); // NOI18N
-        labelContact10.setText("www.facebook/sahayatri_carpool.com");
-
-        labelContact11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-
-        labelContact12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact12.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phoneIcon.PNG"))); // NOI18N
-        labelContact12.setText("+977-(01)-4797486, +977-9841446531");
-
-        labelContact13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact13.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locationIcon.png"))); // NOI18N
-        labelContact13.setText("Pipolbot, Dillibazar, Kathmandu");
-
-        labelContact14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact14.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emailIcon.png"))); // NOI18N
-        labelContact14.setText("sahayatri.carpool@gmail.com");
-
-        javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
-        panelContact.setLayout(panelContactLayout);
-        panelContactLayout.setHorizontalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(labelContact11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
-                .addComponent(labelContact14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact10, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact13, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelContactLayout.createSequentialGroup()
-                    .addGap(123, 123, 123)
-                    .addComponent(labelContact12, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(851, Short.MAX_VALUE)))
-        );
-        panelContactLayout.setVerticalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelContact11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                    .addContainerGap(16, Short.MAX_VALUE)
-                    .addComponent(labelContact12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
         javax.swing.GroupLayout panelMainLayout = new javax.swing.GroupLayout(panelMain);
         panelMain.setLayout(panelMainLayout);
         panelMainLayout.setHorizontalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMainLayout.createSequentialGroup()
-                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(labelCarpoolLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(labelCarpoolLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
         panelMainLayout.setVerticalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,9 +210,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(panelMainLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         labelCarpoolLogo.getAccessibleContext().setAccessibleName("labelCarpoolPhoto");
@@ -494,14 +420,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JLabel labelCarpoolLogo;
-    private javax.swing.JLabel labelContact10;
-    private javax.swing.JLabel labelContact11;
-    private javax.swing.JLabel labelContact12;
-    private javax.swing.JLabel labelContact13;
-    private javax.swing.JLabel labelContact14;
     private javax.swing.JLabel labelLOGIN;
     private javax.swing.JLabel labelWhiteLineDivider;
-    private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelLoginFrame;
     private javax.swing.JPanel panelMain;
     private javax.swing.JTextField textfieldEmail;
