@@ -43,6 +43,8 @@ public final class seat extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BankTop = new javax.swing.JFrame();
+        jPanel1 = new javax.swing.JPanel();
         panelProfile = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         tabDriverTab = new javax.swing.JPanel();
@@ -88,9 +90,34 @@ public final class seat extends javax.swing.JFrame {
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuContact = new javax.swing.JMenu();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
+
+        jPanel1.setBackground(new java.awt.Color(0, 255, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 665, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 480, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout BankTopLayout = new javax.swing.GroupLayout(BankTop.getContentPane());
+        BankTop.getContentPane().setLayout(BankTopLayout);
+        BankTopLayout.setHorizontalGroup(
+            BankTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        BankTopLayout.setVerticalGroup(
+            BankTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -552,6 +579,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuBackActionPerformed(evt);
+            }
+        });
         jMenu.add(jMenuBack);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
@@ -597,6 +629,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuKYC.setOpaque(true);
         jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuKYCActionPerformed(evt);
+            }
+        });
         jMenu.add(jMenuKYC);
 
         jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
@@ -606,6 +643,15 @@ public final class seat extends javax.swing.JFrame {
         jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuBank.setOpaque(true);
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItem1.setText("Bank Details");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuBank.add(jMenuItem1);
+
         jMenu.add(jMenuBank);
 
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
@@ -843,8 +889,23 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new Profile().setVisible(true);
     }//GEN-LAST:event_jMenuItemProfileActionPerformed
+
+    private void jMenuBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuBackActionPerformed
+
+    private void jMenuKYCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuKYCActionPerformed
+       dispose();
+       new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        BankTop.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param evt
@@ -939,6 +1000,7 @@ public final class seat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame BankTop;
     private com.toedter.calendar.JDateChooser Datebox;
     private javax.swing.JComboBox<String> Goingbox;
     private javax.swing.JComboBox<String> Leavebox;
@@ -965,11 +1027,13 @@ public final class seat extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuBank;
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuLogout;
     private javax.swing.JMenu jMenuProfile;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
