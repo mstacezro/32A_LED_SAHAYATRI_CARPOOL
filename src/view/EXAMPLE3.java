@@ -26,21 +26,379 @@ public class EXAMPLE3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelProfile = new javax.swing.JPanel();
+        labelLogoTop = new javax.swing.JLabel();
+        labelWhiteHLine = new javax.swing.JLabel();
+        panelProfileFrame = new javax.swing.JPanel();
+        labelProfile = new javax.swing.JLabel();
+        buttonUpdate = new javax.swing.JButton();
+        labelWhiteLineDivider = new javax.swing.JLabel();
+        labelUsername = new javax.swing.JLabel();
+        labelName = new javax.swing.JLabel();
+        labelDOB = new javax.swing.JLabel();
+        labelGender = new javax.swing.JLabel();
+        labelNationality = new javax.swing.JLabel();
+        labelAddress = new javax.swing.JLabel();
+        labelEmail = new javax.swing.JLabel();
+        labelPhone = new javax.swing.JLabel();
+        labelSecurityQuestion = new javax.swing.JLabel();
+        labelAnswer = new javax.swing.JLabel();
+        labelCitizenshipNo = new javax.swing.JLabel();
+        labelDriverLicenseNo = new javax.swing.JLabel();
+        labelExpiryDate = new javax.swing.JLabel();
+        labelUsernameView = new javax.swing.JLabel();
+        labelNameView = new javax.swing.JLabel();
+        labelGenderView = new javax.swing.JLabel();
+        labelDOBView = new javax.swing.JLabel();
+        labelNationalityView = new javax.swing.JLabel();
+        labelStreetView = new javax.swing.JLabel();
+        labelEmailView = new javax.swing.JLabel();
+        labelPhoneView = new javax.swing.JLabel();
+        labelSecurityView = new javax.swing.JLabel();
+        labelAnswerView = new javax.swing.JLabel();
+        labelCitizenshipView = new javax.swing.JLabel();
+        labelDriverLicenseView = new javax.swing.JLabel();
+        labelExpiryView = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panelProfile.setBackground(new java.awt.Color(102, 142, 57));
+        panelProfile.setPreferredSize(new java.awt.Dimension(1400, 1659));
+
+        labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
+        labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLogoTop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpoolsmall.png"))); // NOI18N
+
+        labelWhiteHLine.setBackground(new java.awt.Color(255, 255, 255));
+        labelWhiteHLine.setOpaque(true);
+        labelWhiteHLine.setPreferredSize(new java.awt.Dimension(4, 20));
+
+        panelProfileFrame.setBackground(new java.awt.Color(102, 142, 57));
+        panelProfileFrame.setPreferredSize(new java.awt.Dimension(1395, 720));
+
+        labelProfile.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
+        labelProfile.setForeground(new java.awt.Color(255, 255, 255));
+        labelProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelProfile.setText("PROFILE");
+        labelProfile.setPreferredSize(new java.awt.Dimension(1270, 134));
+
+        buttonUpdate.setBackground(new java.awt.Color(0, 255, 51));
+        buttonUpdate.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        buttonUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        buttonUpdate.setText("UPDATE");
+        buttonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonUpdateActionPerformed(evt);
+            }
+        });
+
+        labelWhiteLineDivider.setBackground(new java.awt.Color(255, 255, 255));
+        labelWhiteLineDivider.setOpaque(true);
+
+        labelUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelUsername.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsername.setText("Username");
+        labelUsername.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        labelUsername.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelName.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelName.setForeground(new java.awt.Color(255, 255, 255));
+        labelName.setText("Name");
+        labelName.setDoubleBuffered(true);
+        labelName.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelName.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelDOB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelDOB.setForeground(new java.awt.Color(255, 255, 255));
+        labelDOB.setText("DOB");
+        labelDOB.setDoubleBuffered(true);
+        labelDOB.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelDOB.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelGender.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelGender.setForeground(new java.awt.Color(255, 255, 255));
+        labelGender.setText("Gender");
+        labelGender.setDoubleBuffered(true);
+        labelGender.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelGender.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelNationality.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelNationality.setForeground(new java.awt.Color(255, 255, 255));
+        labelNationality.setText("Nationality");
+        labelNationality.setDoubleBuffered(true);
+        labelNationality.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelNationality.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelAddress.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelAddress.setForeground(new java.awt.Color(255, 255, 255));
+        labelAddress.setText("Address");
+        labelAddress.setDoubleBuffered(true);
+        labelAddress.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelAddress.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelEmail.setForeground(new java.awt.Color(255, 255, 255));
+        labelEmail.setText("E-mail");
+        labelEmail.setDoubleBuffered(true);
+        labelEmail.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelEmail.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelPhone.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelPhone.setForeground(new java.awt.Color(255, 255, 255));
+        labelPhone.setText("Phone No.");
+        labelPhone.setDoubleBuffered(true);
+        labelPhone.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelPhone.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelSecurityQuestion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelSecurityQuestion.setForeground(new java.awt.Color(255, 255, 255));
+        labelSecurityQuestion.setText("Security Question");
+        labelSecurityQuestion.setDoubleBuffered(true);
+        labelSecurityQuestion.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelSecurityQuestion.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelAnswer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelAnswer.setForeground(new java.awt.Color(255, 255, 255));
+        labelAnswer.setText("Answer");
+        labelAnswer.setDoubleBuffered(true);
+        labelAnswer.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelAnswer.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelCitizenshipNo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelCitizenshipNo.setForeground(new java.awt.Color(255, 255, 255));
+        labelCitizenshipNo.setText("Citizenship No.");
+        labelCitizenshipNo.setDoubleBuffered(true);
+        labelCitizenshipNo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelCitizenshipNo.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelDriverLicenseNo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelDriverLicenseNo.setForeground(new java.awt.Color(255, 255, 255));
+        labelDriverLicenseNo.setText("Driver License No.");
+        labelDriverLicenseNo.setDoubleBuffered(true);
+        labelDriverLicenseNo.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelDriverLicenseNo.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelExpiryDate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelExpiryDate.setForeground(new java.awt.Color(255, 255, 255));
+        labelExpiryDate.setText("Expiry Date");
+        labelExpiryDate.setDoubleBuffered(true);
+        labelExpiryDate.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        labelExpiryDate.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        labelUsernameView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelUsernameView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelNameView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelNameView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelGenderView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelGenderView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelDOBView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelDOBView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelNationalityView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelNationalityView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelStreetView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelStreetView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelEmailView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelEmailView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelPhoneView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelPhoneView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelSecurityView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelSecurityView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelAnswerView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelAnswerView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelCitizenshipView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelCitizenshipView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelDriverLicenseView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelDriverLicenseView.setForeground(new java.awt.Color(255, 255, 255));
+
+        labelExpiryView.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelExpiryView.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout panelProfileFrameLayout = new javax.swing.GroupLayout(panelProfileFrame);
+        panelProfileFrame.setLayout(panelProfileFrameLayout);
+        panelProfileFrameLayout.setHorizontalGroup(
+            panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                .addGap(0, 64, Short.MAX_VALUE)
+                .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileFrameLayout.createSequentialGroup()
+                        .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addComponent(labelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelCitizenshipNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelExpiryDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelGender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDOB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNationality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelAnswer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDriverLicenseNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelSecurityQuestion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelUsernameView, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(labelNameView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelGenderView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelDOBView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelNationalityView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelStreetView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelEmailView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelPhoneView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelSecurityView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelAnswerView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelCitizenshipView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelDriverLicenseView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelExpiryView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(315, 315, 315))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileFrameLayout.createSequentialGroup()
+                        .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(489, 489, 489))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileFrameLayout.createSequentialGroup()
+                        .addComponent(labelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))))
+        );
+        panelProfileFrameLayout.setVerticalGroup(
+            panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(labelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(labelUsernameView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelNameView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelGenderView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelDOBView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelNationalityView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelStreetView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelEmailView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelPhoneView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelSecurityView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelAnswerView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelCitizenshipView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelDriverLicenseView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelExpiryView, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(labelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelGender, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelNationality, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelSecurityQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelCitizenshipNo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelDriverLicenseNo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panelProfileFrameLayout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(46, 46, 46)
+                .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
+        panelProfile.setLayout(panelProfileLayout);
+        panelProfileLayout.setHorizontalGroup(
+            panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(472, 472, 472))
+            .addGroup(panelProfileLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelLogoTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addComponent(panelProfileFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelProfileLayout.setVerticalGroup(
+            panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfileLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(labelLogoTop)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelProfileFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(539, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1396, Short.MAX_VALUE)
+            .addGap(0, 1412, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1760, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +436,38 @@ public class EXAMPLE3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonUpdate;
+    private javax.swing.JLabel labelAddress;
+    private javax.swing.JLabel labelAnswer;
+    private javax.swing.JLabel labelAnswerView;
+    private javax.swing.JLabel labelCitizenshipNo;
+    private javax.swing.JLabel labelCitizenshipView;
+    private javax.swing.JLabel labelDOB;
+    private javax.swing.JLabel labelDOBView;
+    private javax.swing.JLabel labelDriverLicenseNo;
+    private javax.swing.JLabel labelDriverLicenseView;
+    private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelEmailView;
+    private javax.swing.JLabel labelExpiryDate;
+    private javax.swing.JLabel labelExpiryView;
+    private javax.swing.JLabel labelGender;
+    private javax.swing.JLabel labelGenderView;
+    private javax.swing.JLabel labelLogoTop;
+    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelNameView;
+    private javax.swing.JLabel labelNationality;
+    private javax.swing.JLabel labelNationalityView;
+    private javax.swing.JLabel labelPhone;
+    private javax.swing.JLabel labelPhoneView;
+    private javax.swing.JLabel labelProfile;
+    private javax.swing.JLabel labelSecurityQuestion;
+    private javax.swing.JLabel labelSecurityView;
+    private javax.swing.JLabel labelStreetView;
+    private javax.swing.JLabel labelUsername;
+    private javax.swing.JLabel labelUsernameView;
+    private javax.swing.JLabel labelWhiteHLine;
+    private javax.swing.JLabel labelWhiteLineDivider;
+    private javax.swing.JPanel panelProfile;
+    private javax.swing.JPanel panelProfileFrame;
     // End of variables declaration//GEN-END:variables
 }
