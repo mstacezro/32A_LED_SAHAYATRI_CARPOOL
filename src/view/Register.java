@@ -77,18 +77,18 @@ public class Register extends javax.swing.JFrame {
         textfieldDriverLicense = new javax.swing.JTextField();
         DateExpiry = new com.toedter.calendar.JDateChooser();
         labelNote = new javax.swing.JLabel();
-        panelContact = new javax.swing.JPanel();
-        labelContact5 = new javax.swing.JLabel();
-        labelContact6 = new javax.swing.JLabel();
-        labelContact7 = new javax.swing.JLabel();
-        labelContact8 = new javax.swing.JLabel();
-        labelContact9 = new javax.swing.JLabel();
         jComboBoxSecurityQuestion = new javax.swing.JComboBox<>();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuBack = new javax.swing.JMenu();
+        jMenuBlank = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
+        jMenuBlank1 = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
 
-        jScrollPane2.setPreferredSize(new java.awt.Dimension(1270, 720));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1400, 720));
 
         jPanel1.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -407,67 +407,6 @@ public class Register extends javax.swing.JFrame {
         labelNote.setForeground(new java.awt.Color(255, 0, 0));
         labelNote.setText("* All fields with * are mandatory!");
 
-        panelContact.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelContact5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact5.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fbIcon.png"))); // NOI18N
-        labelContact5.setText("www.facebook/sahayatri_carpool.com");
-
-        labelContact6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-
-        labelContact7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact7.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phoneIcon.PNG"))); // NOI18N
-        labelContact7.setText("+977-(01)-4797486, +977-9841446531");
-
-        labelContact8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact8.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locationIcon.png"))); // NOI18N
-        labelContact8.setText("Pipolbot, Dillibazar, Kathmandu");
-
-        labelContact9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact9.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emailIcon.png"))); // NOI18N
-        labelContact9.setText("sahayatri.carpool@gmail.com");
-
-        javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
-        panelContact.setLayout(panelContactLayout);
-        panelContactLayout.setHorizontalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 289, Short.MAX_VALUE)
-                .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(panelContactLayout.createSequentialGroup()
-                    .addGap(123, 123, 123)
-                    .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(851, Short.MAX_VALUE)))
-        );
-        panelContactLayout.setVerticalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                    .addContainerGap(16, Short.MAX_VALUE)
-                    .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
         jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
 
         javax.swing.GroupLayout panelRegisterFrameLayout = new javax.swing.GroupLayout(panelRegisterFrame);
@@ -480,9 +419,6 @@ public class Register extends javax.swing.JFrame {
                     .addGroup(panelRegisterFrameLayout.createSequentialGroup()
                         .addGap(481, 481, 481)
                         .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelRegisterFrameLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelRegisterFrameLayout.createSequentialGroup()
                         .addGroup(panelRegisterFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelRegisterFrameLayout.createSequentialGroup()
@@ -617,9 +553,7 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 794, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(24, 24, 24)
                 .addComponent(buttonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -652,6 +586,54 @@ public class Register extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel1);
 
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBack);
+
+        jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBlank.setOpaque(true);
+        jMenuBlank.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank);
+
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
+
+        jMenuBlank1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank1.setOpaque(true);
+        jMenuBlank1.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank1);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
+
+        setJMenuBar(jMenu);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -664,16 +646,152 @@ public class Register extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1380, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1327, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
+    private void textfieldDriverLicenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldDriverLicenseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldUsernameActionPerformed
+    }//GEN-LAST:event_textfieldDriverLicenseActionPerformed
+
+    private void textfieldCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldCitizenshipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldCitizenshipActionPerformed
+
+    private void textfieldAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldAnswerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldAnswerActionPerformed
+
+    private void textfieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldPhoneActionPerformed
+
+    private void textfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldEmailActionPerformed
+
+    private void textfieldStreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldStreetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldStreetActionPerformed
+
+    private void textfieldStreetFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldStreetFocusLost
+        // TODO add your handling code here:
+        if (textfieldStreet.getText().equals("")) {
+            textfieldStreet.setText("Kathmandu");
+        }
+    }//GEN-LAST:event_textfieldStreetFocusLost
+
+    private void textfieldStreetFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldStreetFocusGained
+        // TODO add your handling code here:
+        if (textfieldStreet.getText().equals("Kathmandu")) {
+            textfieldStreet.setText("");
+        }
+    }//GEN-LAST:event_textfieldStreetFocusGained
+
+    private void textfieldNationalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNationalityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldNationalityActionPerformed
+
+    private void textfieldNationalityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldNationalityFocusLost
+        // TODO add your handling code here:
+        if (textfieldNationality.getText().equals("")) {
+            textfieldNationality.setText("Nepal");
+        }
+    }//GEN-LAST:event_textfieldNationalityFocusLost
+
+    private void textfieldNationalityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldNationalityFocusGained
+        // TODO add your handling code here:
+        if (textfieldNationality.getText().equals("Nepal")) {
+            textfieldNationality.setText("");
+        }
+    }//GEN-LAST:event_textfieldNationalityFocusGained
+
+    private void jRadioButtonOtherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonOtherActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonOtherActionPerformed
+
+    private void jRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemaleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonFemaleActionPerformed
+
+    private void jRadioButtonMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMaleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonMaleActionPerformed
+
+    private void MiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiddleNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MiddleNameActionPerformed
+
+    private void MiddleNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MiddleNameFocusLost
+        // TODO add your handling code here:
+        if (MiddleName.getText().equals("")) {
+            MiddleName.setText("Middle Name");
+        }
+    }//GEN-LAST:event_MiddleNameFocusLost
+
+    private void MiddleNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MiddleNameFocusGained
+        // TODO add your handling code here:
+        if (MiddleName.getText().equals("Middle Name")) {
+            MiddleName.setText("");
+        }
+    }//GEN-LAST:event_MiddleNameFocusGained
+
+    private void textfieldLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldLastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldLastNameActionPerformed
+
+    private void textfieldLastNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldLastNameFocusLost
+        // TODO add your handling code here:
+        if (textfieldLastName.getText().equals("")) {
+            textfieldLastName.setText("Last Name");
+        }
+    }//GEN-LAST:event_textfieldLastNameFocusLost
+
+    private void textfieldLastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldLastNameFocusGained
+        // TODO add your handling code here:
+        if (textfieldLastName.getText().equals("Last Name")) {
+            textfieldLastName.setText("");
+        }
+    }//GEN-LAST:event_textfieldLastNameFocusGained
+
+    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passTextActionPerformed
+
+    private void passTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusLost
+        // TODO add your handling code here:
+        /*if (passText.getPassword().equals("")) {
+            passText.setText("********");
+        }*/
+    }//GEN-LAST:event_passTextFocusLost
+
+    private void passTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusGained
+        // TODO add your handling code here:
+        /*if (passText.getPassword().equals("********")) {
+            passText.setText("");
+        }*/
+    }//GEN-LAST:event_passTextFocusGained
+
+    private void textfieldFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldFirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfieldFirstNameActionPerformed
+
+    private void textfieldFirstNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldFirstNameFocusLost
+        // TODO add your handling code here:
+        if (textfieldFirstName.getText().equals("")) {
+            textfieldFirstName.setText("First Name");
+        }
+    }//GEN-LAST:event_textfieldFirstNameFocusLost
+
+    private void textfieldFirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldFirstNameFocusGained
+        // TODO add your handling code here:
+        if (textfieldFirstName.getText().equals("First Name")) {
+            textfieldFirstName.setText("");
+        }
+    }//GEN-LAST:event_textfieldFirstNameFocusGained
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         String username = textfieldUsername.getText();
@@ -698,166 +816,30 @@ public class Register extends javax.swing.JFrame {
         String nationality = textfieldNationality.getText();
         String address = textfieldStreet.getText();
         String email = textfieldEmail.getText();
-        
+
         String phone = textfieldPhone.getText();
         String sq = jComboBoxSecurityQuestion.getSelectedItem().toString();
         String sq_ans = textfieldAnswer.getText();
         String citizen = textfieldCitizenship.getText();
         String driver_license = textfieldDriverLicense.getText();
         String exp_date = fmt.format(this.DateExpiry.getDate());
-        // User u1 = new User(textfieldUsername) 
+        // User u1 = new User(textfieldUsername)
         User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
         UserController sc  = new UserController();
         int result = sc.insertDetails(u1);
         JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         //dispose();
         /*if(result>0){
-             JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }else{          
-             JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
-            
-         }*/
+            JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
+
+        }*/
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
-    private void textfieldFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldFirstNameActionPerformed
+    private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldFirstNameActionPerformed
-
-    private void textfieldLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldLastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldLastNameActionPerformed
-
-    private void MiddleNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MiddleNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MiddleNameActionPerformed
-
-    private void jRadioButtonMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonMaleActionPerformed
-
-    private void jRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonFemaleActionPerformed
-
-    private void jRadioButtonOtherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonOtherActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonOtherActionPerformed
-
-    private void textfieldNationalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldNationalityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldNationalityActionPerformed
-
-    private void textfieldStreetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldStreetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldStreetActionPerformed
-
-    private void textfieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldEmailActionPerformed
-
-    private void textfieldPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldPhoneActionPerformed
-
-    private void textfieldAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldAnswerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldAnswerActionPerformed
-
-    private void textfieldCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldCitizenshipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldCitizenshipActionPerformed
-
-    private void textfieldDriverLicenseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldDriverLicenseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfieldDriverLicenseActionPerformed
-
-    private void passTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusGained
-        // TODO add your handling code here:
-        /*if (passText.getPassword().equals("********")) {
-            passText.setText("");
-        }*/
-    }//GEN-LAST:event_passTextFocusGained
-
-    private void passTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passTextFocusLost
-        // TODO add your handling code here:
-        /*if (passText.getPassword().equals("")) {
-            passText.setText("********");
-        }*/
-    }//GEN-LAST:event_passTextFocusLost
-
-    private void textfieldFirstNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldFirstNameFocusGained
-        // TODO add your handling code here:
-        if (textfieldFirstName.getText().equals("First Name")) {
-            textfieldFirstName.setText("");
-        }
-    }//GEN-LAST:event_textfieldFirstNameFocusGained
-
-    private void textfieldFirstNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldFirstNameFocusLost
-        // TODO add your handling code here:
-        if (textfieldFirstName.getText().equals("")) {
-            textfieldFirstName.setText("First Name");
-        }
-    }//GEN-LAST:event_textfieldFirstNameFocusLost
-
-    private void MiddleNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MiddleNameFocusGained
-        // TODO add your handling code here:
-        if (MiddleName.getText().equals("Middle Name")) {
-            MiddleName.setText("");
-        }
-    }//GEN-LAST:event_MiddleNameFocusGained
-
-    private void MiddleNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MiddleNameFocusLost
-        // TODO add your handling code here:
-        if (MiddleName.getText().equals("")) {
-            MiddleName.setText("Middle Name");
-        }
-    }//GEN-LAST:event_MiddleNameFocusLost
-
-    private void textfieldLastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldLastNameFocusGained
-        // TODO add your handling code here:
-        if (textfieldLastName.getText().equals("Last Name")) {
-            textfieldLastName.setText("");
-        }
-    }//GEN-LAST:event_textfieldLastNameFocusGained
-
-    private void textfieldLastNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldLastNameFocusLost
-        // TODO add your handling code here:
-        if (textfieldLastName.getText().equals("")) {
-            textfieldLastName.setText("Last Name");
-        }
-    }//GEN-LAST:event_textfieldLastNameFocusLost
-
-    private void textfieldNationalityFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldNationalityFocusGained
-        // TODO add your handling code here:
-        if (textfieldNationality.getText().equals("Nepal")) {
-            textfieldNationality.setText("");
-        }
-    }//GEN-LAST:event_textfieldNationalityFocusGained
-
-    private void textfieldNationalityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldNationalityFocusLost
-        // TODO add your handling code here:
-        if (textfieldNationality.getText().equals("")) {
-            textfieldNationality.setText("Nepal");
-        }
-    }//GEN-LAST:event_textfieldNationalityFocusLost
-
-    private void textfieldStreetFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldStreetFocusGained
-        // TODO add your handling code here:
-        if (textfieldStreet.getText().equals("Kathmandu")) {
-            textfieldStreet.setText("");
-        }
-    }//GEN-LAST:event_textfieldStreetFocusGained
-
-    private void textfieldStreetFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldStreetFocusLost
-        // TODO add your handling code here:
-        if (textfieldStreet.getText().equals("")) {
-            textfieldStreet.setText("Kathmandu");
-        }
-    }//GEN-LAST:event_textfieldStreetFocusLost
-
-    private void passTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passTextActionPerformed
+    }//GEN-LAST:event_textfieldUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -901,6 +883,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonRegister;
     private javax.swing.JComboBox<String> jComboBoxSecurityQuestion;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBlank;
+    private javax.swing.JMenu jMenuBlank1;
+    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenuExit;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButtonFemale;
     private javax.swing.JRadioButton jRadioButtonMale;
@@ -909,11 +897,6 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel labelAddress;
     private javax.swing.JLabel labelAnswer;
     private javax.swing.JLabel labelCitizenshipNo;
-    private javax.swing.JLabel labelContact5;
-    private javax.swing.JLabel labelContact6;
-    private javax.swing.JLabel labelContact7;
-    private javax.swing.JLabel labelContact8;
-    private javax.swing.JLabel labelContact9;
     private javax.swing.JLabel labelDOB;
     private javax.swing.JLabel labelDriverLicenseNo;
     private javax.swing.JLabel labelEmail;
@@ -931,7 +914,6 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel labelUsername;
     private javax.swing.JLabel labelWhiteHLine;
     private javax.swing.JLabel labelWhiteLineDivider;
-    private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelRegisterFrame;
     private javax.swing.JPasswordField passText;
     private javax.swing.JPasswordField repassText;
