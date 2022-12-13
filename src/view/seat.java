@@ -440,7 +440,7 @@ public final class seat extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("MY RIDE");
+        jLabel3.setText("RESPOND");
 
         javax.swing.GroupLayout panelEditProfile3Layout = new javax.swing.GroupLayout(panelEditProfile3);
         panelEditProfile3.setLayout(panelEditProfile3Layout);
@@ -524,7 +524,7 @@ public final class seat extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jTabbedPane1.addTab("MY RIDE", tabRider);
+        jTabbedPane1.addTab("RESPOND", tabRider);
 
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
