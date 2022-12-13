@@ -41,12 +41,6 @@ public class KYC extends javax.swing.JFrame {
         panelMain = new javax.swing.JPanel();
         labelCarpoolLogo = new javax.swing.JLabel();
         labelWhiteLineDivider = new javax.swing.JLabel();
-        panelContact = new javax.swing.JPanel();
-        labelContact5 = new javax.swing.JLabel();
-        labelContact6 = new javax.swing.JLabel();
-        labelContact7 = new javax.swing.JLabel();
-        labelContact8 = new javax.swing.JLabel();
-        labelContact9 = new javax.swing.JLabel();
         panelLoginFrame = new javax.swing.JPanel();
         labelKYC = new javax.swing.JLabel();
         buttonUploadCitizenship = new javax.swing.JButton();
@@ -55,76 +49,23 @@ public class KYC extends javax.swing.JFrame {
         buttonSubmitCitizenship1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        buttonBack = new javax.swing.JButton();
-        buttonBProfile = new javax.swing.JButton();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuBack = new javax.swing.JMenu();
+        jMenuBlank = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
+        jMenuBlank1 = new javax.swing.JMenu();
+        jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelMain.setBackground(new java.awt.Color(102, 142, 57));
         panelMain.setToolTipText("");
-        panelMain.setPreferredSize(new java.awt.Dimension(1270, 720));
+        panelMain.setPreferredSize(new java.awt.Dimension(1400, 720));
 
         labelCarpoolLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/carpool.png"))); // NOI18N
 
         labelWhiteLineDivider.setBackground(new java.awt.Color(255, 255, 255));
         labelWhiteLineDivider.setOpaque(true);
-
-        panelContact.setBackground(new java.awt.Color(102, 142, 57));
-
-        labelContact5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact5.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/fbIcon.png"))); // NOI18N
-        labelContact5.setText("www.facebook/sahayatri_carpool.com");
-
-        labelContact6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-
-        labelContact7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact7.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phoneIcon.PNG"))); // NOI18N
-        labelContact7.setText("+977-(01)-4797486, +977-9841446531");
-
-        labelContact8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact8.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/locationIcon.png"))); // NOI18N
-        labelContact8.setText("Pipolbot, Dillibazar, Kathmandu");
-
-        labelContact9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        labelContact9.setForeground(new java.awt.Color(255, 255, 255));
-        labelContact9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emailIcon.png"))); // NOI18N
-        labelContact9.setText("sahayatri.carpool@gmail.com");
-
-        javax.swing.GroupLayout panelContactLayout = new javax.swing.GroupLayout(panelContact);
-        panelContact.setLayout(panelContactLayout);
-        panelContactLayout.setHorizontalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContactLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-        panelContactLayout.setVerticalGroup(
-            panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelContact5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContactLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addGroup(panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelContact6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContact8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
 
         panelLoginFrame.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -229,55 +170,81 @@ public class KYC extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        buttonBack.setBackground(new java.awt.Color(102, 142, 57));
-        buttonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-
-        buttonBProfile.setBackground(new java.awt.Color(102, 142, 57));
-        buttonBProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
-
         javax.swing.GroupLayout panelMainLayout = new javax.swing.GroupLayout(panelMain);
         panelMain.setLayout(panelMainLayout);
         panelMainLayout.setHorizontalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMainLayout.createSequentialGroup()
-                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(labelCarpoolLogo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelMainLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(panelMainLayout.createSequentialGroup()
-                                .addComponent(buttonBack)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonBProfile))
-                            .addComponent(panelContact, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addComponent(labelCarpoolLogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         panelMainLayout.setVerticalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMainLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonBProfile)
-                    .addComponent(buttonBack))
                 .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMainLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(109, 109, 109)
                         .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelMainLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(130, 130, 130)
                         .addGroup(panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelCarpoolLogo))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(panelContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
+
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBack);
+
+        jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBlank.setOpaque(true);
+        jMenuBlank.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank);
+
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
+
+        jMenuBlank1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBlank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBlank1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBlank1.setOpaque(true);
+        jMenuBlank1.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenu.add(jMenuBlank1);
+
+        jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
+        jMenuExit.setText("Exit");
+        jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuExit.setOpaque(true);
+        jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuExit);
+
+        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -410,23 +377,21 @@ public class KYC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonBProfile;
-    private javax.swing.JButton buttonBack;
     private javax.swing.JButton buttonSubmitCitizenship;
     private javax.swing.JButton buttonSubmitCitizenship1;
     private javax.swing.JButton buttonUploadCitizenship;
     private javax.swing.JButton buttonUploadCitizenship1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuBlank;
+    private javax.swing.JMenu jMenuBlank1;
+    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenuExit;
     private javax.swing.JLabel labelCarpoolLogo;
-    private javax.swing.JLabel labelContact5;
-    private javax.swing.JLabel labelContact6;
-    private javax.swing.JLabel labelContact7;
-    private javax.swing.JLabel labelContact8;
-    private javax.swing.JLabel labelContact9;
     private javax.swing.JLabel labelKYC;
     private javax.swing.JLabel labelWhiteLineDivider;
-    private javax.swing.JPanel panelContact;
     private javax.swing.JPanel panelLoginFrame;
     private javax.swing.JPanel panelMain;
     // End of variables declaration//GEN-END:variables

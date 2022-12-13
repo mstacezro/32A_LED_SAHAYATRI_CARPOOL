@@ -101,4 +101,23 @@ public class UserController {
         int result = dbConnection.manipulate(editquery);
         return result;
     }
+
+    public int resetPass(User user){
+        String email = user.getuseremail();
+        String pass = user.getuserpass();
+        String sq = user.getusersq();
+        String sqAnswer = user.getusersqanswer();
+
+        String query="update user_table set password='"+pass+"' where email='"+email+"' and sq='"+sq+"' and sq_ans = '"+sqAnswer+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public ResultSet selectEmail(){
+        String selectdetails = "select email from user_table where status='" + "active" + "'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectdetails);
+        return result;
+    }
 }
