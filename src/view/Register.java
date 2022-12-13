@@ -407,7 +407,7 @@ public class Register extends javax.swing.JFrame {
         labelNote.setForeground(new java.awt.Color(255, 0, 0));
         labelNote.setText("* All fields with * are mandatory!");
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your first school name ?", "Who is your best friend ?", "What is your mother's maiden name?", " What is your first pet name?","What is your first job?","What is your favourite holiday place?" }));
 
         javax.swing.GroupLayout panelRegisterFrameLayout = new javax.swing.GroupLayout(panelRegisterFrame);
         panelRegisterFrame.setLayout(panelRegisterFrameLayout);

@@ -133,7 +133,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your first school name ?", "Who is your best friend ?", "What is your mother's maiden name?", " What is your first pet name?","What is your first job?","What is your favourite holiday place?" }));
         jComboBoxSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxSecurityQuestionActionPerformed(evt);
