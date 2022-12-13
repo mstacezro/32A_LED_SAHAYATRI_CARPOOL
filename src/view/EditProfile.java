@@ -103,7 +103,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -710,14 +710,14 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuBank);
 
-        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenu1.setText("Contacts");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenu1.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenu1.setOpaque(true);
-        jMenu1.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenu1);
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
 
         setJMenuBar(jMenu);
 
@@ -1054,9 +1054,9 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuBank;
+    private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuProfile;
