@@ -851,8 +851,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="MY RIDE">
-                    <Property name="tabTitle" type="java.lang.String" value="MY RIDE"/>
+                  <JTabbedPaneConstraints tabName="RESPOND">
+                    <Property name="tabTitle" type="java.lang.String" value="RESPOND"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -1104,7 +1104,7 @@
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="MY RIDE"/>
+                            <Property name="text" type="java.lang.String" value="RESPOND"/>
                           </Properties>
                         </Component>
                       </SubComponents>
