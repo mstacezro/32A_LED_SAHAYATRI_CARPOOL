@@ -109,6 +109,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1400, 1700));
 
         jScrollPane1.setMaximumSize(new java.awt.Dimension(1270, 720));
         jScrollPane1.setMinimumSize(new java.awt.Dimension(1270, 720));
