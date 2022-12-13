@@ -44,6 +44,9 @@ public class ForgetPassword extends javax.swing.JFrame {
         jComboBoxSecurityQuestion = new javax.swing.JComboBox<>();
         buttonRegister = new javax.swing.JButton();
         labelLOGIN3 = new javax.swing.JLabel();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuBack = new javax.swing.JMenu();
+        jMenuContact = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,7 +130,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your first school's name ?", "Who is your mother's maiden name?", "What is your first pet name ?", "What is your first job?","What is your first job", "Who is your favourite singer?","Who is your favourite auther?" }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
         jComboBoxSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxSecurityQuestionActionPerformed(evt);
@@ -228,6 +231,28 @@ public class ForgetPassword extends javax.swing.JFrame {
                         .addGap(89, 89, 89)))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
+
+        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
+        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
+        jMenuBack.setText("BACK");
+        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuBack.setOpaque(true);
+        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuBack);
+
+        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuContact.setText("Contacts");
+        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuContact.setOpaque(true);
+        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenu.add(jMenuContact);
+
+        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -385,6 +410,9 @@ public class ForgetPassword extends javax.swing.JFrame {
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox<String> jComboBoxSecurityQuestion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuBack;
+    private javax.swing.JMenu jMenuContact;
     private javax.swing.JLabel labelCarpoolLogo;
     private javax.swing.JLabel labelLOGIN2;
     private javax.swing.JLabel labelLOGIN3;
