@@ -85,7 +85,7 @@ public class Profile extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(102, 142, 57));
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
-        panelProfile.setPreferredSize(new java.awt.Dimension(1400, 1659));
+        panelProfile.setPreferredSize(new java.awt.Dimension(1276, 1408));
 
         labelLogoTop.setBackground(new java.awt.Color(102, 142, 57));
         labelLogoTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -96,7 +96,7 @@ public class Profile extends javax.swing.JFrame {
         labelWhiteHLine.setPreferredSize(new java.awt.Dimension(4, 20));
 
         panelProfileFrame.setBackground(new java.awt.Color(102, 142, 57));
-        panelProfileFrame.setPreferredSize(new java.awt.Dimension(1395, 720));
+        panelProfileFrame.setPreferredSize(new java.awt.Dimension(1270, 720));
 
         labelProfile.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         labelProfile.setForeground(new java.awt.Color(255, 255, 255));
@@ -251,7 +251,7 @@ public class Profile extends javax.swing.JFrame {
         panelProfileFrameLayout.setHorizontalGroup(
             panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileFrameLayout.createSequentialGroup()
-                .addGap(0, 64, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileFrameLayout.createSequentialGroup()
                         .addGroup(panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,7 +362,7 @@ public class Profile extends javax.swing.JFrame {
                         .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(46, 46, 46)
                 .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
@@ -390,11 +390,14 @@ public class Profile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelProfileFrame, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(539, Short.MAX_VALUE))
+                .addComponent(panelProfileFrame, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+                .addContainerGap(567, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(panelProfile);
+
+        jMenu.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu.setOpaque(true);
 
         jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
         jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
