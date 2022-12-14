@@ -51,6 +51,7 @@ public class KYC extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBlank = new javax.swing.JMenu();
         jMenuContact = new javax.swing.JMenu();
         jMenuBlank1 = new javax.swing.JMenu();
@@ -207,6 +208,15 @@ public class KYC extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItem1.setText("back");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuBack.add(jMenuItem1);
+
         jMenu.add(jMenuBack);
 
         jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
@@ -341,6 +351,10 @@ public class KYC extends javax.swing.JFrame {
         
     }//GEN-LAST:event_buttonSubmitCitizenshipMouseClicked
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +403,7 @@ public class KYC extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuBlank1;
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel labelCarpoolLogo;
     private javax.swing.JLabel labelKYC;
     private javax.swing.JLabel labelWhiteLineDivider;

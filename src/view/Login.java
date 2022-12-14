@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
@@ -87,6 +88,8 @@ public class Login extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfieldEmailActionPerformed(evt);
             }
+
+            
         });
 
         textfieldPassword.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -286,7 +289,8 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    private void textfieldEmailActionPerformed(ActionEvent evt) {
+    }
     private void textfieldUsername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsername1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textfieldUsername1ActionPerformed
@@ -318,6 +322,8 @@ public class Login extends javax.swing.JFrame {
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new Register().setVisible(true);
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void textfieldEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textfieldEmailFocusGained
@@ -368,7 +374,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonLoginDriverActionPerformed
 
     private void buttonRegister1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegister1ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new ForgetPassword().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_buttonRegister1ActionPerformed
 
     /**

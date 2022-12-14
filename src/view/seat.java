@@ -579,6 +579,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBackMouseClicked(evt);
+            }
+        });
         jMenuBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuBackActionPerformed(evt);
@@ -629,6 +634,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuKYC.setOpaque(true);
         jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuKYCMouseClicked(evt);
+            }
+        });
         jMenuKYC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuKYCActionPerformed(evt);
@@ -890,11 +900,15 @@ public final class seat extends javax.swing.JFrame {
 
     private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
         dispose();
-        new Profile().setVisible(true);
+        new Profile().setVisible(true); 
     }//GEN-LAST:event_jMenuItemProfileActionPerformed
 
     private void jMenuBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBackActionPerformed
         // TODO add your handling code here:
+         dispose();
+        new Profile().setVisible(true); 
+        
+        
     }//GEN-LAST:event_jMenuBackActionPerformed
 
     private void jMenuKYCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuKYCActionPerformed
@@ -906,6 +920,17 @@ public final class seat extends javax.swing.JFrame {
         // TODO add your handling code here:
         BankTop.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+dispose();
+        new Profile().setVisible(true);  // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuBackMouseClicked
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
 
     /**
      * @param evt

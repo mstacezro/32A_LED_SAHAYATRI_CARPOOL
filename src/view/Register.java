@@ -407,7 +407,7 @@ public class Register extends javax.swing.JFrame {
         labelNote.setForeground(new java.awt.Color(255, 0, 0));
         labelNote.setText("* All fields with * are mandatory!");
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your first school name ?", "Who is your best friend ?", "What is your mother's maiden name?", " What is your first pet name?","What is your first job?","What is your favourite holiday place?" }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
 
         javax.swing.GroupLayout panelRegisterFrameLayout = new javax.swing.GroupLayout(panelRegisterFrame);
         panelRegisterFrame.setLayout(panelRegisterFrameLayout);
@@ -595,6 +595,11 @@ public class Register extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBackMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuBack);
 
         jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
@@ -839,7 +844,15 @@ public class Register extends javax.swing.JFrame {
 
     private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new Login().setVisible(true);
     }//GEN-LAST:event_textfieldUsernameActionPerformed
+
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jMenuBackMouseClicked
 
     /**
      * @param args the command line arguments

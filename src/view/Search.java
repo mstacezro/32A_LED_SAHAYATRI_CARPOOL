@@ -79,6 +79,8 @@ public class Search extends javax.swing.JFrame {
         jMenuContact = new javax.swing.JMenu();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -468,6 +470,11 @@ public class Search extends javax.swing.JFrame {
         jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuKYC.setOpaque(true);
         jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuKYCMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuKYC);
 
         jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
@@ -506,6 +513,28 @@ public class Search extends javax.swing.JFrame {
         jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuExit.setOpaque(true);
         jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuExitActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setText("Exit");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuExit.add(jMenuItem1);
+
+        jMenuItem2.setText("LogOut");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenuExit.add(jMenuItem2);
+
         jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
@@ -604,8 +633,33 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODO add your handling code here:
+        // TODdispose();
+        dispose();
+        new Profile().setVisible(true);
+        
     }//GEN-LAST:event_jMenuItemProfileActionPerformed
+
+    private void jMenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuExitActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        
+    }//GEN-LAST:event_jMenuExitActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -682,6 +736,8 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuBank;
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;

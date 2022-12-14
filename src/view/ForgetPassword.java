@@ -133,7 +133,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your first school name ?", "Who is your best friend ?", "What is your mother's maiden name?", " What is your first pet name?","What is your first job?","What is your favourite holiday place?" }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your age ?", " " }));
         jComboBoxSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxSecurityQuestionActionPerformed(evt);
@@ -244,6 +244,11 @@ public class ForgetPassword extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBackMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuBack);
 
         jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
@@ -395,6 +400,12 @@ public class ForgetPassword extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_emailTextFocusGained
+
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jMenuBackMouseClicked
     // yp
 
     /**
