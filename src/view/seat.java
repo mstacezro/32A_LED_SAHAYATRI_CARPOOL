@@ -347,11 +347,13 @@ public final class seat extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PUBLISH CARPOOL");
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(51, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("RIDE STATUS");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLabel4.setOpaque(true);
 
         jButtonActive.setBackground(new java.awt.Color(153, 0, 153));
         jButtonActive.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
