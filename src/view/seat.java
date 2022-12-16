@@ -353,7 +353,10 @@ public final class seat extends javax.swing.JFrame {
         jLabel4.setText("RIDE STATUS");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jButtonActive.setText("jButton1");
+        jButtonActive.setBackground(new java.awt.Color(153, 0, 153));
+        jButtonActive.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonActive.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonActive.setText("Complete");
         jButtonActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonActiveActionPerformed(evt);
