@@ -206,16 +206,9 @@
               <Dimension value="[200, 52]"/>
             </Property>
           </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Bank Details"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuBankMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuContact">
           <Properties>
@@ -557,13 +550,13 @@
                                     <Column editable="false" title="S.N." type="java.lang.Integer"/>
                                     <Column editable="false" title="Leaving from ...." type="java.lang.String"/>
                                     <Column editable="false" title="Going to ...." type="java.lang.String"/>
+                                    <Column editable="true" title="Driver Email" type="java.lang.Object"/>
+                                    <Column editable="true" title="Driver Phone" type="java.lang.Object"/>
                                     <Column editable="false" title="Date" type="java.lang.Integer"/>
                                     <Column editable="false" title="Trunk Space" type="java.lang.String"/>
                                     <Column editable="false" title="No. of Passengers" type="java.lang.Integer"/>
                                     <Column editable="false" title="Price" type="java.lang.Integer"/>
-                                    <Column editable="true" title="Ride Status" type="java.lang.Object"/>
-                                    <Column editable="true" title="Driver Email" type="java.lang.Object"/>
-                                    <Column editable="true" title="Driver Phone" type="java.lang.Object"/>
+                                    <Column editable="false" title="Ride Status" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -603,17 +596,17 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>

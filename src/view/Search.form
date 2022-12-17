@@ -164,6 +164,9 @@
               <Dimension value="[200, 52]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuBankMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuContact">
           <Properties>
@@ -657,11 +660,11 @@
                                     <Column editable="false" title="S.N." type="java.lang.Object"/>
                                     <Column editable="false" title="Leaving from ... " type="java.lang.Object"/>
                                     <Column editable="false" title="Going to ..." type="java.lang.Object"/>
+                                    <Column editable="false" title="Driver Phone" type="java.lang.Object"/>
                                     <Column editable="false" title="Date" type="java.lang.Object"/>
                                     <Column editable="false" title="Trunk Space" type="java.lang.Object"/>
                                     <Column editable="false" title="No. of Passengers" type="java.lang.Object"/>
                                     <Column editable="false" title="Price" type="java.lang.Object"/>
-                                    <Column editable="false" title="Driver Phone" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -929,11 +932,11 @@
                                     <Column editable="true" title="SN" type="java.lang.Object"/>
                                     <Column editable="true" title="From" type="java.lang.Object"/>
                                     <Column editable="true" title="To" type="java.lang.Object"/>
+                                    <Column editable="true" title="Driver Phone" type="java.lang.Object"/>
                                     <Column editable="true" title="Username" type="java.lang.Object"/>
                                     <Column editable="true" title="Phone" type="java.lang.Object"/>
                                     <Column editable="true" title="Book Status" type="java.lang.Object"/>
                                     <Column editable="true" title="Ride Status" type="java.lang.Object"/>
-                                    <Column editable="true" title="Phone" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
