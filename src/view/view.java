@@ -17,7 +17,7 @@ public class view {
         // User u1 = new User("1","1","1","1","1","1","1","1","1","1","3", "123", "1", "1", "123", null, null);
         try {
     //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
-            Driver d1 = new Driver(3, null, null, null, null, 0, 0,null);
+            Driver d1 = new Driver(3, null, null, null, null, 0, 0,null,null,null);
             DriverController dc = new DriverController();
             ResultSet result  = dc.selectDetails(d1);
             while(result.next()){

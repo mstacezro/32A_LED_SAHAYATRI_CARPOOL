@@ -4,6 +4,7 @@
  */
 package view;
 import controller.DriverController;
+import controller.UserController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -153,14 +154,14 @@ public final class seat extends javax.swing.JFrame {
 
             },
             new String [] {
-                "S.N.", "Leaving from ....", "Going to ....", "Date", "Trunk Space", "No. of Passengers", "Price", "Ride Status"
+                "S.N.", "Leaving from ....", "Going to ....", "Date", "Trunk Space", "No. of Passengers", "Price", "Ride Status", "Driver Email", "Driver Phone"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -775,7 +776,7 @@ public final class seat extends javax.swing.JFrame {
         int i = rideTable.getSelectedRow();
         TableModel model = rideTable.getModel();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        Driver d1 = new Driver(id,null,null,null,null,0,0,null);
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
         DriverController dc = new DriverController();
         int result = dc.Accept(d1);
         if(result>0){
@@ -788,7 +789,7 @@ public final class seat extends javax.swing.JFrame {
         int i = rideTable.getSelectedRow();
         TableModel model = rideTable.getModel();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        Driver d1 = new Driver(id,null,null,null,null,0,0,null);
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null, null,null);
         DriverController dc = new DriverController();
 
         int result = dc.Decline(d1);
@@ -811,7 +812,7 @@ public final class seat extends javax.swing.JFrame {
             
             try {
                 //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
-            Driver d1 = new Driver(id, null, null, null, null, 0, 0,null);
+            Driver d1 = new Driver(id, null, null, null, null, 0, 0,null,null,null);
             DriverController dc = new DriverController();
             ResultSet result  = dc.selectDetails(d1);
             while(result.next()){
@@ -855,7 +856,7 @@ public final class seat extends javax.swing.JFrame {
 
         }else{
             try {
-                Driver d1 = new Driver(id,null,null,null,null,0,0,null);
+                Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
                 DriverController dc = new DriverController();
                 int result = dc.deleteDetails(d1);
                 if(result>0){
@@ -897,7 +898,7 @@ public final class seat extends javax.swing.JFrame {
         String id = idBox.getText();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(Integer.parseInt(id),publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null);
+        Driver addDriverDetails = new Driver(Integer.parseInt(id),publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,null,null);
         DriverController dc = new DriverController();
         int result = dc.editDetails(addDriverDetails);
         if(result>0){
@@ -929,7 +930,19 @@ public final class seat extends javax.swing.JFrame {
         String publishTrunk = Trunkbox.getSelectedItem().toString();
         String publishSeat = Seatbox.getSelectedItem().toString();
         String publishPrice = Pricebox.getText();
-        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null);
+        String email = null;
+        String phone  = null;
+
+        ResultSet rset = new UserController().selectEmail();
+        try {
+            while(rset.next()){
+            email = rset.getString(1);
+            phone = rset.getString(2);
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,phone,email);
         DriverController dc = new DriverController();
         int result = dc.insertDriverDetails(addDriverDetails);
         if (result > 0) {
@@ -983,7 +996,7 @@ dispose();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
         String rideStatus= model.getValueAt(i,7 ).toString();
         if(rideStatus.equals("Active")){
-            Driver d1 = new Driver(id,null,null,null,null,0,0,null);
+            Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
             DriverController dc = new DriverController();
             int result = dc.Complete(d1);
             if(result>0){
@@ -1008,7 +1021,7 @@ dispose();
 
         }else{
 
-            Driver d1 = new Driver(id,null,null,null,null,0,0,null);
+            Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
             DriverController dc = new DriverController();
             int result = dc.Active(d1);
             if(result>0){
@@ -1042,9 +1055,12 @@ dispose();
                 String seat = rset.getString(6);
                 String price = rset.getString(7);
                 String rideStatus= rset.getString(10);
+                String email = rset.getString(11);
+                String phone  = rset.getString(12);
+                
 
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price,rideStatus};
+                Object[] row = {SN,Leave,Going,date,trunk,seat,price,rideStatus,email,phone};
                 model.addRow(row);
             }
         } catch (SQLException e) {
