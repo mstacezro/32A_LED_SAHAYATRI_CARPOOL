@@ -70,7 +70,6 @@ public class Profile extends javax.swing.JFrame {
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
-        jMenuItemProfile = new javax.swing.JMenuItem();
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
@@ -289,9 +288,8 @@ public class Profile extends javax.swing.JFrame {
                             .addComponent(labelAnswer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelDriverLicenseNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(labelEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelNationality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(labelPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelNationality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(labelSecurityQuestion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -438,21 +436,6 @@ public class Profile extends javax.swing.JFrame {
         jMenuProfile.setOpaque(true);
         jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
 
-        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
-        jMenuItemProfile.setText("View Profile");
-        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuItemProfile.setOpaque(true);
-        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemProfileActionPerformed(evt);
-            }
-        });
-        jMenuProfile.add(jMenuItemProfile);
-
         jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
         jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
@@ -472,6 +455,11 @@ public class Profile extends javax.swing.JFrame {
         jMenuKYC.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuKYC.setOpaque(true);
         jMenuKYC.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuKYC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuKYCMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuKYC);
 
         jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
@@ -532,14 +520,15 @@ public class Profile extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        dispose();
-        
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
-
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonUpdateActionPerformed
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -630,7 +619,6 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JMenuItem jMenuItemDelete;
-    private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuLogout;
     private javax.swing.JMenu jMenuProfile;
