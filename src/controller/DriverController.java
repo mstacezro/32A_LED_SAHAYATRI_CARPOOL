@@ -30,7 +30,7 @@ public class DriverController {
 
     public ResultSet fetchDriverDetails() {
         // ArrayList<Driver> driverList = new ArrayList<Driver>();
-        String selectQuery = "select * from driver_table";
+        String selectQuery = "select * from driver_table where ride_status<>'"+"Complete"+"'";
         dbConnection = new DbConnection();
         ResultSet result = dbConnection.retrieve(selectQuery);
 
@@ -113,6 +113,21 @@ public class DriverController {
     public int Decline(Driver driver){
         int id = driver.getDSN();
         String query = "update driver_table set booking='"+"No"+"' where dSN='"+id+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    public int Active(Driver driver){
+        int id = driver.getDSN();
+        String query = "update driver_table set ride_status='"+"Active"+"' where dSN='"+id+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+    public int Complete(Driver driver){
+        int id = driver.getDSN();
+        String query = "update driver_table set ride_status='"+"Complete"+"' where dSN='"+id+"'";
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(query);
         return result;
