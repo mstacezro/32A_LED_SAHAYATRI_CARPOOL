@@ -196,7 +196,7 @@ public class Search extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "S.N.", "Leaving from ... ", "Going to ...", "Date", "Trunk Space", "No. of Passengers", "Price", "Driver Phone"
+                "S.N.", "Leaving from ... ", "Going to ...", "Driver Phone", "Date", "Trunk Space", "No. of Passengers", "Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -343,7 +343,7 @@ public class Search extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "SN", "From", "To", "Username", "Phone", "Book Status", "Ride Status", "Phone"
+                "SN", "From", "To", "Driver Phone", "Username", "Phone", "Book Status", "Ride Status"
             }
         ));
         jScrollPane3.setViewportView(rideTable);
@@ -507,6 +507,11 @@ public class Search extends javax.swing.JFrame {
         jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuBank.setOpaque(true);
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBank.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBankMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuBank);
 
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
@@ -683,6 +688,12 @@ public class Search extends javax.swing.JFrame {
         dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new BankDetails().setVisible(true);
+    }//GEN-LAST:event_jMenuBankMouseClicked
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -701,7 +712,7 @@ public class Search extends javax.swing.JFrame {
                 String price = result.getString(7);
                 String phone = result.getString(12);
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price,phone};
+                Object[] row = {SN,Leave,Going,phone,date,trunk,seat,price};
                 model.addRow(row);
             }
         } catch (SQLException e) {
@@ -726,7 +737,7 @@ public class Search extends javax.swing.JFrame {
                 String booking = result.getString(6);
                 String ride_status= result.getString(7);
                 String Driverphone = result.getString(8);
-                Object[] rows = {SN,Leave,Going,userName,phone,booking,ride_status,Driverphone};
+                Object[] rows = {SN,Leave,Going,Driverphone,userName,phone,booking,ride_status};
                 model.addRow(rows);
 
                 

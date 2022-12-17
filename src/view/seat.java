@@ -95,7 +95,6 @@ public final class seat extends javax.swing.JFrame {
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuContact = new javax.swing.JMenu();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
@@ -154,14 +153,14 @@ public final class seat extends javax.swing.JFrame {
 
             },
             new String [] {
-                "S.N.", "Leaving from ....", "Going to ....", "Date", "Trunk Space", "No. of Passengers", "Price", "Ride Status", "Driver Email", "Driver Phone"
+                "S.N.", "Leaving from ....", "Going to ....", "Driver Email", "Driver Phone", "Date", "Trunk Space", "No. of Passengers", "Price", "Ride Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true, true, true
+                false, false, false, true, true, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -182,6 +181,9 @@ public final class seat extends javax.swing.JFrame {
             tblDriver.getColumnModel().getColumn(4).setResizable(false);
             tblDriver.getColumnModel().getColumn(5).setResizable(false);
             tblDriver.getColumnModel().getColumn(6).setResizable(false);
+            tblDriver.getColumnModel().getColumn(7).setResizable(false);
+            tblDriver.getColumnModel().getColumn(8).setResizable(false);
+            tblDriver.getColumnModel().getColumn(9).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -704,15 +706,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuBank.setOpaque(true);
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
-
-        jMenuItem1.setText("Bank Details");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+        jMenuBank.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBankMouseClicked(evt);
             }
         });
-        jMenuBank.add(jMenuItem1);
-
         jMenu.add(jMenuBank);
 
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
@@ -973,11 +971,6 @@ public final class seat extends javax.swing.JFrame {
        new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        BankTop.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
 dispose();
         new Profile().setVisible(true);  // TODO add your handling code here:
@@ -994,7 +987,7 @@ dispose();
         int i = tblDriver.getSelectedRow();
         TableModel model = tblDriver.getModel();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        String rideStatus= model.getValueAt(i,7 ).toString();
+        String rideStatus= model.getValueAt(i,9 ).toString();
         if(rideStatus.equals("Active")){
             Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
             DriverController dc = new DriverController();
@@ -1015,7 +1008,7 @@ dispose();
         int i = tblDriver.getSelectedRow();
         TableModel model = tblDriver.getModel();
         int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        String rideStatus= model.getValueAt(i,7 ).toString();
+        String rideStatus= model.getValueAt(i,9 ).toString();
         if(rideStatus.equals("Active")){
             JOptionPane.showMessageDialog(this,"The ride is already active","Error",2);
 
@@ -1030,6 +1023,12 @@ dispose();
         }
     }
     }//GEN-LAST:event_activeBtnActionPerformed
+
+    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new BankDetails().setVisible(true);
+    }//GEN-LAST:event_jMenuBankMouseClicked
 
     /**
      * @param evt
@@ -1060,7 +1059,7 @@ dispose();
                 
 
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price,rideStatus,email,phone};
+                Object[] row = {SN,Leave,Going,email,phone,date,trunk,seat,price,rideStatus};
                 model.addRow(row);
             }
         } catch (SQLException e) {
@@ -1159,7 +1158,6 @@ dispose();
     private javax.swing.JMenu jMenuBank;
     private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
