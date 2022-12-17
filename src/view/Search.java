@@ -33,6 +33,7 @@ public class Search extends javax.swing.JFrame {
     public Search() {
         initComponents();
         table();
+        ride();
     }
 
     /**
@@ -69,6 +70,8 @@ public class Search extends javax.swing.JFrame {
         labelLogoTop3 = new javax.swing.JLabel();
         labelWhiteHLine3 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        rideTable = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
@@ -187,17 +190,17 @@ public class Search extends javax.swing.JFrame {
 
         tblRIder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "S.N.", "Leaving from ... ", "Going to ...", "Date", "Trunk Space", "No. of Passengers", "Price"
+                "S.N.", "Leaving from ... ", "Going to ...", "Date", "Trunk Space", "No. of Passengers", "Price", "Driver Phone"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -214,6 +217,7 @@ public class Search extends javax.swing.JFrame {
             tblRIder.getColumnModel().getColumn(4).setResizable(false);
             tblRIder.getColumnModel().getColumn(5).setResizable(false);
             tblRIder.getColumnModel().getColumn(6).setResizable(false);
+            tblRIder.getColumnModel().getColumn(7).setResizable(false);
         }
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
@@ -227,17 +231,16 @@ public class Search extends javax.swing.JFrame {
         panelEditProfile2Layout.setHorizontalGroup(
             panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(panelEditProfile2Layout.createSequentialGroup()
                 .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panelEditProfile2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 60, Short.MAX_VALUE))
         );
         panelEditProfile2Layout.setVerticalGroup(
             panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,8 +252,8 @@ public class Search extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(794, Short.MAX_VALUE))
         );
 
         labelLogoTop2.setBackground(new java.awt.Color(102, 142, 57));
@@ -264,12 +267,12 @@ public class Search extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(panelEditProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, 1072, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(labelLogoTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 1043, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                        .addComponent(labelLogoTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 1043, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(panelEditProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,13 +291,14 @@ public class Search extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
+                .addContainerGap(596, Short.MAX_VALUE)
                 .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(338, 338, 338))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,15 +335,25 @@ public class Search extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MY RIDE");
 
+        rideTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "SN", "From", "To", "Username", "Phone", "Book Status", "Ride Status", "Phone"
+            }
+        ));
+        jScrollPane3.setViewportView(rideTable);
+
         javax.swing.GroupLayout panelEditProfile3Layout = new javax.swing.GroupLayout(panelEditProfile3);
         panelEditProfile3.setLayout(panelEditProfile3Layout);
         panelEditProfile3Layout.setHorizontalGroup(
             panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
-                .addComponent(labelLogoTop3, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 291, Short.MAX_VALUE)
                 .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
                         .addComponent(labelWhiteHLine3, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,6 +361,13 @@ public class Search extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(353, 353, 353))))
+            .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                .addComponent(labelLogoTop3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEditProfile3Layout.setVerticalGroup(
             panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +377,9 @@ public class Search extends javax.swing.JFrame {
                 .addComponent(labelWhiteHLine3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1623, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1173, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -380,16 +403,16 @@ public class Search extends javax.swing.JFrame {
         tabRider.setLayout(tabRiderLayout);
         tabRiderLayout.setHorizontalGroup(
             tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1143, Short.MAX_VALUE)
+            .addGap(0, 1379, Short.MAX_VALUE)
             .addGroup(tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabRiderLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 151, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 151, Short.MAX_VALUE)))
         );
         tabRiderLayout.setVerticalGroup(
             tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1985, Short.MAX_VALUE)
+            .addGap(0, 2010, Short.MAX_VALUE)
             .addGroup(tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabRiderLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -403,10 +426,10 @@ public class Search extends javax.swing.JFrame {
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfileLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileLayout.createSequentialGroup()
                 .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1065, 1065, 1065))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(820, 820, 820))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,7 +598,7 @@ public class Search extends javax.swing.JFrame {
         try {
             while(rs.next()){
                 String email = rs.getString(1);
-                Driver d1 = new Driver(id, null,null,null,null,0,0,email);
+                Driver d1 = new Driver(id, null,null,null,null,0,0,email,null,null);
                 DriverController dc = new DriverController();
                 int result = dc.Request(d1);
                 if(result>0){
@@ -606,7 +629,7 @@ public class Search extends javax.swing.JFrame {
             convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
         }
         System.out.println(convertedDate);
-        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null);
+        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null,null,null);
         DriverController dc = new DriverController();
         ResultSet result = dc.searchDetails(d1);
         try {
@@ -665,7 +688,7 @@ public class Search extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
         model.setRowCount(0);
         try {
-            Driver d1 = new Driver(0, null,null,null,null,0,0,null);
+            Driver d1 = new Driver(0, null,null,null,null,0,0,null,null,null);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
@@ -676,9 +699,9 @@ public class Search extends javax.swing.JFrame {
                 String trunk = result.getString(5);
                 String seat = result.getString(6);
                 String price = result.getString(7);
-
+                String phone = result.getString(12);
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
+                Object[] row = {SN,Leave,Going,date,trunk,seat,price,phone};
                 model.addRow(row);
             }
         } catch (SQLException e) {
@@ -686,6 +709,31 @@ public class Search extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
+    }
+
+    public void ride(){
+        ResultSet result = new DriverController().showBook();
+        DefaultTableModel model  =(DefaultTableModel) rideTable.getModel();
+        model.setRowCount(0);
+        try {
+            while(result.next()){
+                String SN = result.getString(1);
+                String Leave = result.getString(2);
+                String Going  = result.getString(3);
+
+                String userName = result.getString(4);
+                String phone = result.getString(5);
+                String booking = result.getString(6);
+                String ride_status= result.getString(7);
+                String Driverphone = result.getString(8);
+                Object[] rows = {SN,Leave,Going,userName,phone,booking,ride_status,Driverphone};
+                model.addRow(rows);
+
+                
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
     /**
      * @param args the command line arguments
@@ -748,6 +796,7 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
@@ -757,6 +806,7 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JPanel panelEditProfile3;
     private javax.swing.JPanel panelProfile;
     private javax.swing.JButton requestText;
+    private javax.swing.JTable rideTable;
     private javax.swing.JButton searchBtn;
     private javax.swing.JPanel tabRider;
     private javax.swing.JTable tblRIder;
