@@ -97,7 +97,7 @@ public class DriverController {
     }
 
     public ResultSet showBook() {
-        String query = "select driver_table.dSN,driver_table.dLeavePlace,driver_table.dGoingTo,user_table.username,user_table.phone,driver_table.booking from driver_table join user_table on driver_table.email=user_table.email ";
+        String query = "select driver_table.dSN,driver_table.dLeavePlace,driver_table.dGoingTo,user_table.username,user_table.phone,driver_table.booking,driver_table.ride_status from driver_table join user_table on driver_table.email=user_table.email ";
         dbConnection = new DbConnection();
         ResultSet result= dbConnection.retrieve(query);
         return result;
