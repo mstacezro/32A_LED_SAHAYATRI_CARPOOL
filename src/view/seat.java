@@ -47,6 +47,7 @@ public final class seat extends javax.swing.JFrame {
 
         BankTop = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
         panelProfile = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         tabDriverTab = new javax.swing.JPanel();
@@ -173,18 +174,6 @@ public final class seat extends javax.swing.JFrame {
         });
         tblDriver.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblDriver);
-        if (tblDriver.getColumnModel().getColumnCount() > 0) {
-            tblDriver.getColumnModel().getColumn(0).setResizable(false);
-            tblDriver.getColumnModel().getColumn(1).setResizable(false);
-            tblDriver.getColumnModel().getColumn(2).setResizable(false);
-            tblDriver.getColumnModel().getColumn(3).setResizable(false);
-            tblDriver.getColumnModel().getColumn(4).setResizable(false);
-            tblDriver.getColumnModel().getColumn(5).setResizable(false);
-            tblDriver.getColumnModel().getColumn(6).setResizable(false);
-            tblDriver.getColumnModel().getColumn(7).setResizable(false);
-            tblDriver.getColumnModel().getColumn(8).setResizable(false);
-            tblDriver.getColumnModel().getColumn(9).setResizable(false);
-        }
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -493,9 +482,6 @@ public final class seat extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(rideTable);
-        if (rideTable.getColumnModel().getColumnCount() > 0) {
-            rideTable.getColumnModel().getColumn(0).setPreferredWidth(100);
-        }
 
         declineBtn.setBackground(new java.awt.Color(204, 0, 0));
         declineBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -623,6 +609,8 @@ public final class seat extends javax.swing.JFrame {
                 .addContainerGap(1114, Short.MAX_VALUE))
         );
 
+        jScrollPane3.setViewportView(panelProfile);
+
         jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
         jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
@@ -748,17 +736,15 @@ public final class seat extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1005, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1121, Short.MAX_VALUE))
         );
 
         pack();
@@ -770,110 +756,86 @@ public final class seat extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
-    private void acceptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBtnActionPerformed
-        int i = rideTable.getSelectedRow();
-        TableModel model = rideTable.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
-        DriverController dc = new DriverController();
-        int result = dc.Accept(d1);
-        if(result>0){
-            JOptionPane.showMessageDialog(this, "Accepted");
-            displayBook();
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
+        dispose();
+        new Profile().setVisible(true); 
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
+
+    private void jMenuBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBackActionPerformed
+        // TODO add your handling code here:
+         dispose();
+        new Profile().setVisible(true); 
+        
+        
+    }//GEN-LAST:event_jMenuBackActionPerformed
+
+    private void jMenuKYCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuKYCActionPerformed
+       dispose();
+       new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCActionPerformed
+
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+dispose();
+        new Profile().setVisible(true);  // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuBackMouseClicked
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new BankDetails().setVisible(true);
+    }//GEN-LAST:event_jMenuBankMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        String convertedDate;
+        String publishLeave = Leavebox.getSelectedItem().toString();
+        String publishGoing = Goingbox.getSelectedItem().toString();
+        String publishDate = (String) Datebox.getDate().toString();
+        System.out.println(publishDate);
+        String day = publishDate.split(" ")[2];
+        String month = publishDate.split(" ")[1];
+        String year = publishDate.split(" ")[5];
+        String convertedMonth = convertMonthIntoString(month);
+        int resultHasDigit = convertMonthIntoString(month).length();
+        if (resultHasDigit == 1){
+            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
+        } else{
+            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
         }
-    }//GEN-LAST:event_acceptBtnActionPerformed
+        System.out.println(convertedDate);
+        String publishTrunk = Trunkbox.getSelectedItem().toString();
+        String publishSeat = Seatbox.getSelectedItem().toString();
+        String publishPrice = Pricebox.getText();
+        String email = null;
+        String phone  = null;
 
-    private void declineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declineBtnActionPerformed
-        int i = rideTable.getSelectedRow();
-        TableModel model = rideTable.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        Driver d1 = new Driver(id,null,null,null,null,0,0,null, null,null);
-        DriverController dc = new DriverController();
-
-        int result = dc.Decline(d1);
-        if(result>0){
-            JOptionPane.showMessageDialog(this, "Declined");
-            displayBook();
-
-        }
-    }//GEN-LAST:event_declineBtnActionPerformed
-
-    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
-        int i = tblDriver.getSelectedRow();
-        TableModel model = tblDriver.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        String rideStatus= model.getValueAt(i,7 ).toString();
-        if(rideStatus.equals("Active")||rideStatus.equals("Complete")){
-            JOptionPane.showMessageDialog(this,"The ride can't be viewed","Error",2);
-
-        }else{
-            
-            try {
-                //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
-            Driver d1 = new Driver(id, null, null, null, null, 0, 0,null,null,null);
-            DriverController dc = new DriverController();
-            ResultSet result  = dc.selectDetails(d1);
-            while(result.next()){
-                String dId  = result.getString(1);
-                String dLeave = result.getString(2);
-                String dGoing = result.getString(3);
-                String dDate = result.getString(4);
-                String dTrunk = result.getString(5);
-                String seat = result.getString(6);
-                String price = result.getString(7);
-                // JOptionPane.showMessageDialog(null,dLeave+" " +dGoing +""+ dDate+""+dTrunk+ ""+ seat);
-                Leavebox.setSelectedItem(dLeave);
-                Goingbox.setSelectedItem(dGoing);
-                // Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dDate);
-                java.util.Date dob = new SimpleDateFormat("yyyy-MM-dd").parse(dDate);
-                Datebox.setDate(dob);
-                Trunkbox.setSelectedItem(dTrunk);
-                Seatbox.setSelectedItem(seat);
-                Pricebox.setText(price);
-                idBox.setText(dId);
-                editBtn.setEnabled(true);
+        ResultSet rset = new UserController().selectEmail();
+        try {
+            while(rset.next()){
+                email = rset.getString(1);
+                phone = rset.getString(2);
             }
-
         } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            // TODO: handle exception
         }
-    }
-    }//GEN-LAST:event_viewBtnActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-
-        // DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-        int i = tblDriver.getSelectedRow();
-        TableModel model = tblDriver.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        String rideStatus= model.getValueAt(i,7 ).toString();
-        if(rideStatus.equals("Active")||rideStatus.equals("Complete")){
-            JOptionPane.showMessageDialog(this,"The ride can't be deleted","Error",2);
-
-        }else{
-            try {
-                Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
-                DriverController dc = new DriverController();
-                int result = dc.deleteDetails(d1);
-                if(result>0){
-                    JOptionPane.showMessageDialog(this,"Delete Success");
-                    DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
-                    model1.setRowCount(0);
-                    table();
-    
-                }
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
+        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,phone,email);
+        DriverController dc = new DriverController();
+        int result = dc.insertDriverDetails(addDriverDetails);
+        if (result > 0) {
+            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            table();
 
         }
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnDeleteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnDeleteFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteFocusGained
+        else {
+            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         String convertedDate;
@@ -907,80 +869,82 @@ public final class seat extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDeleteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnDeleteFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteFocusGained
 
-        String convertedDate;
-        String publishLeave = Leavebox.getSelectedItem().toString();
-        String publishGoing = Goingbox.getSelectedItem().toString();
-        String publishDate = (String) Datebox.getDate().toString();
-        System.out.println(publishDate);
-        String day = publishDate.split(" ")[2];
-        String month = publishDate.split(" ")[1];
-        String year = publishDate.split(" ")[5];
-        String convertedMonth = convertMonthIntoString(month);
-        int resultHasDigit = convertMonthIntoString(month).length();
-        if (resultHasDigit == 1){
-            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
-        } else{
-            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
-        }
-        System.out.println(convertedDate);
-        String publishTrunk = Trunkbox.getSelectedItem().toString();
-        String publishSeat = Seatbox.getSelectedItem().toString();
-        String publishPrice = Pricebox.getText();
-        String email = null;
-        String phone  = null;
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
 
-        ResultSet rset = new UserController().selectEmail();
-        try {
-            while(rset.next()){
-            email = rset.getString(1);
-            phone = rset.getString(2);
+        // DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+        int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        String rideStatus= model.getValueAt(i,7 ).toString();
+        if(rideStatus.equals("Active")||rideStatus.equals("Complete")){
+            JOptionPane.showMessageDialog(this,"The ride can't be deleted","Error",2);
+
+        }else{
+            try {
+                Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
+                DriverController dc = new DriverController();
+                int result = dc.deleteDetails(d1);
+                if(result>0){
+                    JOptionPane.showMessageDialog(this,"Delete Success");
+                    DefaultTableModel model1 = (DefaultTableModel) tblDriver.getModel();
+                    model1.setRowCount(0);
+                    table();
+
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
             }
-        } catch (Exception e) {
-            // TODO: handle exception
+
         }
-        Driver addDriverDetails = new Driver(0,publishLeave, publishGoing, convertedDate, publishTrunk, Integer.parseInt(publishSeat), Integer.parseInt(publishPrice),null,phone,email);
-        DriverController dc = new DriverController();
-        int result = dc.insertDriverDetails(addDriverDetails);
-        if (result > 0) {
-            JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            table();
-            
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
+        int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        String rideStatus= model.getValueAt(i,7 ).toString();
+        if(rideStatus.equals("Active")||rideStatus.equals("Complete")){
+            JOptionPane.showMessageDialog(this,"The ride can't be viewed","Error",2);
+
+        }else{
+
+            try {
+                //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
+                Driver d1 = new Driver(id, null, null, null, null, 0, 0,null,null,null);
+                DriverController dc = new DriverController();
+                ResultSet result  = dc.selectDetails(d1);
+                while(result.next()){
+                    String dId  = result.getString(1);
+                    String dLeave = result.getString(2);
+                    String dGoing = result.getString(3);
+                    String dDate = result.getString(4);
+                    String dTrunk = result.getString(5);
+                    String seat = result.getString(6);
+                    String price = result.getString(7);
+                    // JOptionPane.showMessageDialog(null,dLeave+" " +dGoing +""+ dDate+""+dTrunk+ ""+ seat);
+                    Leavebox.setSelectedItem(dLeave);
+                    Goingbox.setSelectedItem(dGoing);
+                    // Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dDate);
+                    java.util.Date dob = new SimpleDateFormat("yyyy-MM-dd").parse(dDate);
+                    Datebox.setDate(dob);
+                    Trunkbox.setSelectedItem(dTrunk);
+                    Seatbox.setSelectedItem(seat);
+                    Pricebox.setText(price);
+                    idBox.setText(dId);
+                    editBtn.setEnabled(true);
+                }
+
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
-        else {
-            JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        dispose();
-        new Profile().setVisible(true); 
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
-
-    private void jMenuBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBackActionPerformed
-        // TODO add your handling code here:
-         dispose();
-        new Profile().setVisible(true); 
-        
-        
-    }//GEN-LAST:event_jMenuBackActionPerformed
-
-    private void jMenuKYCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuKYCActionPerformed
-       dispose();
-       new KYC().setVisible(true);
-    }//GEN-LAST:event_jMenuKYCActionPerformed
-
-    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
-dispose();
-        new Profile().setVisible(true);  // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuBackMouseClicked
-
-    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new KYC().setVisible(true);
-    }//GEN-LAST:event_jMenuKYCMouseClicked
+    }//GEN-LAST:event_viewBtnActionPerformed
 
     private void completeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeBtnActionPerformed
         // TODO add your handling code here:
@@ -996,10 +960,10 @@ dispose();
                 // JOptionPane.showMessageDialog(this, "Accepted");
                 table();
             }
-            
+
         }else{
             JOptionPane.showMessageDialog(this,"The ride is not active","Error",2);
-            
+
         }
         // if()
     }//GEN-LAST:event_completeBtnActionPerformed
@@ -1018,17 +982,39 @@ dispose();
             DriverController dc = new DriverController();
             int result = dc.Active(d1);
             if(result>0){
-            // JOptionPane.showMessageDialog(this, "Accepted");
-            table();
+                // JOptionPane.showMessageDialog(this, "Accepted");
+                table();
+            }
         }
-    }
     }//GEN-LAST:event_activeBtnActionPerformed
 
-    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new BankDetails().setVisible(true);
-    }//GEN-LAST:event_jMenuBankMouseClicked
+    private void declineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declineBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null, null,null);
+        DriverController dc = new DriverController();
+
+        int result = dc.Decline(d1);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "Declined");
+            displayBook();
+
+        }
+    }//GEN-LAST:event_declineBtnActionPerformed
+
+    private void acceptBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        int result = dc.Accept(d1);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "Accepted");
+            displayBook();
+        }
+    }//GEN-LAST:event_acceptBtnActionPerformed
 
     /**
      * @param evt
@@ -1169,6 +1155,7 @@ dispose();
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelLogoTop1;
     private javax.swing.JLabel labelLogoTop3;
