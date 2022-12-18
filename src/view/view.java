@@ -1,38 +1,95 @@
 package view;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import javax.swing.JOptionPane;
-
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.io.File;
+import java.net.URI;
+import java.util.Properties;
 // import com.mysql.cj.jdbc.Driver;
 
-import controller.DriverController;
-import controller.UserController;
-import model.Driver;
-import model.User;
 
 public class view {
-    public static void main(String[] args) {
-        // User u1 = new User("1","1","1","1","1","1","1","1","1","1","3", "123", "1", "1", "123", null, null);
-        try {
-    //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
-            Driver d1 = new Driver(3, null, null, null, null, 0, 0);
-            DriverController dc = new DriverController();
-            ResultSet result  = dc.selectDetails(d1);
-            while(result.next()){
-                String dLeave = result.getString(2);
-                String dGoing = result.getString(3);
-                String dDate = result.getString(4);
-                String dTrunk = result.getString(5);
-                String seat = result.getString(6);
-                // JOptionPane.showMessageDialog(null,dLeave+" " +dGoing +""+ dDate+""+dTrunk+ ""+ seat);
+    private String username;
+    private String password;
 
-            }
-                
+    private final Properties prop;
+    public view(String host, int port, String username, String password) {
+        prop = new Properties();
+        prop.put("mail.smtp.auth", true);
+        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.host", host);
+        prop.put("mail.smtp.port", port);
+        prop.put("mail.smtp.ssl.trust", host);
+
+        this.username = username;
+        this.password = password;
+    }
+
+    public view(String host, int port) {
+        prop = new Properties();
+        prop.put("mail.smtp.host", host);
+        prop.put("mail.smtp.port", port);
+    }
+
+    public static void main(String... args) {
+        try {
+            new view("smtp.mailtrap.io", 25, "khadkacrystal23@gmail.com", "khadka430")
+              .sendMail();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public void sendMail() throws Exception {
+
+        Session session = Session.getInstance(prop, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        Message message = new MimeMessage(session);
+        message.setFrom(new InternetAddress("from@gmail.com"));
+        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("to@gmail.com"));
+        message.setSubject("Mail Subject");
+
+        String msg = "This is my first email using JavaMailer";
+
+        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+        mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+
+        String msgStyled = "This is my <b style='color:red;'>bold-red email</b> using JavaMailer";
+        MimeBodyPart mimeBodyPartWithStyledText = new MimeBodyPart();
+        mimeBodyPartWithStyledText.setContent(msgStyled, "text/html; charset=utf-8");
+
+        MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+
+        attachmentBodyPart.attachFile(getFile());
+
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(mimeBodyPart);
+        multipart.addBodyPart(mimeBodyPartWithStyledText);
+        multipart.addBodyPart(attachmentBodyPart);
+
+        message.setContent(multipart);
+
+        Transport.send(message);
+    }
+
+    private File getFile() throws Exception {
+        URI uri = this.getClass()
+          .getClassLoader()
+          .getResource("attachment.txt")
+          .toURI();
+        return new File(uri);
     }
 }
