@@ -252,6 +252,11 @@ public class KYC extends javax.swing.JFrame {
         jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuExit.setOpaque(true);
         jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuExitMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
@@ -351,9 +356,14 @@ public class KYC extends javax.swing.JFrame {
         
     }//GEN-LAST:event_buttonSubmitCitizenshipMouseClicked
 
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuExitMouseClicked
+
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
         
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }                                          
 
     /**
      * @param args the command line arguments
