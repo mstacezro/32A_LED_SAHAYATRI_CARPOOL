@@ -19,6 +19,21 @@ public class Driver {
     private int dSeatAvailable;
     private int dPrice;
     private String email;
+    private String phone;
+    private String dEmail;
+
+    public Driver(int dSN, String dLeavePlace, String dGoingTo, String dDate, String dTrunkSpace, int dSeatAvailable, int dPrice, String email, String phone, String dEmail) {
+        this.dSN = dSN;
+        this.dLeavePlace = dLeavePlace;
+        this.dGoingTo = dGoingTo;
+        this.dDate = dDate;
+        this.dTrunkSpace = dTrunkSpace;
+        this.dSeatAvailable = dSeatAvailable;
+        this.dPrice = dPrice;
+        this.email = email;
+        this.phone = phone;
+        this.dEmail = dEmail;
+    }
 
     public int getDSN() {
         return this.dSN;
@@ -84,15 +99,20 @@ public class Driver {
         this.email = email;
     }
 
-    public Driver(int dSN, String dLeavePlace, String dGoingTo, String dDate, String dTrunkSpace, int dSeatAvailable, int dPrice, String email) {
-        this.dSN = dSN;
-        this.dLeavePlace = dLeavePlace;
-        this.dGoingTo = dGoingTo;
-        this.dDate = dDate;
-        this.dTrunkSpace = dTrunkSpace;
-        this.dSeatAvailable = dSeatAvailable;
-        this.dPrice = dPrice;
-        this.email = email;
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDEmail() {
+        return this.dEmail;
+    }
+
+    public void setDEmail(String dEmail) {
+        this.dEmail = dEmail;
     }
 
 }
