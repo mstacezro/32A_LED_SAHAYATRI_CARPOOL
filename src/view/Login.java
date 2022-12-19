@@ -88,8 +88,6 @@ public class Login extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfieldEmailActionPerformed(evt);
             }
-
-            
         });
 
         textfieldPassword.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -134,6 +132,11 @@ public class Login extends javax.swing.JFrame {
         buttonLoginDriver.setForeground(new java.awt.Color(255, 255, 255));
         buttonLoginDriver.setText("LOGIN as Driver");
         buttonLoginDriver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buttonLoginDriver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonLoginDriverMouseClicked(evt);
+            }
+        });
         buttonLoginDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonLoginDriverActionPerformed(evt);
@@ -377,6 +380,12 @@ public class Login extends javax.swing.JFrame {
         dispose();
         new ForgetPassword().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_buttonRegister1ActionPerformed
+
+    private void buttonLoginDriverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonLoginDriverMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new seat().setVisible(true);
+    }//GEN-LAST:event_buttonLoginDriverMouseClicked
 
     /**
      * @param args the command line arguments

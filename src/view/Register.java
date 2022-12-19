@@ -834,12 +834,12 @@ public class Register extends javax.swing.JFrame {
         int result = sc.insertDetails(u1);
         JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         //dispose();
-        /*if(result>0){
-            JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
+       // if(result>0){
+         //   JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        //}else{
+          //  JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
 
-        }*/
+        //}
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
