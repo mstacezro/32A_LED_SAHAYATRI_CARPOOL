@@ -104,7 +104,8 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
         jMenuBank = new javax.swing.JMenu();
-        jMenuContact = new javax.swing.JMenu();
+        contactMenu = new javax.swing.JMenu();
+        MenuAboutUs = new javax.swing.JCheckBoxMenuItem();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
@@ -723,15 +724,31 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenu.add(jMenuBank);
 
-        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenuContact.setText("Contacts");
-        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuContact.setOpaque(true);
-        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuContact);
+        contactMenu.setBackground(new java.awt.Color(102, 142, 57));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
+        contactMenu.setText("Help");
+        contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
+        contactMenu.setOpaque(true);
+        contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        MenuAboutUs.setBackground(new java.awt.Color(102, 142, 57));
+        MenuAboutUs.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        MenuAboutUs.setForeground(new java.awt.Color(255, 255, 255));
+        MenuAboutUs.setText("About Us");
+        MenuAboutUs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MenuAboutUs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
+        MenuAboutUs.setOpaque(true);
+        MenuAboutUs.setPreferredSize(new java.awt.Dimension(200, 52));
+        MenuAboutUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAboutUsActionPerformed(evt);
+            }
+        });
+        contactMenu.add(MenuAboutUs);
+
+        jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
         jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -764,7 +781,7 @@ public class EditProfile extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1685, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1686, Short.MAX_VALUE)
         );
 
         pack();
@@ -986,6 +1003,10 @@ public class EditProfile extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Updated Successfully");
         }
     }//GEN-LAST:event_buttonUpdateActionPerformed
+
+    private void MenuAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAboutUsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuAboutUsActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1081,17 +1102,18 @@ public class EditProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem MenuAboutUs;
     private javax.swing.JTextField MiddleName;
     private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonUpdate;
     private javax.swing.JButton buttonUploadProfilePic;
+    private javax.swing.JMenu contactMenu;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuBank;
-    private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenuItem jMenuItemProfile;
