@@ -34,7 +34,12 @@ public class AboutUs extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
         panelProfile.setAutoscrolls(true);
@@ -62,6 +67,8 @@ public class AboutUs extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -72,6 +79,7 @@ public class AboutUs extends javax.swing.JFrame {
         jTextArea2.setWrapStyleWord(true);
         jTextArea2.setAlignmentX(1.0F);
         jTextArea2.setAlignmentY(1.0F);
+        jTextArea2.setAutoscrolls(false);
         jTextArea2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -87,17 +95,15 @@ public class AboutUs extends javax.swing.JFrame {
                         .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelProfileLayout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jLabel1)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panelProfileLayout.createSequentialGroup()
-                .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelProfileLayout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jButton1))
+                        .addComponent(jLabel1))
                     .addGroup(panelProfileLayout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelProfileLayout.createSequentialGroup()
+                .addGap(254, 254, 254)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +116,7 @@ public class AboutUs extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -139,6 +145,11 @@ public class AboutUs extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
