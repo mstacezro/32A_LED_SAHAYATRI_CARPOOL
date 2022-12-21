@@ -732,6 +732,11 @@ public class EditProfile extends javax.swing.JFrame {
         contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
         contactMenu.setOpaque(true);
         contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+        contactMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contactMenuMouseClicked(evt);
+            }
+        });
 
         MenuAboutUs.setBackground(new java.awt.Color(102, 142, 57));
         MenuAboutUs.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -741,6 +746,11 @@ public class EditProfile extends javax.swing.JFrame {
         MenuAboutUs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
         MenuAboutUs.setOpaque(true);
         MenuAboutUs.setPreferredSize(new java.awt.Dimension(200, 52));
+        MenuAboutUs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuAboutUsMouseClicked(evt);
+            }
+        });
         MenuAboutUs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuAboutUsActionPerformed(evt);
@@ -1007,6 +1017,16 @@ public class EditProfile extends javax.swing.JFrame {
     private void MenuAboutUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAboutUsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuAboutUsActionPerformed
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void MenuAboutUsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuAboutUsMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_MenuAboutUsMouseClicked
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
