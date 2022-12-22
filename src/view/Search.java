@@ -6,6 +6,7 @@ package view;
 
 import controller.DriverController;
 import controller.UserController;
+import controller.favoriteController;
 
 import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
@@ -20,6 +21,7 @@ import javax.swing.table.TableModel;
 // import com.mysql.cj.protocol.ResultsetRow;
 
 import model.Driver;
+import model.Favorite;
 
 /**
  *
@@ -737,7 +739,28 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelBtnActionPerformed
 
     private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
-        // TODO add your handling code here:
+int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        try {
+            ResultSet result = dc.select(d1);
+            while(result.next()){
+                String email = result.getString(1);
+                String dEmail = result.getString(2);
+                Favorite f1 = new Favorite(email, dEmail, 0);
+                favoriteController fc=  new favoriteController();
+                int rs = fc.favorite(f1);
+                if(rs>0){
+                    JOptionPane.showMessageDialog(this, "favorite added", "Success", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }//GEN-LAST:event_favoriteBtnActionPerformed
     
     public void table(){
