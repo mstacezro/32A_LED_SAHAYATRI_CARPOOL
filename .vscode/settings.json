@@ -7,6 +7,9 @@
         "c:\\Users\\user\\Desktop\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar",
         "c:\\Users\\user\\Downloads\\jcalendar-1.4 (1).jar",
         "c:\\Users\\Kehar SR\\Desktop\\mysql-connector-j-8.0.31.jar",
-        "c:\\Users\\LEGION\\Desktop\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar"
-    ]
+        "c:\\Users\\LEGION\\Desktop\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30\\mysql-connector-java-8.0.30.jar",
+        "c:\\Users\\Kehar SR\\Desktop\\mysql-connector-j-8.0.31.jar"
+    
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

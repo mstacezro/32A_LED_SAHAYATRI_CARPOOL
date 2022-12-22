@@ -1047,12 +1047,13 @@ public class EditProfile extends javax.swing.JFrame {
 
     private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
         // TODO add your handling code here:
+        dispose();
         
     }//GEN-LAST:event_jMenuExitMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
         // TODO add your handling code here:
-        sasadasdada;
+        
     }//GEN-LAST:event_jMenuLogoutMouseClicked
     public void view(){
         try {
