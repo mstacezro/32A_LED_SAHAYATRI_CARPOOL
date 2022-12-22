@@ -348,6 +348,8 @@ public class Search extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(rideTable);
 
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -355,6 +357,8 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
+        favoriteBtn.setBackground(new java.awt.Color(0, 255, 51));
+        favoriteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         favoriteBtn.setText("Favorite");
         favoriteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
