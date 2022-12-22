@@ -425,6 +425,11 @@ public class Profile extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBackMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuBack);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
@@ -529,6 +534,11 @@ public class Profile extends javax.swing.JFrame {
         dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuBackMouseClicked
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
