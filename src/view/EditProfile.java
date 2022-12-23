@@ -1083,7 +1083,9 @@ public class EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuExitMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
-        // TODO add your handling code here:
+        new UserController().changeStatus(null);
+        dispose();
+        new Login().setVisible(true);
         
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
