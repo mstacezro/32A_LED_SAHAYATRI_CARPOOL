@@ -742,10 +742,20 @@ public class EditProfile extends javax.swing.JFrame {
         });
         contactMenu.add(AboutUsMenuItem);
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
             }
         });
         contactMenu.add(jMenuItem2);
@@ -1055,6 +1065,11 @@ public class EditProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
