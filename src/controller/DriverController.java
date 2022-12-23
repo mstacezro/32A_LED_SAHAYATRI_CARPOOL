@@ -73,6 +73,14 @@ public class DriverController {
         return result;
 
     }
+    public int deleteallDetails() {
+        
+        String query = "delete from driver_table join on user_table.email=driver_table.driverEmail where user_table.status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+
+    }
 
     public ResultSet searchDetails(Driver driver) {
 
@@ -142,5 +150,14 @@ public class DriverController {
         int result = dbConnection.manipulate(query);
         return result;
     }
+    public int cancelAllRide(){
+        
+        String query = "update driver_table join user_table on driver_email=user_table.email set email='"+""+"' where user_table.status='"+"active"+"' ";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    
 
 }
