@@ -102,6 +102,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile = new javax.swing.JMenu();
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         contactMenu = new javax.swing.JMenu();
         AboutUsMenuItem = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -710,6 +711,11 @@ public class EditProfile extends javax.swing.JFrame {
         });
         jMenu.add(jMenuKYC);
 
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(200, 6));
+        jMenu.add(jMenu1);
+
         contactMenu.setBackground(new java.awt.Color(102, 142, 57));
         contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
@@ -748,7 +754,7 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
         jMenuItem2.setText("Terms & Conditions");
         jMenuItem2.setOpaque(true);
-        jMenuItem2.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuItem2MouseClicked(evt);
@@ -1195,6 +1201,7 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JMenuItem jMenuItem1;
