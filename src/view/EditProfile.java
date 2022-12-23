@@ -105,6 +105,7 @@ public class EditProfile extends javax.swing.JFrame {
         contactMenu = new javax.swing.JMenu();
         AboutUsMenuItem = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
@@ -742,13 +743,37 @@ public class EditProfile extends javax.swing.JFrame {
         });
         contactMenu.add(AboutUsMenuItem);
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuItem2MouseClicked(evt);
             }
         });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem1);
 
         jMenu.add(contactMenu);
 
@@ -1055,6 +1080,16 @@ public class EditProfile extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1162,6 +1197,7 @@ public class EditProfile extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenu jMenuKYC;
