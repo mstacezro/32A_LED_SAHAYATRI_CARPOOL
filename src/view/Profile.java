@@ -604,6 +604,8 @@ public class Profile extends javax.swing.JFrame {
 
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new EditProfile().setVisible(true);
     }//GEN-LAST:event_buttonUpdateActionPerformed
 
     private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
