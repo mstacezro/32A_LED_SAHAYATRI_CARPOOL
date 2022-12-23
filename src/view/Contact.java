@@ -31,6 +31,11 @@ public class Contact extends javax.swing.JPanel {
         labelWhiteHLine = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
         panelProfile.setAutoscrolls(true);
@@ -58,6 +63,36 @@ public class Contact extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(102, 142, 57));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Phone No");
+        jLabel2.setOpaque(true);
+
+        jLabel3.setBackground(new java.awt.Color(102, 142, 57));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Email");
+        jLabel3.setOpaque(true);
+
+        jLabel4.setBackground(new java.awt.Color(102, 142, 57));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Address");
+        jLabel4.setOpaque(true);
+
+        jLabel5.setBackground(new java.awt.Color(102, 142, 57));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Website");
+        jLabel5.setOpaque(true);
+
+        jLabel6.setBackground(new java.awt.Color(102, 142, 57));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Address");
+        jLabel6.setOpaque(true);
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -73,8 +108,18 @@ public class Contact extends javax.swing.JPanel {
                         .addComponent(jLabel1)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addGap(254, 254, 254)
-                .addComponent(jButton1)
+                .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jButton1))
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelProfileLayout.setVerticalGroup(
@@ -86,7 +131,17 @@ public class Contact extends javax.swing.JPanel {
                 .addComponent(labelWhiteHLine, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(343, 343, 343)
+                .addGap(86, 86, 86)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(117, 117, 117)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -117,6 +172,11 @@ public class Contact extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel labelLogoTop;
     private javax.swing.JLabel labelWhiteHLine;
     private javax.swing.JPanel panelProfile;
