@@ -73,6 +73,8 @@ public class Search extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         rideTable = new javax.swing.JTable();
+        cancelBtn = new javax.swing.JButton();
+        favoriteBtn = new javax.swing.JButton();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
@@ -346,6 +348,24 @@ public class Search extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(rideTable);
 
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cancelBtn.setText("Cancel");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
+
+        favoriteBtn.setBackground(new java.awt.Color(0, 255, 51));
+        favoriteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        favoriteBtn.setText("Favorite");
+        favoriteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoriteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelEditProfile3Layout = new javax.swing.GroupLayout(panelEditProfile3);
         panelEditProfile3.setLayout(panelEditProfile3Layout);
         panelEditProfile3Layout.setHorizontalGroup(
@@ -358,7 +378,11 @@ public class Search extends javax.swing.JFrame {
                         .addGap(329, 329, 329))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(353, 353, 353))))
+                        .addGap(88, 88, 88)
+                        .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(favoriteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84))))
             .addGroup(panelEditProfile3Layout.createSequentialGroup()
                 .addComponent(labelLogoTop3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -374,7 +398,12 @@ public class Search extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(favoriteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(1173, Short.MAX_VALUE))
@@ -696,6 +725,24 @@ public class Search extends javax.swing.JFrame {
     private void Goingbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Goingbox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Goingbox1ActionPerformed
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        int result = dc.cancelRide(d1);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "RIde canceled", "Success", JOptionPane.PLAIN_MESSAGE);
+            ride();
+        }
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_favoriteBtnActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -787,6 +834,8 @@ public class Search extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Datebox1;
     private javax.swing.JComboBox<String> Goingbox1;
     private javax.swing.JComboBox<String> Leavebox1;
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JButton favoriteBtn;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

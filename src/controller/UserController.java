@@ -120,4 +120,12 @@ public class UserController {
         ResultSet result = dbConnection.retrieve(selectdetails);
         return result;
     }
+
+    public int deleteAccount(){
+        String deleteQuery = "delete from user_table where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(deleteQuery);
+        return result;
+    }
+
 }
