@@ -150,7 +150,7 @@ public class ContactMain extends javax.swing.JFrame {
         jLabel14.setBackground(new java.awt.Color(102, 142, 57));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Biratnagar");
+        jLabel14.setText("Janakpur");
         jLabel14.setOpaque(true);
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
