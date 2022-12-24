@@ -76,6 +76,9 @@ public class Search extends javax.swing.JFrame {
         rideTable = new javax.swing.JTable();
         cancelBtn = new javax.swing.JButton();
         favoriteBtn = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
@@ -449,6 +452,23 @@ public class Search extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("MY RIDE", tabRider);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        jTabbedPane2.addTab("tab1", jScrollPane4);
+
+        jTabbedPane1.addTab("FAVOURITE", jTabbedPane2);
 
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
@@ -894,7 +914,10 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelWhiteHLine3;
