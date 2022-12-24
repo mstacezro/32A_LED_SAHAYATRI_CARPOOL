@@ -82,13 +82,15 @@ public class Search extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
-        jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
-        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
-        jMenuBank = new javax.swing.JMenu();
-        jMenuContact = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        contactMenu = new javax.swing.JMenu();
+        AboutUsMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
@@ -489,17 +491,6 @@ public class Search extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelProfile);
 
-        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
-        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-        jMenuBack.setText("BACK");
-        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuBack.setOpaque(true);
-        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuBack);
-
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
         jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
@@ -509,20 +500,18 @@ public class Search extends javax.swing.JFrame {
         jMenuProfile.setOpaque(true);
         jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
 
-        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
-        jMenuItemProfile.setText("View Profile");
-        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuItemProfile.setOpaque(true);
-        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuItem3.setText("View Profile");
+        jMenuItem3.setOpaque(true);
+        jMenuItem3.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemProfileActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenuProfile.add(jMenuItemProfile);
+        jMenuProfile.add(jMenuItem3);
 
         jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
         jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -555,29 +544,77 @@ public class Search extends javax.swing.JFrame {
         });
         jMenu.add(jMenuKYC);
 
-        jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/bankIcon.png"))); // NOI18N
-        jMenuBank.setText("Bank Details");
-        jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBank.setOpaque(true);
-        jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuBank.addMouseListener(new java.awt.event.MouseAdapter() {
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(400, 6));
+        jMenu.add(jMenu1);
+
+        contactMenu.setBackground(new java.awt.Color(102, 142, 57));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
+        contactMenu.setText("Help");
+        contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
+        contactMenu.setOpaque(true);
+        contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+        contactMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuBankMouseClicked(evt);
+                contactMenuMouseClicked(evt);
             }
         });
-        jMenu.add(jMenuBank);
 
-        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenuContact.setText("Contacts");
-        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuContact.setOpaque(true);
-        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuContact);
+        AboutUsMenuItem.setBackground(new java.awt.Color(102, 142, 57));
+        AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
+        AboutUsMenuItem.setText("About Us");
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setOpaque(true);
+        AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
+        AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutUsMenuItemMouseClicked(evt);
+            }
+        });
+        AboutUsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutUsMenuItemActionPerformed(evt);
+            }
+        });
+        contactMenu.add(AboutUsMenuItem);
+
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem1);
+
+        jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
         jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -586,6 +623,11 @@ public class Search extends javax.swing.JFrame {
         jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuLogout.setOpaque(true);
         jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuLogoutMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
@@ -599,11 +641,6 @@ public class Search extends javax.swing.JFrame {
         jMenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuExitMouseClicked(evt);
-            }
-        });
-        jMenuExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuExitActionPerformed(evt);
             }
         });
         jMenu.add(jMenuExit);
@@ -758,12 +795,6 @@ int i = rideTable.getSelectedRow();
         new Profile().setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new KYC().setVisible(true);
-    }//GEN-LAST:event_jMenuKYCMouseClicked
-
     private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_AboutUsMenuItemMouseClicked
@@ -787,38 +818,49 @@ int i = rideTable.getSelectedRow();
         new Login().setVisible(true);
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        // TODO add your handling code here:
+        UserController uc = new UserController();
+        DriverController dc=  new DriverController();
+        dc.cancelAllRide();
+        dc.deleteallDetails();
+        int result = uc.deleteAccount();
+        if(result>0){
+            JOptionPane.showMessageDialog(null, "Account Deleted");
+            dispose();
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(this,"Do you want to exit?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
+
         if(response == JOptionPane.YES_OPTION){
             new UserController().changeStatus(null);
             dispose();
         }
         else if(response == JOptionPane.NO_OPTION){
-           return;
-            
+            return;
+
         }
     }//GEN-LAST:event_jMenuExitMouseClicked
-
-    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-        // TODO add your handling code here:
-        UserController uc = new UserController();
-            DriverController dc=  new DriverController();
-            dc.cancelAllRide();
-            dc.deleteallDetails();
-            int result = uc.deleteAccount();
-            if(result>0){
-                JOptionPane.showMessageDialog(null, "Account Deleted");
-                dispose();
-                new Login().setVisible(true);
-            }
-        
-    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
-
-    private void jMenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuExitActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -907,10 +949,12 @@ int i = rideTable.getSelectedRow();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AboutUsMenuItem;
     private com.toedter.calendar.JDateChooser Datebox1;
     private javax.swing.JComboBox<String> Goingbox1;
     private javax.swing.JComboBox<String> Leavebox1;
     private javax.swing.JButton cancelBtn;
+    private javax.swing.JMenu contactMenu;
     private javax.swing.JButton favoriteBtn;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -918,12 +962,12 @@ int i = rideTable.getSelectedRow();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenuBack;
-    private javax.swing.JMenu jMenuBank;
-    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItemDelete;
-    private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuLogout;
     private javax.swing.JMenu jMenuProfile;
