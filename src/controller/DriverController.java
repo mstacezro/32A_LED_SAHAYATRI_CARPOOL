@@ -73,6 +73,14 @@ public class DriverController {
         return result;
 
     }
+    public int deleteallDetails() {
+        
+        String query = "delete from driver_table join on user_table.email=driver_table.driverEmail where user_table.status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+
+    }
 
     public ResultSet searchDetails(Driver driver) {
 
@@ -135,6 +143,15 @@ public class DriverController {
         return result;
     }
 
+    public ResultSet select(Driver driver){
+        int dID = driver.getDSN();
+        String selectQuery = "select email,driverEmail from driver_table where dSN='"+dID+"'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+
+        return result;
+    }
+
     public int cancelRide(Driver driver){
         int id = driver.getDSN();
         String query = "update driver_table set email='"+""+"' where dSN='"+id+"'";
@@ -142,5 +159,14 @@ public class DriverController {
         int result = dbConnection.manipulate(query);
         return result;
     }
+    public int cancelAllRide(){
+        
+        String query = "update driver_table join user_table on driver_email=user_table.email set email='"+""+"' where user_table.status='"+"active"+"' ";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(query);
+        return result;
+    }
+
+    
 
 }

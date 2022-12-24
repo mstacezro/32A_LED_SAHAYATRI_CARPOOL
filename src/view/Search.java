@@ -6,8 +6,10 @@ package view;
 
 import controller.DriverController;
 import controller.UserController;
+import controller.favoriteController;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import javax.swing.table.TableModel;
 // import com.mysql.cj.protocol.ResultsetRow;
 
 import model.Driver;
+import model.Favorite;
 
 /**
  *
@@ -75,18 +78,21 @@ public class Search extends javax.swing.JFrame {
         rideTable = new javax.swing.JTable();
         cancelBtn = new javax.swing.JButton();
         favoriteBtn = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
-        jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
-        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
-        jMenuBank = new javax.swing.JMenu();
-        jMenuContact = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        contactMenu = new javax.swing.JMenu();
+        AboutUsMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -112,12 +118,18 @@ public class Search extends javax.swing.JFrame {
         panelEditProfile2.setMaximumSize(new java.awt.Dimension(1145, 895));
         panelEditProfile2.setName(""); // NOI18N
 
+        Leavebox1.setEditable(true);
         Leavebox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
+        Leavebox1.setMinimumSize(new java.awt.Dimension(100, 22));
+        Leavebox1.setPreferredSize(new java.awt.Dimension(100, 22));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("Leaving from ...");
 
+        Goingbox1.setEditable(true);
         Goingbox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
+        Goingbox1.setMinimumSize(new java.awt.Dimension(100, 22));
+        Goingbox1.setPreferredSize(new java.awt.Dimension(100, 22));
         Goingbox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Goingbox1ActionPerformed(evt);
@@ -146,25 +158,22 @@ public class Search extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                        .addComponent(Leavebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Leavebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Goingbox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Datebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
+                    .addComponent(Goingbox1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Datebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -175,16 +184,16 @@ public class Search extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(searchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel14)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Datebox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Leavebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Goingbox1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(Goingbox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
@@ -348,6 +357,8 @@ public class Search extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(rideTable);
 
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -355,6 +366,8 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
+        favoriteBtn.setBackground(new java.awt.Color(0, 255, 51));
+        favoriteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         favoriteBtn.setText("Favorite");
         favoriteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -445,6 +458,23 @@ public class Search extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("MY RIDE", tabRider);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        jTabbedPane2.addTab("tab1", jScrollPane4);
+
+        jTabbedPane1.addTab("FAVOURITE", jTabbedPane2);
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -464,17 +494,6 @@ public class Search extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelProfile);
 
-        jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
-        jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
-        jMenuBack.setText("BACK");
-        jMenuBack.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuBack.setOpaque(true);
-        jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuBack);
-
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
         jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
@@ -484,20 +503,18 @@ public class Search extends javax.swing.JFrame {
         jMenuProfile.setOpaque(true);
         jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
 
-        jMenuItemProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuItemProfile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jMenuItemProfile.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewProfile.png"))); // NOI18N
-        jMenuItemProfile.setText("View Profile");
-        jMenuItemProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuItemProfile.setOpaque(true);
-        jMenuItemProfile.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuItem3.setText("View Profile");
+        jMenuItem3.setOpaque(true);
+        jMenuItem3.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemProfileActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenuProfile.add(jMenuItemProfile);
+        jMenuProfile.add(jMenuItem3);
 
         jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
         jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -506,6 +523,11 @@ public class Search extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -525,29 +547,77 @@ public class Search extends javax.swing.JFrame {
         });
         jMenu.add(jMenuKYC);
 
-        jMenuBank.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/bankIcon.png"))); // NOI18N
-        jMenuBank.setText("Bank Details");
-        jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBank.setOpaque(true);
-        jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuBank.addMouseListener(new java.awt.event.MouseAdapter() {
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(400, 6));
+        jMenu.add(jMenu1);
+
+        contactMenu.setBackground(new java.awt.Color(102, 142, 57));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
+        contactMenu.setText("Help");
+        contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
+        contactMenu.setOpaque(true);
+        contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+        contactMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuBankMouseClicked(evt);
+                contactMenuMouseClicked(evt);
             }
         });
-        jMenu.add(jMenuBank);
 
-        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenuContact.setText("Contacts");
-        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuContact.setOpaque(true);
-        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuContact);
+        AboutUsMenuItem.setBackground(new java.awt.Color(102, 142, 57));
+        AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
+        AboutUsMenuItem.setText("About Us");
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setOpaque(true);
+        AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
+        AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutUsMenuItemMouseClicked(evt);
+            }
+        });
+        AboutUsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutUsMenuItemActionPerformed(evt);
+            }
+        });
+        contactMenu.add(AboutUsMenuItem);
+
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem1);
+
+        jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
         jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -556,6 +626,11 @@ public class Search extends javax.swing.JFrame {
         jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuLogout.setOpaque(true);
         jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuLogoutMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
@@ -566,28 +641,11 @@ public class Search extends javax.swing.JFrame {
         jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuExit.setOpaque(true);
         jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenuExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuExitActionPerformed(evt);
+        jMenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuExitMouseClicked(evt);
             }
         });
-
-        jMenuItem1.setText("Exit");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenuExit.add(jMenuItem1);
-
-        jMenuItem2.setText("LogOut");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenuExit.add(jMenuItem2);
-
         jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
@@ -612,46 +670,20 @@ public class Search extends javax.swing.JFrame {
 
     
 
+    protected void jMenuBankMouseClicked(MouseEvent evt) {
+    }
+
+    protected void jMenuItemProfileActionPerformed(ActionEvent evt) {
+    }
+
+    protected void jMenuExitActionPerformed(ActionEvent evt) {
+    }
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         // fetchDriverDetails();
         
     }//GEN-LAST:event_formWindowOpened
-
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODdispose();
-        dispose();
-        new Profile().setVisible(true);
-        
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
-
-    private void jMenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuExitActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        
-    }//GEN-LAST:event_jMenuExitActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new KYC().setVisible(true);
-    }//GEN-LAST:event_jMenuKYCMouseClicked
-
-    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new BankDetails().setVisible(true);
-    }//GEN-LAST:event_jMenuBankMouseClicked
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
 
@@ -737,8 +769,112 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelBtnActionPerformed
 
     private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
-        // TODO add your handling code here:
+int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        try {
+            ResultSet result = dc.select(d1);
+            while(result.next()){
+                String email = result.getString(1);
+                String dEmail = result.getString(2);
+                Favorite f1 = new Favorite(email, dEmail, 0);
+                favoriteController fc=  new favoriteController();
+                int rs = fc.favorite(f1);
+                if(rs>0){
+                    JOptionPane.showMessageDialog(this, "favorite added", "Success", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }//GEN-LAST:event_favoriteBtnActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        new Profile().setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutUsMenuItemMouseClicked
+
+    private void AboutUsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutUsMenuItemActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_AboutUsMenuItemActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+            JOptionPane.showMessageDialog(this, "Logged out successfully");
+            new Login().setVisible(true);
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
+        
+       
+    }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        // TODO add your handling code here:
+        UserController uc = new UserController();
+        DriverController dc=  new DriverController();
+        dc.cancelAllRide();
+        dc.deleteallDetails();
+        int result = uc.deleteAccount();
+        if(result>0){
+            JOptionPane.showMessageDialog(null, "Account Deleted");
+            dispose();
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to exit?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+    }//GEN-LAST:event_jMenuExitMouseClicked
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -827,10 +963,12 @@ public class Search extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AboutUsMenuItem;
     private com.toedter.calendar.JDateChooser Datebox1;
     private javax.swing.JComboBox<String> Goingbox1;
     private javax.swing.JComboBox<String> Leavebox1;
     private javax.swing.JButton cancelBtn;
+    private javax.swing.JMenu contactMenu;
     private javax.swing.JButton favoriteBtn;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -838,14 +976,12 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenuBack;
-    private javax.swing.JMenu jMenuBank;
-    private javax.swing.JMenu jMenuContact;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItemDelete;
-    private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenu jMenuKYC;
     private javax.swing.JMenu jMenuLogout;
     private javax.swing.JMenu jMenuProfile;
@@ -856,7 +992,10 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelWhiteHLine3;

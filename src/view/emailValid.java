@@ -2,26 +2,29 @@ package view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class emailValid {
-   private static final String regex = "^(.+)@(.+)$";
-   public static void main(String args[]) {
-       List<String> emails = new ArrayList<String>();
-       // valid email addresses
-       emails.add("alice@example.com");
-       emails.add("alice.bob@example.co.in");
-       emails.add("alice#@example.me.org");
-       //invalid email addresses
-       emails.add("alice.example.com");
-       emails.add("alice#example.com");
-       emails.add("@example.me.org");
-       //initialize the Pattern object
-       Pattern pattern = Pattern.compile(regex);
-       //searching for occurrences of regex
-       for (String value : emails) {
-           Matcher matcher = pattern.matcher(value);
-           System.out.println("The Email address " + value + " is " + (matcher.matches() ? "valid" : "invalid"));
-       }
+    
+    private static final String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}$";
+    public static boolean emailVerify(String email){
+    List<String> emails = new ArrayList<String>();
+    emails.add(email);
+    Pattern pattern = Pattern.compile(regex);
+    for(String values : emails){
+        Matcher matcher = pattern.matcher(values);
+        if(matcher.matches()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    return false;
    }
+
+   
+
+
+   
 }
