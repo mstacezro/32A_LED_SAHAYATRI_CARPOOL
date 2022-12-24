@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.DriverController;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -237,6 +238,11 @@ public class KYC extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -485,6 +491,20 @@ public class KYC extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jMenuExitMouseClicked
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        // TODO add your handling code here:
+            UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
 
   
         
