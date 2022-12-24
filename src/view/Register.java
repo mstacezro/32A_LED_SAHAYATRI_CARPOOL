@@ -5,7 +5,9 @@
 package view;
 
 import java.text.DateFormat;
+import java.text.Format;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 import javax.swing.JOptionPane;
 
@@ -883,11 +885,56 @@ public class Register extends javax.swing.JFrame {
         String citizen = textfieldCitizenship.getText();
         String driver_license = textfieldDriverLicense.getText();
         String exp_date = fmt.format(this.DateExpiry.getDate());
+
+        // Get today's date
+        LocalDate today = LocalDate.now();
+        Format formatter = new SimpleDateFormat("YYYY-MM-DD");
+        String todayString = formatter.format(today);
+
+
+        // if (username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||
+        // Check for empty fields
+
+        if (username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||gender.equals("")||dob.equals("")||nationality.equals("")||address.equals("")||email.equals("")||phone.equals("")||sq.equals("")||sq_ans.equals("")||citizen.equals("")||driver_license.equals("")||exp_date.equals("")) {
+            JOptionPane.showMessageDialog(this, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if(!emailValid.emailVerify(email)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if(!nameValid.nameVerify(fname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid first name", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if(!nameValid.nameVerify(mname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid middle name", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if(!nameValid.nameVerify(lname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid last name", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        else if(!phoneValid.phoneVerify(phone)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid phone number", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+       
+        else if(!pass.equals(repass)){
+            JOptionPane.showMessageDialog(this, "Passwords do not match", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        else{
+
+            User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
+            UserController sc  = new UserController();
+            int result = sc.insertDetails(u1);
+            JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            new Login().setVisible(true);
+        }
         // User u1 = new User(textfieldUsername)
-        User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
-        UserController sc  = new UserController();
-        int result = sc.insertDetails(u1);
-        JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         //dispose();
        // if(result>0){
          //   JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
