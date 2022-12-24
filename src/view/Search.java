@@ -816,9 +816,20 @@ int i = rideTable.getSelectedRow();
     }//GEN-LAST:event_contactMenuMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
-        new UserController().changeStatus(null);
-        dispose();
-        new Login().setVisible(true);
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+            JOptionPane.showMessageDialog(this, "Logged out successfully");
+            new Login().setVisible(true);
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
+        
+       
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
     private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
