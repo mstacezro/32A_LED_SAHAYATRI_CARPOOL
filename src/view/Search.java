@@ -108,7 +108,7 @@ public class Search extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(102, 142, 57));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setToolTipText("DRIVER");
-        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N color changed
 
         jPanel3.setBackground(new java.awt.Color(102, 142, 57));
 
