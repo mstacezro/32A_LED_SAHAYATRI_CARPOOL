@@ -1084,7 +1084,16 @@ public class EditProfile extends javax.swing.JFrame {
 
     private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
         // TODO add your handling code here:
-        dispose();
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to exit?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
         
     }//GEN-LAST:event_jMenuExitMouseClicked
 
