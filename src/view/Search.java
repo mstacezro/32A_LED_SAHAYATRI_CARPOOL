@@ -23,6 +23,7 @@ import javax.swing.table.TableModel;
 
 import model.Driver;
 import model.Favorite;
+import model.User;
 
 /**
  *
@@ -37,6 +38,7 @@ public class Search extends javax.swing.JFrame {
         initComponents();
         table();
         ride();
+        showFavorite();
     }
 
     /**
@@ -80,7 +82,7 @@ public class Search extends javax.swing.JFrame {
         favoriteBtn = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        favoriteTable = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
         jMenuProfile = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -458,18 +460,18 @@ public class Search extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("MY RIDE", tabRider);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        favoriteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Driver Name", "Driver Phone"
             }
         ));
-        jScrollPane4.setViewportView(jTable1);
+        jScrollPane4.setViewportView(favoriteTable);
 
         jTabbedPane2.addTab("tab1", jScrollPane4);
 
@@ -685,114 +687,6 @@ public class Search extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
-
-        String convertedDate;
-        String publishLeave = Leavebox1.getSelectedItem().toString();
-        String publishGoing = Goingbox1.getSelectedItem().toString();
-        String publishDate = (String) Datebox1.getDate().toString();
-        System.out.println(publishDate);
-        String day = publishDate.split(" ")[2];
-        String month = publishDate.split(" ")[1];
-        String year = publishDate.split(" ")[5];
-        String convertedMonth = convertMonthIntoString(month);
-        int resultHasDigit = convertMonthIntoString(month).length();
-        if (resultHasDigit == 1){
-            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
-        } else{
-            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
-        }
-        System.out.println(convertedDate);
-        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null,null,null);
-        DriverController dc = new DriverController();
-        ResultSet result = dc.searchDetails(d1);
-        try {
-            DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
-            model.setRowCount(0);
-            while(result.next()){
-                String SN = result.getString(1);
-                String Leave = result.getString(2);
-                String Going  = result.getString(3);
-                String date = result.getString(4);
-                String trunk = result.getString(5);
-                String seat = result.getString(6);
-                String price = result.getString(7);
-
-                // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
-                model.addRow(row);
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-
-        //
-    }//GEN-LAST:event_searchBtnActionPerformed
-
-    private void requestTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTextActionPerformed
-        ResultSet rs = new UserController().selectEmail();
-        int i = tblRIder.getSelectedRow();
-        TableModel model = tblRIder.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        try {
-            while(rs.next()){
-                String email = rs.getString(1);
-                Driver d1 = new Driver(id, null,null,null,null,0,0,email,null,null);
-                DriverController dc = new DriverController();
-                int result = dc.Request(d1);
-                if(result>0){
-                    JOptionPane.showMessageDialog(this, "Booked Success");
-                }
-
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-    }//GEN-LAST:event_requestTextActionPerformed
-
-    private void Goingbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Goingbox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Goingbox1ActionPerformed
-
-    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        int i = rideTable.getSelectedRow();
-        TableModel model = rideTable.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-
-        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
-        DriverController dc = new DriverController();
-        int result = dc.cancelRide(d1);
-        if(result>0){
-            JOptionPane.showMessageDialog(this, "RIde canceled", "Success", JOptionPane.PLAIN_MESSAGE);
-            ride();
-        }
-    }//GEN-LAST:event_cancelBtnActionPerformed
-
-    private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
-int i = rideTable.getSelectedRow();
-        TableModel model = rideTable.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-
-        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
-        DriverController dc = new DriverController();
-        try {
-            ResultSet result = dc.select(d1);
-            while(result.next()){
-                String email = result.getString(1);
-                String dEmail = result.getString(2);
-                Favorite f1 = new Favorite(email, dEmail, 0);
-                favoriteController fc=  new favoriteController();
-                int rs = fc.favorite(f1);
-                if(rs>0){
-                    JOptionPane.showMessageDialog(this, "favorite added", "Success", JOptionPane.INFORMATION_MESSAGE);
-                }
-
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-    }//GEN-LAST:event_favoriteBtnActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         new Profile().setVisible(true);
@@ -875,6 +769,117 @@ int i = rideTable.getSelectedRow();
 
         }
     }//GEN-LAST:event_jMenuExitMouseClicked
+
+    private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        try {
+            ResultSet result = dc.select(d1);
+            while(result.next()){
+                String email = result.getString(1);
+                String dEmail = result.getString(2);
+                Favorite f1 = new Favorite(dEmail, email, 0);
+                favoriteController fc=  new favoriteController();
+                int rs = fc.favorite(f1);
+                if(rs>0){
+                    JOptionPane.showMessageDialog(this, "favorite added", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    showFavorite();
+                }
+                
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_favoriteBtnActionPerformed
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        int result = dc.cancelRide(d1);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "RIde canceled", "Success", JOptionPane.PLAIN_MESSAGE);
+            ride();
+        }
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void requestTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTextActionPerformed
+        ResultSet rs = new UserController().selectEmail();
+        int i = tblRIder.getSelectedRow();
+        TableModel model = tblRIder.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        try {
+            while(rs.next()){
+                String email = rs.getString(1);
+                Driver d1 = new Driver(id, null,null,null,null,0,0,email,null,null);
+                DriverController dc = new DriverController();
+                int result = dc.Request(d1);
+                if(result>0){
+                    JOptionPane.showMessageDialog(this, "Booked Success");
+                    ride();
+                }
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_requestTextActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+
+        String convertedDate;
+        String publishLeave = Leavebox1.getSelectedItem().toString();
+        String publishGoing = Goingbox1.getSelectedItem().toString();
+        String publishDate = (String) Datebox1.getDate().toString();
+        System.out.println(publishDate);
+        String day = publishDate.split(" ")[2];
+        String month = publishDate.split(" ")[1];
+        String year = publishDate.split(" ")[5];
+        String convertedMonth = convertMonthIntoString(month);
+        int resultHasDigit = convertMonthIntoString(month).length();
+        if (resultHasDigit == 1){
+            convertedDate = String.format("%s-0%s-%s", year, convertedMonth, day);
+        } else{
+            convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
+        }
+        System.out.println(convertedDate);
+        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        ResultSet result = dc.searchDetails(d1);
+        try {
+            DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
+            model.setRowCount(0);
+            while(result.next()){
+                String SN = result.getString(1);
+                String Leave = result.getString(2);
+                String Going  = result.getString(3);
+                String date = result.getString(4);
+                String trunk = result.getString(5);
+                String seat = result.getString(6);
+                String price = result.getString(7);
+
+                // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
+                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        //
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void Goingbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Goingbox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Goingbox1ActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -927,6 +932,48 @@ int i = rideTable.getSelectedRow();
             // TODO: handle exception
         }
     }
+    public void showFavorite(){
+        try {
+            String email = null;
+
+            ResultSet rs1 = new UserController().selectEmail();
+            while(rs1.next()){
+                email = rs1.getString(1);
+
+            }
+            System.out.println(email);
+            Favorite f1= new Favorite(email, email, 0);
+            favoriteController fc = new favoriteController();
+            ResultSet result = fc.fetchFavorite(f1);
+            DefaultTableModel model = (DefaultTableModel) favoriteTable.getModel();
+            model.setRowCount(0);
+            while(result.next()){
+                String demail = result.getString(1);
+                System.out.println(demail);
+                // User u1 = 
+                User u1 = new User(null, null, null, null, null, null, null, null, null, null, demail,null, null, null, null, null, null) ;  
+            
+                ResultSet rs = new UserController().driverDetails(u1);
+                while(rs.next()){
+                    String fname= rs.getString(1);
+                    String mname = rs.getString(2);
+                    String lname = rs.getString(3);
+                    String phone = rs.getString(4);
+                    if(mname.equals("Middle Name")){
+                        mname = "";
+                    }
+                    String name = fname+" "+mname+" "+lname;
+                    
+                    
+                    Object[] row = {name,phone};
+                    model.addRow(row);
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e, getTitle(), ABORT);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -970,6 +1017,7 @@ int i = rideTable.getSelectedRow();
     private javax.swing.JButton cancelBtn;
     private javax.swing.JMenu contactMenu;
     private javax.swing.JButton favoriteBtn;
+    private javax.swing.JTable favoriteTable;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -995,7 +1043,6 @@ int i = rideTable.getSelectedRow();
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelWhiteHLine3;
