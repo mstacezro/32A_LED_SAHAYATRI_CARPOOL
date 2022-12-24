@@ -513,7 +513,9 @@ public class KYC extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuExitMouseClicked
 
     private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
             UserController uc = new UserController();
             DriverController dc=  new DriverController();
             dc.cancelAllRide();
@@ -524,6 +526,12 @@ public class KYC extends javax.swing.JFrame {
                 dispose();
                 new Login().setVisible(true);
             }
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+
     }//GEN-LAST:event_jMenuItemDeleteActionPerformed
 
   

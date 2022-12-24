@@ -672,6 +672,9 @@ public class Search extends javax.swing.JFrame {
 
     
 
+    protected void jMenuItemDeleteActionPerformed(ActionEvent evt) {
+    }
+
     protected void jMenuBankMouseClicked(MouseEvent evt) {
     }
 
@@ -725,20 +728,6 @@ public class Search extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jMenuLogoutMouseClicked
-
-    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-        // TODO add your handling code here:
-        UserController uc = new UserController();
-        DriverController dc=  new DriverController();
-        dc.cancelAllRide();
-        dc.deleteallDetails();
-        int result = uc.deleteAccount();
-        if(result>0){
-            JOptionPane.showMessageDialog(null, "Account Deleted");
-            dispose();
-            new Login().setVisible(true);
-        }
-    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
 
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
