@@ -818,6 +818,16 @@ int i = rideTable.getSelectedRow();
 
     private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
         // TODO add your handling code here:
+        UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
         
     }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     
