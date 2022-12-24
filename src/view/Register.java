@@ -887,9 +887,7 @@ public class Register extends javax.swing.JFrame {
         String exp_date = fmt.format(this.DateExpiry.getDate());
 
         // Get today's date
-        LocalDate today = LocalDate.now();
-        Format formatter = new SimpleDateFormat("YYYY-MM-DD");
-        String todayString = formatter.format(today);
+       
 
 
         // if (username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||
