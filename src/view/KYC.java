@@ -16,6 +16,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import controller.UserController;
 /**
  *
  * @author lenovo
@@ -51,10 +53,14 @@ public class KYC extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
+        jMenuProfile = new javax.swing.JMenu();
+        jMenuItemDelete = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        contactMenu = new javax.swing.JMenu();
+        AboutUsMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuBlank = new javax.swing.JMenu();
-        jMenuContact = new javax.swing.JMenu();
-        jMenuBlank1 = new javax.swing.JMenu();
+        jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -208,41 +214,118 @@ public class KYC extends javax.swing.JFrame {
         jMenuBack.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuBack.setOpaque(true);
         jMenuBack.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBackMouseClicked(evt);
+            }
+        });
+        jMenu.add(jMenuBack);
 
-        jMenuItem1.setText("back");
+        jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
+        jMenuProfile.setText("Profile");
+        jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuProfile.setMinimumSize(new java.awt.Dimension(200, 52));
+        jMenuProfile.setOpaque(true);
+        jMenuProfile.setPreferredSize(new java.awt.Dimension(200, 52));
+
+        jMenuItemDelete.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItemDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
+        jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
+        jMenuItemDelete.setText("Delete Account");
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setOpaque(true);
+        jMenuProfile.add(jMenuItemDelete);
+
+        jMenu.add(jMenuProfile);
+
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(400, 6));
+        jMenu.add(jMenu1);
+
+        contactMenu.setBackground(new java.awt.Color(102, 142, 57));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
+        contactMenu.setText("Help");
+        contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
+        contactMenu.setOpaque(true);
+        contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+        contactMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contactMenuMouseClicked(evt);
+            }
+        });
+
+        AboutUsMenuItem.setBackground(new java.awt.Color(102, 142, 57));
+        AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
+        AboutUsMenuItem.setText("About Us");
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setOpaque(true);
+        AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
+        AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutUsMenuItemMouseClicked(evt);
+            }
+        });
+        AboutUsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutUsMenuItemActionPerformed(evt);
+            }
+        });
+        contactMenu.add(AboutUsMenuItem);
+
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenuBack.add(jMenuItem1);
+        contactMenu.add(jMenuItem1);
 
-        jMenu.add(jMenuBack);
+        jMenu.add(contactMenu);
 
-        jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBlank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBlank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBlank.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuBlank.setOpaque(true);
-        jMenuBlank.setPreferredSize(new java.awt.Dimension(400, 52));
-        jMenu.add(jMenuBlank);
-
-        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenuContact.setText("Contacts");
-        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuContact.setOpaque(true);
-        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuContact);
-
-        jMenuBlank1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBlank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBlank1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBlank1.setOpaque(true);
-        jMenuBlank1.setPreferredSize(new java.awt.Dimension(400, 52));
-        jMenu.add(jMenuBlank1);
+        jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
+        jMenuLogout.setText("Logout");
+        jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuLogout.setOpaque(true);
+        jMenuLogout.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuLogoutMouseClicked(evt);
+            }
+        });
+        jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
         jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -252,6 +335,11 @@ public class KYC extends javax.swing.JFrame {
         jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuExit.setOpaque(true);
         jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuExitMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
@@ -351,9 +439,56 @@ public class KYC extends javax.swing.JFrame {
         
     }//GEN-LAST:event_buttonSubmitCitizenshipMouseClicked
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-        
+    private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuBackMouseClicked
+
+    private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_AboutUsMenuItemMouseClicked
+
+    private void AboutUsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutUsMenuItemActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_AboutUsMenuItemActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
+        new UserController().changeStatus(null);
+        dispose();
+        new Login().setVisible(true);
+
+    }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+
+    }//GEN-LAST:event_jMenuExitMouseClicked
+
+  
+        
+                                           
 
     /**
      * @param args the command line arguments
@@ -391,19 +526,23 @@ public class KYC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AboutUsMenuItem;
     private javax.swing.JButton buttonSubmitCitizenship;
     private javax.swing.JButton buttonSubmitCitizenship1;
     private javax.swing.JButton buttonUploadCitizenship;
     private javax.swing.JButton buttonUploadCitizenship1;
+    private javax.swing.JMenu contactMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
-    private javax.swing.JMenu jMenuBlank;
-    private javax.swing.JMenu jMenuBlank1;
-    private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItemDelete;
+    private javax.swing.JMenu jMenuLogout;
+    private javax.swing.JMenu jMenuProfile;
     private javax.swing.JLabel labelCarpoolLogo;
     private javax.swing.JLabel labelKYC;
     private javax.swing.JLabel labelWhiteLineDivider;

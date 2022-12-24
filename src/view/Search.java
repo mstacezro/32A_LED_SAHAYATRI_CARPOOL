@@ -8,6 +8,7 @@ import controller.DriverController;
 import controller.UserController;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class Search extends javax.swing.JFrame {
     public Search() {
         initComponents();
         table();
+        ride();
     }
 
     /**
@@ -44,6 +46,7 @@ public class Search extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         panelProfile = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -61,14 +64,21 @@ public class Search extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblRIder = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        labelLogoTop2 = new javax.swing.JLabel();
         labelWhiteHLine5 = new javax.swing.JLabel();
+        labelLogoTop2 = new javax.swing.JLabel();
         tabRider = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         panelEditProfile3 = new javax.swing.JPanel();
         labelLogoTop3 = new javax.swing.JLabel();
         labelWhiteHLine3 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        rideTable = new javax.swing.JTable();
+        cancelBtn = new javax.swing.JButton();
+        favoriteBtn = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
@@ -88,6 +98,8 @@ public class Search extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(2267, 800));
 
         panelProfile.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -110,6 +122,11 @@ public class Search extends javax.swing.JFrame {
         jLabel13.setText("Leaving from ...");
 
         Goingbox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Bhaktapur", "Lalitpur", "Pokhara", "Chitwan" }));
+        Goingbox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Goingbox1ActionPerformed(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("Going to ...");
@@ -145,7 +162,7 @@ public class Search extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(149, 149, 149)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Datebox1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -187,17 +204,17 @@ public class Search extends javax.swing.JFrame {
 
         tblRIder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "S.N.", "Leaving from ... ", "Going to ...", "Date", "Trunk Space", "No. of Passengers", "Price"
+                "S.N.", "Leaving from ... ", "Going to ...", "Driver Phone", "Date", "Trunk Space", "No. of Passengers", "Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -206,15 +223,6 @@ public class Search extends javax.swing.JFrame {
         });
         tblRIder.setPreferredSize(new java.awt.Dimension(525, 50));
         jScrollPane2.setViewportView(tblRIder);
-        if (tblRIder.getColumnModel().getColumnCount() > 0) {
-            tblRIder.getColumnModel().getColumn(0).setResizable(false);
-            tblRIder.getColumnModel().getColumn(1).setResizable(false);
-            tblRIder.getColumnModel().getColumn(2).setResizable(false);
-            tblRIder.getColumnModel().getColumn(3).setResizable(false);
-            tblRIder.getColumnModel().getColumn(4).setResizable(false);
-            tblRIder.getColumnModel().getColumn(5).setResizable(false);
-            tblRIder.getColumnModel().getColumn(6).setResizable(false);
-        }
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,35 +230,47 @@ public class Search extends javax.swing.JFrame {
         jLabel2.setText("SEARCH CARPOOL");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        labelWhiteHLine5.setBackground(new java.awt.Color(255, 255, 255));
+        labelWhiteHLine5.setOpaque(true);
+        labelWhiteHLine5.setPreferredSize(new java.awt.Dimension(4, 20));
+
         javax.swing.GroupLayout panelEditProfile2Layout = new javax.swing.GroupLayout(panelEditProfile2);
         panelEditProfile2.setLayout(panelEditProfile2Layout);
         panelEditProfile2Layout.setHorizontalGroup(
             panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelEditProfile2Layout.createSequentialGroup()
+                        .addGap(1108, 1108, 1108)
+                        .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 60, Short.MAX_VALUE))
             .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelEditProfile2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelEditProfile2Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelEditProfile2Layout.createSequentialGroup()
+                        .addGap(392, 392, 392)
+                        .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEditProfile2Layout.setVerticalGroup(
             panelEditProfile2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEditProfile2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(47, 47, 47)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(636, Short.MAX_VALUE))
         );
 
         labelLogoTop2.setBackground(new java.awt.Color(102, 142, 57));
@@ -265,48 +285,36 @@ public class Search extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(panelEditProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, 1072, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(panelEditProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
+                        .addGap(124, 124, 124)
                         .addComponent(labelLogoTop2, javax.swing.GroupLayout.PREFERRED_SIZE, 1043, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelLogoTop2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelEditProfile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        labelWhiteHLine5.setBackground(new java.awt.Color(255, 255, 255));
-        labelWhiteHLine5.setOpaque(true);
-        labelWhiteHLine5.setPreferredSize(new java.awt.Dimension(4, 20));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
-                .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(338, 338, 338))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addComponent(labelWhiteHLine5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1210, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("RIDER", jPanel3);
@@ -331,22 +339,61 @@ public class Search extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MY RIDE");
 
+        rideTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "SN", "From", "To", "Driver Phone", "Username", "Phone", "Book Status", "Ride Status"
+            }
+        ));
+        jScrollPane3.setViewportView(rideTable);
+
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cancelBtn.setText("Cancel");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
+
+        favoriteBtn.setBackground(new java.awt.Color(0, 255, 51));
+        favoriteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        favoriteBtn.setText("Favorite");
+        favoriteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoriteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelEditProfile3Layout = new javax.swing.GroupLayout(panelEditProfile3);
         panelEditProfile3.setLayout(panelEditProfile3Layout);
         panelEditProfile3Layout.setHorizontalGroup(
             panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
-                .addComponent(labelLogoTop3, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 291, Short.MAX_VALUE)
                 .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
                         .addComponent(labelWhiteHLine3, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(329, 329, 329))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEditProfile3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(353, 353, 353))))
+                        .addGap(88, 88, 88)
+                        .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(favoriteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84))))
+            .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                .addComponent(labelLogoTop3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEditProfile3Layout.setVerticalGroup(
             panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,8 +402,15 @@ public class Search extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelWhiteHLine3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1623, Short.MAX_VALUE))
+                .addGroup(panelEditProfile3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panelEditProfile3Layout.createSequentialGroup()
+                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(favoriteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1173, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -380,16 +434,16 @@ public class Search extends javax.swing.JFrame {
         tabRider.setLayout(tabRiderLayout);
         tabRiderLayout.setHorizontalGroup(
             tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1143, Short.MAX_VALUE)
+            .addGap(0, 1379, Short.MAX_VALUE)
             .addGroup(tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabRiderLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 151, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 151, Short.MAX_VALUE)))
         );
         tabRiderLayout.setVerticalGroup(
             tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1985, Short.MAX_VALUE)
+            .addGap(0, 2010, Short.MAX_VALUE)
             .addGroup(tabRiderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(tabRiderLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -399,14 +453,31 @@ public class Search extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("MY RIDE", tabRider);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        jTabbedPane2.addTab("tab1", jScrollPane4);
+
+        jTabbedPane1.addTab("FAVOURITE", jTabbedPane2);
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelProfileLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProfileLayout.createSequentialGroup()
                 .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1065, 1065, 1065))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(820, 820, 820))
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,6 +486,8 @@ public class Search extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 932, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(690, Short.MAX_VALUE))
         );
+
+        jScrollPane1.setViewportView(panelProfile);
 
         jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
         jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -458,6 +531,11 @@ public class Search extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -484,6 +562,11 @@ public class Search extends javax.swing.JFrame {
         jMenuBank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jMenuBank.setOpaque(true);
         jMenuBank.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuBank.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuBankMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuBank);
 
         jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
@@ -543,17 +626,15 @@ public class Search extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 868, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -561,32 +642,20 @@ public class Search extends javax.swing.JFrame {
 
     
 
+    protected void jMenuBankMouseClicked(MouseEvent evt) {
+    }
+
+    protected void jMenuItemProfileActionPerformed(ActionEvent evt) {
+    }
+
+    protected void jMenuExitActionPerformed(ActionEvent evt) {
+    }
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         // fetchDriverDetails();
         
     }//GEN-LAST:event_formWindowOpened
-
-    private void requestTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTextActionPerformed
-        ResultSet rs = new UserController().selectEmail();
-        int i = tblRIder.getSelectedRow();
-        TableModel model = tblRIder.getModel();
-        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
-        try {
-            while(rs.next()){
-                String email = rs.getString(1);
-                Driver d1 = new Driver(id, null,null,null,null,0,0,email);
-                DriverController dc = new DriverController();
-                int result = dc.Request(d1);
-                if(result>0){
-                    JOptionPane.showMessageDialog(this, "Booked Success");
-                }
-
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-    }//GEN-LAST:event_requestTextActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
 
@@ -606,7 +675,7 @@ public class Search extends javax.swing.JFrame {
             convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
         }
         System.out.println(convertedDate);
-        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null);
+        Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null,null,null);
         DriverController dc = new DriverController();
         ResultSet result = dc.searchDetails(d1);
         try {
@@ -632,40 +701,108 @@ public class Search extends javax.swing.JFrame {
         //
     }//GEN-LAST:event_searchBtnActionPerformed
 
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODdispose();
-        dispose();
+    private void requestTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTextActionPerformed
+        ResultSet rs = new UserController().selectEmail();
+        int i = tblRIder.getSelectedRow();
+        TableModel model = tblRIder.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        try {
+            while(rs.next()){
+                String email = rs.getString(1);
+                Driver d1 = new Driver(id, null,null,null,null,0,0,email,null,null);
+                DriverController dc = new DriverController();
+                int result = dc.Request(d1);
+                if(result>0){
+                    JOptionPane.showMessageDialog(this, "Booked Success");
+                }
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }//GEN-LAST:event_requestTextActionPerformed
+
+    private void Goingbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Goingbox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Goingbox1ActionPerformed
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        int i = rideTable.getSelectedRow();
+        TableModel model = rideTable.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+
+        Driver d1 = new Driver(id, null,null,null,null,0,0,null,null,null);
+        DriverController dc = new DriverController();
+        int result = dc.cancelRide(d1);
+        if(result>0){
+            JOptionPane.showMessageDialog(this, "RIde canceled", "Success", JOptionPane.PLAIN_MESSAGE);
+            ride();
+        }
+    }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void favoriteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_favoriteBtnActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
         new Profile().setVisible(true);
-        
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
-
-    private void jMenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuExitActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        
-    }//GEN-LAST:event_jMenuExitActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
         dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutUsMenuItemMouseClicked
+
+    private void AboutUsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutUsMenuItemActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_AboutUsMenuItemActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
+        new UserController().changeStatus(null);
+        dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuExitMouseClicked
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
         model.setRowCount(0);
         try {
-            Driver d1 = new Driver(0, null,null,null,null,0,0,null);
+            Driver d1 = new Driver(0, null,null,null,null,0,0,null,null,null);
             DriverController dc = new DriverController();
             ResultSet result = dc.fetchDriverDetails();
             while(result.next()){
@@ -676,9 +813,9 @@ public class Search extends javax.swing.JFrame {
                 String trunk = result.getString(5);
                 String seat = result.getString(6);
                 String price = result.getString(7);
-
+                String phone = result.getString(12);
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
-                Object[] row = {SN,Leave,Going,date,trunk,seat,price};
+                Object[] row = {SN,Leave,Going,phone,date,trunk,seat,price};
                 model.addRow(row);
             }
         } catch (SQLException e) {
@@ -686,6 +823,31 @@ public class Search extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
+    }
+
+    public void ride(){
+        ResultSet result = new DriverController().showBook();
+        DefaultTableModel model  =(DefaultTableModel) rideTable.getModel();
+        model.setRowCount(0);
+        try {
+            while(result.next()){
+                String SN = result.getString(1);
+                String Leave = result.getString(2);
+                String Going  = result.getString(3);
+
+                String userName = result.getString(4);
+                String phone = result.getString(5);
+                String booking = result.getString(6);
+                String ride_status= result.getString(7);
+                String Driverphone = result.getString(8);
+                Object[] rows = {SN,Leave,Going,Driverphone,userName,phone,booking,ride_status};
+                model.addRow(rows);
+
+                
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
     /**
      * @param args the command line arguments
@@ -726,6 +888,8 @@ public class Search extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Datebox1;
     private javax.swing.JComboBox<String> Goingbox1;
     private javax.swing.JComboBox<String> Leavebox1;
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JButton favoriteBtn;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -747,8 +911,13 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelWhiteHLine3;
@@ -757,6 +926,7 @@ public class Search extends javax.swing.JFrame {
     private javax.swing.JPanel panelEditProfile3;
     private javax.swing.JPanel panelProfile;
     private javax.swing.JButton requestText;
+    private javax.swing.JTable rideTable;
     private javax.swing.JButton searchBtn;
     private javax.swing.JPanel tabRider;
     private javax.swing.JTable tblRIder;

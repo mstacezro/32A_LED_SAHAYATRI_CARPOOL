@@ -115,9 +115,17 @@ public class UserController {
     }
 
     public ResultSet selectEmail(){
-        String selectdetails = "select email from user_table where status='" + "active" + "'";
+        String selectdetails = "select email,phone from user_table where status='" + "active" + "'";
         dbConnection = new DbConnection();
         ResultSet result = dbConnection.retrieve(selectdetails);
         return result;
     }
+
+    public int deleteAccount(){
+        String deleteQuery = "delete from user_table where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(deleteQuery);
+        return result;
+    }
+
 }

@@ -80,9 +80,11 @@ public class Register extends javax.swing.JFrame {
         jComboBoxSecurityQuestion = new javax.swing.JComboBox<>();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
-        jMenuBlank = new javax.swing.JMenu();
-        jMenuContact = new javax.swing.JMenu();
-        jMenuBlank1 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        contactMenu = new javax.swing.JMenu();
+        AboutUsMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuExit = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -602,30 +604,78 @@ public class Register extends javax.swing.JFrame {
         });
         jMenu.add(jMenuBack);
 
-        jMenuBlank.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBlank.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBlank.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBlank.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuBlank.setOpaque(true);
-        jMenuBlank.setPreferredSize(new java.awt.Dimension(400, 52));
-        jMenu.add(jMenuBlank);
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setMinimumSize(new java.awt.Dimension(600, 6));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(800, 6));
+        jMenu.add(jMenu1);
 
-        jMenuContact.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuContact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuContact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
-        jMenuContact.setText("Contacts");
-        jMenuContact.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuContact.setMinimumSize(new java.awt.Dimension(200, 52));
-        jMenuContact.setOpaque(true);
-        jMenuContact.setPreferredSize(new java.awt.Dimension(200, 52));
-        jMenu.add(jMenuContact);
+        contactMenu.setBackground(new java.awt.Color(102, 142, 57));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
+        contactMenu.setText("Help");
+        contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        contactMenu.setMinimumSize(new java.awt.Dimension(200, 52));
+        contactMenu.setOpaque(true);
+        contactMenu.setPreferredSize(new java.awt.Dimension(200, 52));
+        contactMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contactMenuMouseClicked(evt);
+            }
+        });
 
-        jMenuBlank1.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBlank1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuBlank1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jMenuBlank1.setOpaque(true);
-        jMenuBlank1.setPreferredSize(new java.awt.Dimension(400, 52));
-        jMenu.add(jMenuBlank1);
+        AboutUsMenuItem.setBackground(new java.awt.Color(102, 142, 57));
+        AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
+        AboutUsMenuItem.setText("About Us");
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setOpaque(true);
+        AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
+        AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutUsMenuItemMouseClicked(evt);
+            }
+        });
+        AboutUsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutUsMenuItemActionPerformed(evt);
+            }
+        });
+        contactMenu.add(AboutUsMenuItem);
+
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem1);
+
+        jMenu.add(contactMenu);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
         jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -635,6 +685,11 @@ public class Register extends javax.swing.JFrame {
         jMenuExit.setMinimumSize(new java.awt.Dimension(200, 52));
         jMenuExit.setOpaque(true);
         jMenuExit.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuExitMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuExit);
 
         setJMenuBar(jMenu);
@@ -834,12 +889,12 @@ public class Register extends javax.swing.JFrame {
         int result = sc.insertDetails(u1);
         JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         //dispose();
-        /*if(result>0){
-            JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
+       // if(result>0){
+         //   JOptionPane.showMessageDialog(this, "Registered Succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        //}else{
+          //  JOptionPane.showMessageDialog(this, " Registered Failed", "Error", JOptionPane.INFORMATION_MESSAGE);
 
-        }*/
+        //}
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     private void textfieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsernameActionPerformed
@@ -851,8 +906,40 @@ public class Register extends javax.swing.JFrame {
     private void jMenuBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBackMouseClicked
         // TODO add your handling code here:
         dispose();
-        new Login().setVisible(true);
+        new Login().setVisible(true);;
     }//GEN-LAST:event_jMenuBackMouseClicked
+
+    private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutUsMenuItemMouseClicked
+
+    private void AboutUsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutUsMenuItemActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_AboutUsMenuItemActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuExitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -890,18 +977,20 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AboutUsMenuItem;
     private com.toedter.calendar.JDateChooser DateDOB;
     private com.toedter.calendar.JDateChooser DateExpiry;
     private javax.swing.JTextField MiddleName;
     private javax.swing.ButtonGroup buttonGroupGender;
     private javax.swing.JButton buttonRegister;
+    private javax.swing.JMenu contactMenu;
     private javax.swing.JComboBox<String> jComboBoxSecurityQuestion;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
-    private javax.swing.JMenu jMenuBlank;
-    private javax.swing.JMenu jMenuBlank1;
-    private javax.swing.JMenu jMenuContact;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButtonFemale;
     private javax.swing.JRadioButton jRadioButtonMale;
