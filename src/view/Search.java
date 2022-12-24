@@ -108,7 +108,7 @@ public class Search extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(102, 142, 57));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setToolTipText("DRIVER");
-        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N color changed
+        jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(102, 142, 57));
 
@@ -832,20 +832,6 @@ int i = rideTable.getSelectedRow();
        
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
-    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-        // TODO add your handling code here:
-        UserController uc = new UserController();
-        DriverController dc=  new DriverController();
-        dc.cancelAllRide();
-        dc.deleteallDetails();
-        int result = uc.deleteAccount();
-        if(result>0){
-            JOptionPane.showMessageDialog(null, "Account Deleted");
-            dispose();
-            new Login().setVisible(true);
-        }
-    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
-
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
         dispose();
@@ -875,6 +861,28 @@ int i = rideTable.getSelectedRow();
 
         }
     }//GEN-LAST:event_jMenuExitMouseClicked
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
