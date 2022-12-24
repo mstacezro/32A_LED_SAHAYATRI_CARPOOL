@@ -143,6 +143,15 @@ public class DriverController {
         return result;
     }
 
+    public ResultSet select(Driver driver){
+        int dID = driver.getDSN();
+        String selectQuery = "select email,driverEmail from driver_table where dSN='"+dID+"'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectQuery);
+
+        return result;
+    }
+
     public int cancelRide(Driver driver){
         int id = driver.getDSN();
         String query = "update driver_table set email='"+""+"' where dSN='"+id+"'";
