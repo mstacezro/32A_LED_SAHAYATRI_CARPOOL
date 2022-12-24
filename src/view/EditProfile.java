@@ -22,6 +22,7 @@ import javax.swing.JRadioButton;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import controller.DriverController;
 import controller.UserController;
 import model.User;
 
@@ -102,9 +103,11 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuProfile = new javax.swing.JMenu();
         jMenuItemDelete = new javax.swing.JMenuItem();
         jMenuKYC = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         contactMenu = new javax.swing.JMenu();
         AboutUsMenuItem = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
@@ -690,6 +693,11 @@ public class EditProfile extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -708,6 +716,11 @@ public class EditProfile extends javax.swing.JFrame {
             }
         });
         jMenu.add(jMenuKYC);
+
+        jMenu1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenu1.setOpaque(true);
+        jMenu1.setPreferredSize(new java.awt.Dimension(200, 6));
+        jMenu.add(jMenu1);
 
         contactMenu.setBackground(new java.awt.Color(102, 142, 57));
         contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -742,13 +755,37 @@ public class EditProfile extends javax.swing.JFrame {
         });
         contactMenu.add(AboutUsMenuItem);
 
-        jMenuItem2.setText("jMenuItem2");
+        jMenuItem2.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/TermsIcon.png"))); // NOI18N
+        jMenuItem2.setText("Terms & Conditions");
+        jMenuItem2.setOpaque(true);
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(400, 52));
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuItem2MouseClicked(evt);
             }
         });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         contactMenu.add(jMenuItem2);
+
+        jMenuItem1.setBackground(new java.awt.Color(102, 142, 57));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/contactIcon.png"))); // NOI18N
+        jMenuItem1.setText("Contact");
+        jMenuItem1.setBorderPainted(false);
+        jMenuItem1.setOpaque(true);
+        jMenuItem1.setPreferredSize(new java.awt.Dimension(200, 52));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        contactMenu.add(jMenuItem1);
 
         jMenu.add(contactMenu);
 
@@ -1052,9 +1089,36 @@ public class EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuExitMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
-        // TODO add your handling code here:
+        new UserController().changeStatus(null);
+        dispose();
+        new Login().setVisible(true);
         
     }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+            UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
+        
+        
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1160,8 +1224,10 @@ public class EditProfile extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabelProfilePic;
     private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuBack;
     private javax.swing.JMenu jMenuExit;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemDelete;
     private javax.swing.JMenu jMenuKYC;

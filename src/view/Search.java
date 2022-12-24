@@ -9,6 +9,7 @@ import controller.UserController;
 import controller.favoriteController;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -77,6 +78,9 @@ public class Search extends javax.swing.JFrame {
         rideTable = new javax.swing.JTable();
         cancelBtn = new javax.swing.JButton();
         favoriteBtn = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jMenu = new javax.swing.JMenuBar();
         jMenuBack = new javax.swing.JMenu();
         jMenuProfile = new javax.swing.JMenu();
@@ -350,6 +354,8 @@ public class Search extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(rideTable);
 
+        cancelBtn.setBackground(new java.awt.Color(255, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -357,6 +363,8 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
+        favoriteBtn.setBackground(new java.awt.Color(0, 255, 51));
+        favoriteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         favoriteBtn.setText("Favorite");
         favoriteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -447,6 +455,23 @@ public class Search extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("MY RIDE", tabRider);
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        jTabbedPane2.addTab("tab1", jScrollPane4);
+
+        jTabbedPane1.addTab("FAVOURITE", jTabbedPane2);
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -508,6 +533,11 @@ public class Search extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -614,46 +644,20 @@ public class Search extends javax.swing.JFrame {
 
     
 
+    protected void jMenuBankMouseClicked(MouseEvent evt) {
+    }
+
+    protected void jMenuItemProfileActionPerformed(ActionEvent evt) {
+    }
+
+    protected void jMenuExitActionPerformed(ActionEvent evt) {
+    }
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         // fetchDriverDetails();
         
     }//GEN-LAST:event_formWindowOpened
-
-    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
-        // TODdispose();
-        dispose();
-        new Profile().setVisible(true);
-        
-    }//GEN-LAST:event_jMenuItemProfileActionPerformed
-
-    private void jMenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuExitActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        
-    }//GEN-LAST:event_jMenuExitActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new KYC().setVisible(true);
-    }//GEN-LAST:event_jMenuKYCMouseClicked
-
-    private void jMenuBankMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuBankMouseClicked
-        // TODO add your handling code here:
-        dispose();
-        new BankDetails().setVisible(true);
-    }//GEN-LAST:event_jMenuBankMouseClicked
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
 
@@ -762,6 +766,60 @@ int i = rideTable.getSelectedRow();
             // TODO: handle exception
         }
     }//GEN-LAST:event_favoriteBtnActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        new Profile().setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new KYC().setVisible(true);
+    }//GEN-LAST:event_jMenuKYCMouseClicked
+
+    private void AboutUsMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMenuItemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AboutUsMenuItemMouseClicked
+
+    private void AboutUsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutUsMenuItemActionPerformed
+        // TODO add your handling code here:
+        new AboutUs().setVisible(true);
+    }//GEN-LAST:event_AboutUsMenuItemActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Terms().setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new ContactMain().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactMenuMouseClicked
+
+    private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
+        new UserController().changeStatus(null);
+        dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jMenuLogoutMouseClicked
+
+    private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuExitMouseClicked
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     
     public void table(){
         DefaultTableModel model = (DefaultTableModel) tblRIder.getModel();
@@ -879,7 +937,10 @@ int i = rideTable.getSelectedRow();
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelLogoTop2;
     private javax.swing.JLabel labelLogoTop3;
     private javax.swing.JLabel labelWhiteHLine3;
