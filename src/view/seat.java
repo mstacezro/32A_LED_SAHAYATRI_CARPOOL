@@ -803,7 +803,15 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to add advertisement?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            view();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
      public void view(){
