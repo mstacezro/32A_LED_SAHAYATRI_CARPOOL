@@ -120,4 +120,20 @@ public class UserController {
         ResultSet result = dbConnection.retrieve(selectdetails);
         return result;
     }
+
+    public int deleteAccount(){
+        String deleteQuery = "delete from user_table where status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        int result = dbConnection.manipulate(deleteQuery);
+        return result;
+    }
+
+    public ResultSet driverDetails(User user){
+        String email = user.getuseremail();
+        String selectdetails = "select first_name,middle_name,last_name,phone from user_table where email='" +email + "'";
+        dbConnection = new DbConnection();
+        ResultSet result = dbConnection.retrieve(selectdetails);
+        return result;
+    }
+
 }
