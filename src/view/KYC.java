@@ -83,7 +83,7 @@ public class KYC extends javax.swing.JFrame {
         labelKYC.setText("KYC");
 
         buttonUploadCitizenship.setBackground(new java.awt.Color(0, 0, 255));
-        buttonUploadCitizenship.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonUploadCitizenship.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         buttonUploadCitizenship.setForeground(new java.awt.Color(255, 255, 255));
         buttonUploadCitizenship.setText("Upload Citizenship");
         buttonUploadCitizenship.setPreferredSize(new java.awt.Dimension(172, 27));
@@ -94,7 +94,7 @@ public class KYC extends javax.swing.JFrame {
         });
 
         buttonSubmitCitizenship.setBackground(new java.awt.Color(0, 255, 51));
-        buttonSubmitCitizenship.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonSubmitCitizenship.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         buttonSubmitCitizenship.setForeground(new java.awt.Color(255, 255, 255));
         buttonSubmitCitizenship.setText("Submit Citizenship");
         buttonSubmitCitizenship.setPreferredSize(new java.awt.Dimension(172, 27));
@@ -110,7 +110,7 @@ public class KYC extends javax.swing.JFrame {
         });
 
         buttonUploadCitizenship1.setBackground(new java.awt.Color(0, 0, 255));
-        buttonUploadCitizenship1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonUploadCitizenship1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         buttonUploadCitizenship1.setForeground(new java.awt.Color(255, 255, 255));
         buttonUploadCitizenship1.setText("Upload Driver License");
         buttonUploadCitizenship1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +120,7 @@ public class KYC extends javax.swing.JFrame {
         });
 
         buttonSubmitCitizenship1.setBackground(new java.awt.Color(0, 255, 51));
-        buttonSubmitCitizenship1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonSubmitCitizenship1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         buttonSubmitCitizenship1.setForeground(new java.awt.Color(255, 255, 255));
         buttonSubmitCitizenship1.setText("Submit Driver License");
         buttonSubmitCitizenship1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,14 +145,15 @@ public class KYC extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
                             .addComponent(buttonUploadCitizenship1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(buttonSubmitCitizenship1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
-                            .addComponent(buttonUploadCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(buttonSubmitCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(buttonSubmitCitizenship1)))
                     .addGroup(panelLoginFrameLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(panelLoginFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelLoginFrameLayout.createSequentialGroup()
+                                .addComponent(buttonUploadCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonSubmitCitizenship, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLoginFrameLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -189,7 +190,7 @@ public class KYC extends javax.swing.JFrame {
                 .addComponent(labelWhiteLineDivider, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(panelLoginFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         panelMainLayout.setVerticalGroup(
             panelMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +208,7 @@ public class KYC extends javax.swing.JFrame {
         );
 
         jMenuBack.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuBack.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuBack.setForeground(new java.awt.Color(255, 0, 102));
         jMenuBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/backIcon.png"))); // NOI18N
         jMenuBack.setText("BACK");
@@ -223,7 +224,7 @@ public class KYC extends javax.swing.JFrame {
         jMenu.add(jMenuBack);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -236,7 +237,7 @@ public class KYC extends javax.swing.JFrame {
         jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
         jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
         jMenuItemDelete.setText("Delete Account");
-        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuItemDelete.setOpaque(true);
         jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +254,7 @@ public class KYC extends javax.swing.JFrame {
         jMenu.add(jMenu1);
 
         contactMenu.setBackground(new java.awt.Color(102, 142, 57));
-        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
         contactMenu.setText("Help");
         contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -270,7 +271,7 @@ public class KYC extends javax.swing.JFrame {
         AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
         AboutUsMenuItem.setText("About Us");
-        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         AboutUsMenuItem.setOpaque(true);
         AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
         AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -320,7 +321,7 @@ public class KYC extends javax.swing.JFrame {
         jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
         jMenuLogout.setText("Logout");
         jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -334,7 +335,7 @@ public class KYC extends javax.swing.JFrame {
         jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
         jMenuExit.setText("Exit");
         jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
