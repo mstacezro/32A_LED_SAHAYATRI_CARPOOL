@@ -1,9 +1,13 @@
 package model;
 
+
+
 public class Favorite {
     private String driverEmail;
     private String email;
     private int fav_id;
+    
+//    Creating get and set methods
     public String getDriverEmail() {
         return driverEmail;
     }
@@ -22,6 +26,8 @@ public class Favorite {
     public void setFav_id(int fav_id) {
         this.fav_id = fav_id;
     }
+    
+    // Creating Constructor
     public Favorite(String driverEmail, String email, int fav_id) {
         this.driverEmail = driverEmail;
         this.email = email;
