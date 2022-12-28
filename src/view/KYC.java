@@ -64,7 +64,7 @@ public class KYC extends javax.swing.JFrame {
         jMenuLogout = new javax.swing.JMenu();
         jMenuExit = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         panelMain.setBackground(new java.awt.Color(102, 142, 57));
         panelMain.setToolTipText("");
