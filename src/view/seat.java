@@ -1033,7 +1033,6 @@ public final class seat extends javax.swing.JFrame {
 
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
-        dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
 
