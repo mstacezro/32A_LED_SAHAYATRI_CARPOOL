@@ -1,5 +1,7 @@
 package model;
 
+
+// Creating Constructor
 public class Favorite {
     private String driverEmail;
     private String email;
