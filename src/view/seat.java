@@ -649,6 +649,11 @@ public final class seat extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -1028,7 +1033,6 @@ public final class seat extends javax.swing.JFrame {
 
     private void jMenuKYCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuKYCMouseClicked
         // TODO add your handling code here:
-        dispose();
         new KYC().setVisible(true);
     }//GEN-LAST:event_jMenuKYCMouseClicked
 
@@ -1060,19 +1064,61 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMenuMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
-        new UserController().changeStatus(null);
-        dispose();
-        new Login().setVisible(true);
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+            JOptionPane.showMessageDialog(this, "Logged out successfully");
+            new Login().setVisible(true);
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
+        
+       
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
     private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
         // TODO add your handling code here:
-        dispose();
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to exit?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
     }//GEN-LAST:event_jMenuExitMouseClicked
 
     private void LeaveboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaveboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LeaveboxActionPerformed
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
 
 
     /**

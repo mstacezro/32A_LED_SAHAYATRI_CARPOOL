@@ -4,9 +4,11 @@
  */
 package view;
 
+import controller.DriverController;
 import java.sql.ResultSet;
 
 import controller.UserController;
+import javax.swing.JOptionPane;
 import model.User;
 
 /**
@@ -462,6 +464,11 @@ public class Profile extends javax.swing.JFrame {
         jMenuItemDelete.setText("Delete Account");
         jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
+        jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDeleteActionPerformed(evt);
+            }
+        });
         jMenuProfile.add(jMenuItemDelete);
 
         jMenu.add(jMenuProfile);
@@ -649,15 +656,34 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_contactMenuMouseClicked
 
     private void jMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuLogoutMouseClicked
-        new UserController().changeStatus(null);
-        dispose();
-        new Login().setVisible(true);
-
+         int response = JOptionPane.showConfirmDialog(this,"Do you want to logout?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+            JOptionPane.showMessageDialog(this, "Logged out successfully");
+            new Login().setVisible(true);
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
+        
+       
     }//GEN-LAST:event_jMenuLogoutMouseClicked
 
     private void jMenuExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExitMouseClicked
         // TODO add your handling code here:
-        dispose();
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to exit?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+            new UserController().changeStatus(null);
+            dispose();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+           return;
+            
+        }
 
     }//GEN-LAST:event_jMenuExitMouseClicked
 
@@ -666,6 +692,28 @@ public class Profile extends javax.swing.JFrame {
         dispose();
         new EditProfile().setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            UserController uc = new UserController();
+            DriverController dc=  new DriverController();
+            dc.cancelAllRide();
+            dc.deleteallDetails();
+            int result = uc.deleteAccount();
+            if(result>0){
+                JOptionPane.showMessageDialog(null, "Account Deleted");
+                dispose();
+                new Login().setVisible(true);
+            }
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+
+    }//GEN-LAST:event_jMenuItemDeleteActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
