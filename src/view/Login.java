@@ -357,6 +357,8 @@ public class Login extends javax.swing.JFrame {
                      sc.updatestatus(u1);
                      dispose();
                      new Search().setVisible(true);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Incorrect Credentials");
      
                  }
              } catch (Exception e) {
