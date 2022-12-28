@@ -623,7 +623,7 @@ public final class seat extends javax.swing.JFrame {
         jScrollPane3.setViewportView(panelProfile);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -649,7 +649,7 @@ public final class seat extends javax.swing.JFrame {
         jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
         jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
         jMenuItemDelete.setText("Delete Account");
-        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuItemDelete.setOpaque(true);
         jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -661,7 +661,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenuProfile);
 
         jMenuKYC.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuKYC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
         jMenuKYC.setText("KYC");
         jMenuKYC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -681,7 +681,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenu1);
 
         contactMenu.setBackground(new java.awt.Color(102, 142, 57));
-        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
         contactMenu.setText("Help");
         contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -698,7 +698,7 @@ public final class seat extends javax.swing.JFrame {
         AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
         AboutUsMenuItem.setText("About Us");
-        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         AboutUsMenuItem.setOpaque(true);
         AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
         AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -748,7 +748,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
         jMenuLogout.setText("Logout");
         jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -762,7 +762,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
         jMenuExit.setText("Exit");
         jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -803,7 +803,10 @@ public final class seat extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
+     public void view(){
         String convertedDate;
         String publishLeave = Leavebox.getSelectedItem().toString();
         String publishGoing = Goingbox.getSelectedItem().toString();
@@ -846,8 +849,7 @@ public final class seat extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
+}
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         String convertedDate;
         String publishLeave = Leavebox.getSelectedItem().toString();
