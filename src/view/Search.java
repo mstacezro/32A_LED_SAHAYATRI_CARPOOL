@@ -823,8 +823,8 @@ public class Search extends javax.swing.JFrame {
     }//GEN-LAST:event_requestTextActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
-
-        String convertedDate;
+try {
+    String convertedDate;
         String publishLeave = Leavebox1.getSelectedItem().toString();
         String publishGoing = Goingbox1.getSelectedItem().toString();
         String publishDate = (String) Datebox1.getDate().toString();
@@ -840,6 +840,14 @@ public class Search extends javax.swing.JFrame {
             convertedDate = String.format("%s-%s-%s", year, convertedMonth, day);
         }
         System.out.println(convertedDate);
+        
+    if(!nameValid.nameVerify(publishLeave)){
+        JOptionPane.showMessageDialog(this, "Please enter valid leave place", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }else if(!nameValid.nameVerify(publishGoing)){
+        JOptionPane.showMessageDialog(this, "Please enter valid going place", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }else{
         Driver d1 = new Driver(0, publishLeave,publishGoing,convertedDate,null,0,0,null,null,null);
         DriverController dc = new DriverController();
         ResultSet result = dc.searchDetails(d1);
@@ -862,7 +870,14 @@ public class Search extends javax.swing.JFrame {
         } catch (Exception e) {
             // TODO: handle exception
         }
+        // TODO: handle exception
+    }
+} catch (NullPointerException e) {
+        JOptionPane.showMessageDialog(this, "Please enter valid date", "Error", JOptionPane.ERROR_MESSAGE);
 
+    }catch (Exception e) {
+        JOptionPane.showMessageDialog(this,e);
+    }
         //
     }//GEN-LAST:event_searchBtnActionPerformed
 
@@ -983,13 +998,13 @@ public class Search extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EXAMPLE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
