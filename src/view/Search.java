@@ -884,6 +884,9 @@ public class Search extends javax.swing.JFrame {
                 String date = result.getString(4);
                 String trunk = result.getString(5);
                 String seat = result.getString(6);
+                if(seat.equals("0")){
+                    seat = "Full";
+                }
                 String price = result.getString(7);
                 String phone = result.getString(12);
                 // JOptionPane.showMessageDialog(null,SN + Leave+Going+date+trunk+price);
