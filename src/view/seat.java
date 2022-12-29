@@ -91,6 +91,7 @@ public final class seat extends javax.swing.JFrame {
         declineBtn = new javax.swing.JButton();
         acceptBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        fullBtn = new javax.swing.JButton();
         jMenu = new javax.swing.JMenuBar();
         jMenuProfile = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -603,6 +604,13 @@ public final class seat extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("RESPOND", tabRider);
 
+        fullBtn.setText("Full");
+        fullBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fullBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelProfileLayout = new javax.swing.GroupLayout(panelProfile);
         panelProfile.setLayout(panelProfileLayout);
         panelProfileLayout.setHorizontalGroup(
@@ -610,20 +618,27 @@ public final class seat extends javax.swing.JFrame {
             .addGroup(panelProfileLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fullBtn)
+                .addContainerGap())
         );
         panelProfileLayout.setVerticalGroup(
             panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelProfileLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelProfileLayout.createSequentialGroup()
+                        .addGap(526, 526, 526)
+                        .addComponent(fullBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1114, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(panelProfile);
 
         jMenuProfile.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jMenuProfile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profiledashboardIcon.png"))); // NOI18N
         jMenuProfile.setText("Profile");
         jMenuProfile.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -649,7 +664,7 @@ public final class seat extends javax.swing.JFrame {
         jMenuItemDelete.setForeground(new java.awt.Color(255, 51, 51));
         jMenuItemDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/delete.png"))); // NOI18N
         jMenuItemDelete.setText("Delete Account");
-        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jMenuItemDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuItemDelete.setOpaque(true);
         jMenuItemDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -661,7 +676,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenuProfile);
 
         jMenuKYC.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jMenuKYC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuKYC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/kycIcon.png"))); // NOI18N
         jMenuKYC.setText("KYC");
         jMenuKYC.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -681,7 +696,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenu1);
 
         contactMenu.setBackground(new java.awt.Color(102, 142, 57));
-        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        contactMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         contactMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/HelpIcon.png"))); // NOI18N
         contactMenu.setText("Help");
         contactMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -698,7 +713,7 @@ public final class seat extends javax.swing.JFrame {
         AboutUsMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         AboutUsMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/AboutUs.png"))); // NOI18N
         AboutUsMenuItem.setText("About Us");
-        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        AboutUsMenuItem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         AboutUsMenuItem.setOpaque(true);
         AboutUsMenuItem.setPreferredSize(new java.awt.Dimension(200, 52));
         AboutUsMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -748,7 +763,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(contactMenu);
 
         jMenuLogout.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jMenuLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logout.png"))); // NOI18N
         jMenuLogout.setText("Logout");
         jMenuLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -762,7 +777,7 @@ public final class seat extends javax.swing.JFrame {
         jMenu.add(jMenuLogout);
 
         jMenuExit.setBackground(new java.awt.Color(102, 142, 57));
-        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jMenuExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Exit.png"))); // NOI18N
         jMenuExit.setText("Exit");
         jMenuExit.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1132,6 +1147,25 @@ public final class seat extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItemDeleteActionPerformed
 
+    private void fullBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullBtnActionPerformed
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to fill the seat?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(response == JOptionPane.YES_OPTION){
+            int i = tblDriver.getSelectedRow();
+        TableModel model = tblDriver.getModel();
+        int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+        Driver d1 = new Driver(id,null,null,null,null,0,0,null,null,null);
+        
+            DriverController dc = new DriverController();
+            dc.fullSeat(d1);
+            JOptionPane.showMessageDialog(this, "Seat Filled");
+            table();
+        }
+        else if(response == JOptionPane.NO_OPTION){
+            return;
+
+        }
+    }//GEN-LAST:event_fullBtnActionPerformed
+
 
     /**
      * @param evt
@@ -1155,6 +1189,10 @@ public final class seat extends javax.swing.JFrame {
                 
                 String trunk = rset.getString(5);
                 String seat = rset.getString(6);
+                if(seat.equals("0")){
+                    seat = "Full";
+                }
+                
                 String price = rset.getString(7);
                 String rideStatus= rset.getString(10);
                 String email = rset.getString(11);
@@ -1246,6 +1284,7 @@ public final class seat extends javax.swing.JFrame {
     private javax.swing.JMenu contactMenu;
     private javax.swing.JButton declineBtn;
     private javax.swing.JButton editBtn;
+    private javax.swing.JButton fullBtn;
     private javax.swing.JTextField idBox;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
