@@ -25,7 +25,7 @@ public class nameValid {
        }
 
        public static void main(String[] args) {
-              System.out.println(nameVerify("John"));
+              System.out.println(nameVerify("1"));
        }
        
     }
