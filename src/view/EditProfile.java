@@ -1041,12 +1041,44 @@ public class EditProfile extends javax.swing.JFrame {
         String citizen = textfieldCitizenship.getText();
         String driver_license = textfieldDriverLicense.getText();
         String exp_date = fmt.format(this.jDateChooser2.getDate());
-        User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
-        UserController sc  = new UserController();
-        int result = sc.editdetails(u1);
-        if(result>0){
-            JOptionPane.showMessageDialog(null, "Updated Successfully");
+        if(username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||gender.equals(null)||dob.equals("")||nationality.equals("")||address.equals("")||email.equals("")||phone.equals("")||sq.equals("")||sq_ans.equals("")||citizen.equals("")||driver_license.equals("")||exp_date.equals("")){
+            JOptionPane.showMessageDialog(this, "Please fill all the fields");
+        }else if(!pass.equals(repass)){
+            JOptionPane.showMessageDialog(this, "Password and Re-Password does not match");
         }
+        else if(!emailValid.emailVerify(email)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address");
+
+        }else if(!nameValid.nameVerify(fname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid first name");
+        }
+        else if(!nameValid.nameVerify(mname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid middle name");
+        }
+        else if(!nameValid.nameVerify(lname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid last name");
+        }
+        else if(!nameValid.nameVerify(sq_ans)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid answer");
+        }
+        else if(!nameValid.nameVerify(address)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid address");
+        }
+        else if(!phoneValid.phoneVerify(phone)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid phone number");
+        }else if(!UsernameValid.nameVerify(username)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid username");
+        }
+        else{
+            User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
+            UserController sc  = new UserController();
+            int result = sc.editdetails(u1);
+            if(result>0){
+                JOptionPane.showMessageDialog(this, "Updated Successfully");
+            }
+
+        }
+        
     }//GEN-LAST:event_buttonUpdateActionPerformed
 
     private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
@@ -1124,7 +1156,10 @@ public class EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeleteActionPerformed
-            UserController uc = new UserController();
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to delete your account?", "Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+            if(response == JOptionPane.YES_OPTION){
+                UserController uc = new UserController();
             DriverController dc=  new DriverController();
             dc.cancelAllRide();
             dc.deleteallDetails();
@@ -1133,6 +1168,11 @@ public class EditProfile extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Account Deleted");
                 dispose();
                 new Login().setVisible(true);
+            }
+            }
+            else if(response == JOptionPane.NO_OPTION){
+               return;
+
             }
         
         
