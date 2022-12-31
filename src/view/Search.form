@@ -497,11 +497,11 @@
                                       <Component id="jLabel2" min="-2" pref="97" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                       <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                                       <Component id="requestText" min="-2" pref="43" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" pref="264" max="-2" attributes="0"/>
-                                      <EmptySpace pref="636" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="264" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="636" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
