@@ -106,13 +106,19 @@ public class DriverController {
         return result;
     }
 
-    public ResultSet showBook() {
-        String query = "select driver_table.dSN,driver_table.dLeavePlace,driver_table.dGoingTo,user_table.username,user_table.phone,driver_table.booking,driver_table.ride_status,driver_table.driverPhone from driver_table join user_table on driver_table.email=user_table.email where user_table.status='"+"active"+"'";
+    public ResultSet showBook(Driver driver) {
+        String email = driver.getDEmail();
+        String query = "select driver_table.dSN,driver_table.dLeavePlace,driver_table.dGoingTo,user_table.username,user_table.phone,driver_table.booking,driver_table.ride_status,driver_table.driverPhone from driver_table join user_table on user_table.email=driver_table.driverEmail where user_table.status='"+"active"+"'";
         dbConnection = new DbConnection();
         ResultSet result= dbConnection.retrieve(query);
         return result;
     }
-
+    public ResultSet showBook() {
+        String query = "select driver_table.dSN,driver_table.dLeavePlace,driver_table.dGoingTo,user_table.username,user_table.phone,driver_table.booking,driver_table.ride_status,driver_table.driverPhone from driver_table join user_table on user_table.email=driver_table.email where user_table.status='"+"active"+"'";
+        dbConnection = new DbConnection();
+        ResultSet result= dbConnection.retrieve(query);
+        return result;
+    }
     public int Accept(Driver driver){
         int id = driver.getDSN();
         String query = "update driver_table set booking='"+"Yes"+"' where dSN='"+id+"'";

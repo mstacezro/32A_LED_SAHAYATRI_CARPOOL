@@ -135,7 +135,7 @@ public class ForgetPassword extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {" What is your favourite food ?", "What was your school name ?", "Who is your best friend ?", "What is your mother's maiden name?", "What is your first pet name?","What is your first job?" }));
+        jComboBoxSecurityQuestion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"What is your favourite food ?", "What was your school name?", "Who is your best friend?", "What is your mother's maiden name?", "What is your first pet name?","What is your first job?" }));
         jComboBoxSecurityQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxSecurityQuestionActionPerformed(evt);
@@ -381,6 +381,9 @@ public class ForgetPassword extends javax.swing.JFrame {
 
         if(result>0){
             JOptionPane.showMessageDialog(this, "Reset password Success");
+        }else{
+            JOptionPane.showMessageDialog(this, "Incorrect Security Question");
+
         }
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
