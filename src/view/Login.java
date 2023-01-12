@@ -410,7 +410,10 @@ public class Login extends javax.swing.JFrame {
                      sc.updatestatus(u1);
                      dispose();
                      new seat().setVisible(true);
-     
+                     
+                    }else{
+                     JOptionPane.showMessageDialog(null, "Incorrect Credentials");
+
                  }
              } catch (Exception e) {
                  // TODO Auto-generated catch block
