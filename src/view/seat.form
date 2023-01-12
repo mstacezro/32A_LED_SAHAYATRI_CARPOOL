@@ -377,8 +377,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
+                      <Component id="jTabbedPane1" min="-2" pref="1384" max="-2" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
+=======
                       <Component id="jTabbedPane1" min="-2" pref="1387" max="-2" attributes="0"/>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                   </Group>
               </Group>
             </DimensionLayout>
@@ -426,10 +431,17 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="panelEditProfile1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+=======
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="panelEditProfile1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -458,6 +470,42 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                              <Component id="labelLogoTop1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jPanel2" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel4" alignment="0" min="-2" pref="401" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="activeBtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="completeBtn" min="-2" pref="198" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="editBtn" min="-2" pref="146" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="idBox" min="-2" pref="76" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="viewBtn" min="-2" pref="143" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnDelete" min="-2" pref="143" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="fullBtn" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+=======
                               <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
@@ -485,16 +533,20 @@
                                               <Component id="fullBtn" min="-2" pref="95" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+                                  <EmptySpace min="-2" pref="498" max="-2" attributes="0"/>
+=======
                                   <Component id="labelLogoTop1" min="-2" pref="1378" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="499" max="-2" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                                   <Component id="jLabel1" min="-2" pref="377" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -507,20 +559,58 @@
                                   <Component id="labelLogoTop1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel1" min="-2" pref="24" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" min="-2" pref="101" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="completeBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                                      <Component id="activeBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="103" groupAlignment="3" attributes="0">
+                                                              <Component id="viewBtn" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                                                              <Component id="btnDelete" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="editBtn" max="32767" attributes="0"/>
+                                                      <Component id="idBox" alignment="1" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              </Group>
+=======
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace pref="7" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="completeBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                               <Component id="activeBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                                           </Group>
+                                          <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="1024" max="-2" attributes="0"/>
                                       </Group>
+<<<<<<< HEAD
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                                          <Component id="fullBtn" min="-2" pref="63" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+=======
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                               <Component id="btnDelete" alignment="3" pref="63" max="32767" attributes="0"/>
@@ -537,6 +627,7 @@
                                   <EmptySpace pref="18" max="32767" attributes="0"/>
                                   <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="1023" max="32767" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -554,13 +645,18 @@
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JPanel" name="jPanel7">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="39" green="8e" red="66" type="rgb"/>
+                            </Property>
+                          </Properties>
 
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jScrollPane1" min="-2" pref="1123" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -637,7 +733,11 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="Datebox" min="-2" pref="155" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
+                                              <Component id="Trunkbox" max="32767" attributes="0"/>
+=======
                                               <Component id="Trunkbox" pref="158" max="32767" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -1011,7 +1111,11 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                          <EmptySpace min="0" pref="1384" max="32767" attributes="0"/>
+=======
                           <EmptySpace min="0" pref="1387" max="32767" attributes="0"/>
+>>>>>>> 48974dafeae44350d52849e52608034cb842417f
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
