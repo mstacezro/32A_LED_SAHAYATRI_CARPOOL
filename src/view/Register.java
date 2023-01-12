@@ -856,7 +856,8 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_textfieldFirstNameFocusGained
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        String username = textfieldUsername.getText();
+        try {
+            String username = textfieldUsername.getText();
         String fname = textfieldFirstName.getText();
         String mname= MiddleName.getText();
         String lname = textfieldLastName.getText();
@@ -887,9 +888,7 @@ public class Register extends javax.swing.JFrame {
         String exp_date = fmt.format(this.DateExpiry.getDate());
 
         // Get today's date
-        LocalDate today = LocalDate.now();
-        Format formatter = new SimpleDateFormat("YYYY-MM-DD");
-        String todayString = formatter.format(today);
+       
 
 
         // if (username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||
@@ -897,6 +896,9 @@ public class Register extends javax.swing.JFrame {
 
         if (username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||gender.equals("")||dob.equals("")||nationality.equals("")||address.equals("")||email.equals("")||phone.equals("")||sq.equals("")||sq_ans.equals("")||citizen.equals("")||driver_license.equals("")||exp_date.equals("")) {
             JOptionPane.showMessageDialog(this, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(!UsernameValid.nameVerify(username)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid username", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         else if(!emailValid.emailVerify(email)){
@@ -934,6 +936,13 @@ public class Register extends javax.swing.JFrame {
             dispose();
             new Login().setVisible(true);
         }
+        }
+         catch (NullPointerException e) {
+           JOptionPane.showMessageDialog(this, "Please fill all the date ", "Error", JOptionPane.ERROR_MESSAGE);
+        }catch (Exception e) {
+           JOptionPane.showMessageDialog(this, e, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
         // User u1 = new User(textfieldUsername)
         //dispose();
        // if(result>0){
