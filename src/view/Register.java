@@ -1085,12 +1085,12 @@ public class Register extends javax.swing.JFrame {
                 return;
             }
 
-            else if (!mname.equals("")) {
-                if (!nameValid.nameVerify(mname)) {
+            
+            else if (!nameValid.nameVerify(mname)) {
                     JOptionPane.showMessageDialog(this, "Please enter a valid middle name", "Error",
                             JOptionPane.ERROR_MESSAGE);
                     return;
-                }
+                
             } else if (!nameValid.nameVerify(lname)) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid last name", "Error",
                         JOptionPane.ERROR_MESSAGE);
