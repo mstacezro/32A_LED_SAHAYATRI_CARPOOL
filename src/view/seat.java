@@ -900,12 +900,12 @@ public final class seat extends javax.swing.JFrame {
             DriverController dc = new DriverController();
             int result = dc.insertDriverDetails(addDriverDetails);
             if (result > 0) {
-                JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Carpool advertised successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 table();
     
             }
             else {
-                JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Failed to advertise carpool.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
 }
