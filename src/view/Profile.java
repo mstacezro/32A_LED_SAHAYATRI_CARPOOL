@@ -738,13 +738,13 @@ public class Profile extends javax.swing.JFrame {
                         sq=result.getString(11);
                         sqanswer=result.getString(12);
                         citizen=result.getString(13);
-                        license= result.getString(14);
-                        expiry=result.getString(15);
-                        address=result.getString(16);
+                        license= result.getString(15);
+                        expiry=result.getString(16);
+                        address=result.getString(14);
         
                         System.out.println(username+pass+fname+mname+lname+gender+dob+nationality+email+phone+sq+sqanswer+citizen+license+expiry+address);
                         labelUsernameView.setText(username);
-                        labelNameView.setText(fname+""+ mname+""+lname);
+                        labelNameView.setText(fname+" "+ mname+" "+lname);
                         labelGenderView.setText(gender);
                         labelDOBView.setText(dob);
                         labelNationalityView.setText(nationality);

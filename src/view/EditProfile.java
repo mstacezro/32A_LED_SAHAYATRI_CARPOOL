@@ -461,16 +461,15 @@ public class EditProfile extends javax.swing.JFrame {
         panelContactLayout.setHorizontalGroup(
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContactLayout.createSequentialGroup()
-                .addGap(470, 470, 470)
-                .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(480, Short.MAX_VALUE))
+                .addGap(549, 549, 549)
+                .addComponent(buttonUpdate)
+                .addContainerGap(587, Short.MAX_VALUE))
         );
         panelContactLayout.setVerticalGroup(
             panelContactLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelContactLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(buttonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addComponent(buttonUpdate)
+                .addGap(0, 130, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelEditProfileFrameLayout = new javax.swing.GroupLayout(panelEditProfileFrame);
@@ -830,7 +829,7 @@ public class EditProfile extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1687, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1647, Short.MAX_VALUE)
         );
 
         pack();
@@ -1010,77 +1009,11 @@ public class EditProfile extends javax.swing.JFrame {
             textfieldStreet.setText("Street");
         }
     }//GEN-LAST:event_textfieldStreetFocusLost
-
-    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
-        // TODO add your handling code here:
-        String username = textfieldUsername.getText();
-        String fname = textfieldFirstName.getText();
-        String mname= MiddleName.getText();
-        String lname = textfieldLastName.getText();
-        String pass = new String(jPasswordField1.getPassword());
-        String repass = new String(jPasswordField2.getPassword());
-        String gender =null;
-        if(jRadioButton1.isSelected()){
-            gender="Male";
-
-        }else if(jRadioButton2.isSelected()){
-            gender="Female";
-        }
-        else{
-            gender ="Other";
-        }
-
-        DateFormat fmt = new SimpleDateFormat("YYYY-MM-DD");
-        String dob = fmt.format(this.jDateChooser1.getDate());
-        String nationality = textfieldNationality.getText();
-        String address = textfieldStreet.getText();
-        String email = textfieldEmail.getText();
-        String phone = textfieldPhone.getText();
-        String sq = textfieldSecurityQuestion.getText();
-        String sq_ans = textfieldAnswer.getText();
-        String citizen = textfieldCitizenship.getText();
-        String driver_license = textfieldDriverLicense.getText();
-        String exp_date = fmt.format(this.jDateChooser2.getDate());
-        if(username.equals("") || fname.equals("") || mname.equals("") || lname.equals("") || pass.equals("") || repass.equals("")||gender.equals(null)||dob.equals("")||nationality.equals("")||address.equals("")||email.equals("")||phone.equals("")||sq.equals("")||sq_ans.equals("")||citizen.equals("")||driver_license.equals("")||exp_date.equals("")){
-            JOptionPane.showMessageDialog(this, "Please fill all the fields");
-        }else if(!pass.equals(repass)){
-            JOptionPane.showMessageDialog(this, "Password and Re-Password does not match");
-        }
-        else if(!emailValid.emailVerify(email)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid email address");
-
-        }else if(!nameValid.nameVerify(fname)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid first name");
-        }
-        else if(!nameValid.nameVerify(mname)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid middle name");
-        }
-        else if(!nameValid.nameVerify(lname)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid last name");
-        }
-        else if(!nameValid.nameVerify(sq_ans)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid answer");
-        }
-        else if(!nameValid.nameVerify(address)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid address");
-        }
-        else if(!phoneValid.phoneVerify(phone)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid phone number");
-        }else if(!UsernameValid.nameVerify(username)){
-            JOptionPane.showMessageDialog(this, "Please enter a valid username");
-        }
-        else{
-            User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
-            UserController sc  = new UserController();
-            int result = sc.editdetails(u1);
-            if(result>0){
-                JOptionPane.showMessageDialog(this, "Updated Successfully");
-            }
-
-        }
+/*
+    
+    
         
-    }//GEN-LAST:event_buttonUpdateActionPerformed
-
+    */
     private void contactMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contactMenuMouseClicked
         // TODO add your handling code here:
         
@@ -1177,6 +1110,86 @@ public class EditProfile extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMenuItemDeleteActionPerformed
+
+    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
+        // TODO add your handling code here:
+        // JOptionPane.showMessageDialog(this,"Pressed");
+        try {
+            
+            String username = textfieldUsername.getText();
+            String fname = textfieldFirstName.getText();
+        String mname= MiddleName.getText();
+        
+        String lname = textfieldLastName.getText();
+        String pass = new String(jPasswordField1.getPassword());
+        String repass = new String(jPasswordField2.getPassword());
+        String gender =null;
+        if(jRadioButton1.isSelected()){
+            gender="Male";
+
+        }else if(jRadioButton2.isSelected()){
+            gender="Female";
+        }
+        else{
+            gender ="Other";
+        }
+
+        DateFormat fmt = new SimpleDateFormat("YYYY-MM-DD");
+        String dob = fmt.format(this.jDateChooser1.getDate());
+        String nationality = textfieldNationality.getText();
+        String address = textfieldStreet.getText();
+        String email = textfieldEmail.getText();
+        String phone = textfieldPhone.getText();
+        String sq = textfieldSecurityQuestion.getText();
+        String sq_ans = textfieldAnswer.getText();
+        String citizen = textfieldCitizenship.getText();
+        String driver_license = textfieldDriverLicense.getText();
+        String exp_date = fmt.format(this.jDateChooser2.getDate());
+        // JOptionPane.showMessageDialog(this,fname);
+        if(username.equals("") || fname.equals("")  || lname.equals("") || pass.equals("") || repass.equals("")||gender.equals(null)||dob.equals("")||nationality.equals("")||address.equals("")||email.equals("")||phone.equals("")||sq.equals("")||sq_ans.equals("")||citizen.equals("")||driver_license.equals("")){
+            JOptionPane.showMessageDialog(this, "Please fill all the fields");
+        }else if(!pass.equals(repass)){
+            JOptionPane.showMessageDialog(this, "Password and Re-Password does not match");
+        }
+        else if(!emailValid.emailVerify(email)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address");
+
+        }else if(!nameValid.nameVerify(fname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid first name");
+        }
+        else  if(!nameValid.nameVerify(mname)){
+                JOptionPane.showMessageDialog(this, "Please enter a valid middle name", "Error", JOptionPane.ERROR_MESSAGE);
+        
+        }
+        else if(!nameValid.nameVerify(lname)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid last name");
+        }
+        
+        else if(!nameValid.nameVerify(address)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid address");
+        }
+        else if(!phoneValid.phoneVerify(phone)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid phone number");
+        }else if(!UsernameValid.nameVerify(username)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid username");
+        }
+        else{
+            // JOptionPane.showMessageDialog(this,"Pressed");
+            User u1 = new User(username, pass, repass, fname, mname, lname, gender, dob, nationality, address, email, phone, sq, sq_ans, citizen, driver_license, exp_date);
+            UserController sc  = new UserController();
+            int result = sc.editdetails(u1);
+            if(result>0){
+                JOptionPane.showMessageDialog(this, "Updated Successfully");
+            }else{
+                JOptionPane.showMessageDialog(this, "Updated Insucess");
+
+            }
+
+        }
+    } catch (Exception e) {
+        // TODO: handle exception
+    }
+    }//GEN-LAST:event_buttonUpdateActionPerformed
     public void view(){
         try {
             //    User u1 = new User(null, "1", null, null, null, null, null, null, null, null, "2", null, null, null, null, null, null) ;
@@ -1200,11 +1213,11 @@ public class EditProfile extends javax.swing.JFrame {
                         sq=result.getString(11);
                         sqanswer=result.getString(12);
                         citizen=result.getString(13);
-                        license= result.getString(14);
-                        expiry=result.getString(15);
-                        address=result.getString(16);
+                        license= result.getString(15);
+                        expiry=result.getString(16);
+                        address=result.getString(14);
         
-                        System.out.println(username+pass+fname+mname+lname+gender+dob+nationality+email+phone+sq+sqanswer+citizen+license+expiry+address);
+                        // System.out.println(username+pass+fname+mname+lname+gender+dob+nationality+email+phone+sq+sqanswer+citizen+license+expiry+address);
                         textfieldUsername.setText(username);
                         jPasswordField1.setText(pass);
                         jPasswordField2.setText(pass);
@@ -1233,8 +1246,7 @@ public class EditProfile extends javax.swing.JFrame {
                     }
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+                    JOptionPane.showMessageDialog(this,e);                }
     }
     /**
      * @param args the command line arguments

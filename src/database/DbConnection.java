@@ -76,7 +76,7 @@ public class DbConnection {
 
         }catch (SQLException e){
 
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,e);    
 
         }
 
@@ -94,7 +94,7 @@ public class DbConnection {
 
         }catch (SQLException e){
 
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,e);    
 
         }
 
