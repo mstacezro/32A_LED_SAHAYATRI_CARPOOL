@@ -276,8 +276,8 @@ public class Search extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(requestText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(636, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addGap(636, 636, 636))
         );
 
         labelLogoTop2.setBackground(new java.awt.Color(102, 142, 57));
@@ -916,12 +916,22 @@ try {
     }
 
     public void ride(){
+        
+String email = null;
+
+        try {
+            ResultSet r1 = new UserController().selectEmail();
+            while(r1.next()){
+                email = r1.getString(1);
+            }
+            Driver d1 = new Driver(0, null,null,null,null,0,0,null,null,email);
+            
         ResultSet result = new DriverController().showBook();
         DefaultTableModel model  =(DefaultTableModel) rideTable.getModel();
         model.setRowCount(0);
-        try {
             while(result.next()){
                 String SN = result.getString(1);
+                System.out.println(SN);
                 String Leave = result.getString(2);
                 String Going  = result.getString(3);
 

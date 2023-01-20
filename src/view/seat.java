@@ -900,12 +900,12 @@ public final class seat extends javax.swing.JFrame {
             DriverController dc = new DriverController();
             int result = dc.insertDriverDetails(addDriverDetails);
             if (result > 0) {
-                JOptionPane.showMessageDialog(this, "Driver details inserted successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Carpool advertised successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                 table();
     
             }
             else {
-                JOptionPane.showMessageDialog(this, "Failed to add driver details.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Failed to advertise carpool.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
 }
@@ -1269,10 +1269,17 @@ public final class seat extends javax.swing.JFrame {
     }
 
     public void displayBook(){
-        ResultSet result = new DriverController().showBook();
+        String email = null;
+        try {
+        ResultSet r1 = new UserController().selectEmail();
+        while(r1.next()){
+            email = r1.getString(1);
+        }
+        Driver d1 = new Driver(0, null,null,null,null,0,0,null,null,email);
+        
+    ResultSet result = new DriverController().showBook(d1);
         DefaultTableModel model  =(DefaultTableModel) rideTable.getModel();
         model.setRowCount(0);
-        try {
             while(result.next()){
                 String SN = result.getString(1);
                 String Leave = result.getString(2);
